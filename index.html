@@ -130,7 +130,15 @@
 					<div class="card view zoom">
   						<img class="card-img-top img-fluid " src="images/4.jpg">
 					  	<div class="card-body">
-					  		<h5><button type="button" >~ Mozarella ~</button></h5>
+					  		<h5><button type="button" onclick="showOrderForm()">~ Mozarella ~</button></h5>
+							<form id="orderForm" style="display: none;">
+							<label for="quantity">Monta pizzaa: </label>
+							<input type="number" id="quantity" name="quantity">
+							<label for="toppings">Lisukkeet:</label>
+							<toppings>
+								<input type="checkbox" id="">
+							</toppings>
+							</form>
 					    	<ul class="list-group list-group-flush">
 							    <li class="list-group-item">Bocconcini di carne in nido di sfoglia</li>
 							    <li class="list-group-item">Bruschette con maiale al curry</li>
