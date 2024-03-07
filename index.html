@@ -130,7 +130,7 @@
 					<div class="card view zoom">
   						<img class="card-img-top img-fluid " src="images/4.jpg">
 					  	<div class="card-body">
-					  		<h5 class="card-title">~ Mozarella ~</h5>
+					  		<h5><button type="button" >~ Mozarella ~</button></h5>
 					    	<ul class="list-group list-group-flush">
 							    <li class="list-group-item">Bocconcini di carne in nido di sfoglia</li>
 							    <li class="list-group-item">Bruschette con maiale al curry</li>
@@ -271,9 +271,9 @@
 					}
 					.container {
 						margin: 50px auto;
-						padding: 20px;
+						padding: 200px;
 						background-color: #fff;
-						border-radius: 5px;
+						border-radius: 99px;
 						box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 					}
 					input {
@@ -295,6 +295,9 @@
 					}
 					.container1{
 						padding: 200px;
+						box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+						border-radius: 99px;
+						margin: 50px auto;
 					}
 				</style>
 			</head>
@@ -349,7 +352,7 @@
 						document.getElementById('user-name').innerText = storedName;
 						switchForm('user-info');
 					} else {
-						alert('Salasana on väärin. Yritä uudelleen!');
+						alert('Salasana on väärin tai sinulla ei ole olemassa olevaa käyttäjää. Yritä uudelleen!');
 					}
 				}
 			
