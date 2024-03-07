@@ -131,12 +131,15 @@
   						<img class="card-img-top img-fluid " src="images/4.jpg">
 					  	<div class="card-body">
 					  		<h5><button type="button" onclick="showOrderForm()">~ Mozarella ~</button></h5>
-							<form id="orderForm" style="display: none;">
+							<form id="orderForm">
 							<label for="quantity">Monta pizzaa: </label>
 							<input type="number" id="quantity" name="quantity">
 							<label for="toppings">Lisukkeet:</label>
 							<toppings>
-								<input type="checkbox" id="">
+								<input type="checkbox" id="top" name="top">
+								<label for="top">placeHolder</label>
+								<input type="checkbox" id="top2" name="top2">
+								<label for="top2">place holder</label>
 							</toppings>
 							</form>
 					    	<ul class="list-group list-group-flush">
