@@ -43,11 +43,7 @@
 					    <li class="nav-item">
 					    	<a class="nav-link" href="#OurLocation">Sijaintimme</a>
 							
-					    </li>
-					    <li class="nav-item">
-					    	<a href="#" class="language" rel="fi-FI"><img src="images/fi.ico" class="flag" alt="Suomi"></a>
-					    	<a href="index.html" class="language" rel="en-En"><img src="images/UK.ico" class="flag" alt="English"></a>
-					    </li>
+					    </li>					    
 				    </ul>
 				</div>
 			</nav>
@@ -334,7 +330,7 @@
 					<label for="register-name">Nimi:</label>
 					<input type="text" id="register-name" required>
 					<label for="register-password">Salasana:</label>
-					<input type="password" id="register-password" required>
+					<input type="password" id="register-password" required minlength="3" maxlength="8">
 					<button type="button" onclick="register()">Kirjaudu sisään</button>
 				</form>
 				<button onclick="switchForm('login-container')">Eikö sinulla ole käyttäjää? Rekisteröidy täältä!</button>
