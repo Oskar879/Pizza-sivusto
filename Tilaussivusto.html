@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html>
 <title>MENU</title>
-<h2>~ Pizzat ~</h2>
 <style>
 .h2, h2 {
     font-size: 3rem;
 }
 </style>
 <head>
+    <script>
+        function myFunction() {
+            location.replace("http://127.0.0.1:5501/index.html");
+        }
+    </script>
     <style>
         body {
-            background-color: rgb(202, 54, 54);
+            background-color: rgb(158, 100, 100);
             
         }
 
@@ -39,19 +43,7 @@
             top: 100px;
             left: 20px;
         }
-    </style>
-</head>
-<body>
-    <button class="back-button" onclick="myFunction()">
-        <div class="arrow"></div>
-    </button>
-    <script>
-        function myFunction() {
-            location.replace("http://127.0.0.1:5501/index.html");
-        }
-    </script>
-        <style>
-            body {
+        body {
                 font-family: Arial, sans-serif;
                 text-align: center;
                 padding: 50px;
@@ -59,6 +51,27 @@
             h1 {
                 margin: 0;
             }
-        </style>
+            .container{
+                margin: 50px auto;
+                padding: 200px;
+                background-color: #fff;
+                border-radius: 99px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            .bg-light {
+                background-color: #f8f9fa !important;
+            }
+    </style>
+</head>
+<body>
+    <button class="back-button" onclick="myFunction()">
+        <div class="arrow"></div>
+    </button>
+        <div class="container">        <div class="row" id="Restaurant">
+            <div class="col navMenu">
+                  <h2 class="text-center" >~ Valikoima ~</h2>
+                  <div class="row bg-light" >testi</div>
+            </div>
+          </div>
 </body>
 </html>
