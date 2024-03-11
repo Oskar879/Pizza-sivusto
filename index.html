@@ -332,9 +332,9 @@
 					<label for="register-password">Salasana:</label>
 					<input type="password" id="register-password" required>
 					<p id="password-error" style="color:red"></p>
-					<button type="button" onclick="register()">Kirjaudu sisään</button>
+					<button type="button" onclick="register()">Rekisteröidy</button>
 				</form>
-				<button onclick="switchForm('login-container')">Eikö sinulla ole käyttäjää? Rekisteröidy täältä!</button>
+				<button onclick="switchForm('login-container')" id="b1">Onko jo käyttäjä?</button>
 			</div>
 			<script>
 				document.getElementById('register-password').addEventListener('blur', function() {
@@ -398,6 +398,8 @@
 					document.getElementById('user-info').style.display = 'none';
 			
 					document.getElementById(formToShow).style.display = 'block';
+
+					document.getElementById('b1').style.display = 'none'
 				}
 			</script>
 			
