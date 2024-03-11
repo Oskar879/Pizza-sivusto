@@ -43,7 +43,10 @@
 					    <li class="nav-item">
 					    	<a class="nav-link" href="#OurLocation">Sijaintimme</a>
 							
-					    </li>					    
+					    </li>				
+						<li class="nav-item">
+							<a class="nav-link" href="#login">Login</a>
+						</li>	    
 				    </ul>
 				</div>
 			</nav>
@@ -282,7 +285,8 @@
 					<h3>Address:</h3>
 					<p>Viale Enrico Fermi, 20159 Milan, Mailand (Lombardia) </p>
 					<h3>Email:</h3>
-					<p>mail@example.com</p>
+					<p>pizzaplaceb@gmail.com</p>
+					<p style="font-size: 7px">ps, this address is real</p>
 				</div>
 			</div>
 
@@ -330,43 +334,46 @@
 				</style>
 			</head>
 			
-			<div class="container1" id="register-container">
-				<h2>Rekisteröidy</h2>
-				<form id="register-form">
-					<label for="register-name">Nimi:</label>
-					<input type="text" id="register-name" required>
-					<label for="register-password">Salasana:</label>
-					<input type="password" id="register-password" required>
-					<p id="password-error" style="color:red"></p>
-					<button type="button" onclick="register()">Kirjaudu sisään</button>
-				</form>
-				<button onclick="switchForm('login-container')">Eikö sinulla ole käyttäjää? Rekisteröidy täältä!</button>
-			</div>
-			<script>
-				document.getElementById('register-password').addEventListener('blur', function() {
-					var password = this.value
-					var error = document.getElementById('password-error')
+			<login id="login">
+				<div class="container1" id="register-container">
+					<h2>Rekisteröidy</h2>
+					<form id="register-form">
+						<label for="register-name">Nimi:</label>
+						<input type="text" id="register-name" required>
+						<label for="register-password">Salasana:</label>
+						<input type="password" id="register-password" required>
+						<p id="password-error" style="color:red"></p>
+						<button type="button" onclick="register()">Rekisteröidy</button>
+					</form>
+					<button onclick="switchForm('login-container')" id="b1">Onko jo käyttäjä?</button>
+				</div>
+				<script>
+					document.getElementById('register-password').addEventListener('blur', function() {
+						var password = this.value
+						var error = document.getElementById('password-error')
 
-					if (password.trim() === '') {
-						error.textContent = 'Salasana ei voi olla tyhjä'
-					} else {
-						error.textContent = ''
-					}
-				})
-			</script>
-			
-			<div class="container" id="login-container" style="display:none;">
-				<h2>Kirjaudu sisään</h2>
-				<form id="login-form">
-					<label for="login-name">Nimi:</label>
-					<input type="text" id="login-name" required>
-					<label for="login-password">Salasana:</label>
-					<input type="password" id="login-password" required>
-					<button type="button" onclick="login()">Kirjaudu sisään</button>
-				</form>
-				<button onclick="switchForm('register-container')">Eikö sinulla ole käyttäjää? Rekisteröidy täältä!</button>
-			</div>
-			
+						if (password.trim() === '') {
+							error.textContent = 'Salasana ei voi olla tyhjä'
+						} else if (password.length < 3) {
+							error.textContent = 'Salanan tulee olla enemmän kun 3 kirjainta'
+						} else {
+							error.textContent = ''
+						}
+					})
+				</script>
+				
+				<div class="container" id="login-container" style="display:none;">
+					<h2>Kirjaudu sisään</h2>
+					<form id="login-form">
+						<label for="login-name">Nimi:</label>
+						<input type="text" id="login-name" required>
+						<label for="login-password">Salasana:</label>
+						<input type="password" id="login-password" required>
+						<button type="button" onclick="login()">Kirjaudu sisään</button>
+					</form>
+					<button onclick="switchForm('register-container')">Eikö sinulla ole käyttäjää? Rekisteröidy täältä!</button>
+				</div>
+			</login>
 			<script>
 				function register() {
 					var name = document.getElementById('register-name').value;
@@ -404,6 +411,8 @@
 					document.getElementById('user-info').style.display = 'none';
 			
 					document.getElementById(formToShow).style.display = 'block';
+
+					document.getElementById('b1').style.display = 'none'
 				}
 			</script>
 			
