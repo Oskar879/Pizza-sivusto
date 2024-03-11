@@ -7,7 +7,7 @@
 		<link href='https://fonts.googleapis.com/css?family=Merienda' rel='stylesheet'>
 		<link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
 
-    	<title>Italian Restaurant</title>
+    	<title>Ryhmä B</title>
     	<link rel="icon" href="images/logo_2.png">
 	</head>
 	<body data-spy="scroll" data-target=".navbar" data-offset="50">
@@ -15,13 +15,18 @@
 	  		<!---Start navigation Bar -->
 	    	<nav class="navbar navbar-expand-lg navbar fixed-top  navbar-light bg-light">
 		 		<a class="navbar-brand" href="#Welcome">
-    				<img src="images/logo_2.png" width="50" height="50" class="d-inline-block" alt=""> Italian Restaurant
+    				<img src="images/logo_2.png" width="50" height="50" class="d-inline-block" alt=""> Ryhmä B
 		 		</a>
 		 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
 		    		<span class="navbar-toggler-icon"></span>
 		 		</button>
 			  	<div class="collapse navbar-collapse" id="navbarText">
 			    	<ul class="navbar-nav ml-auto">
+
+						<div id="user-info" style="display:none;">
+							<a>Tervetuloa, <span id="user-name"></span>! <button onclick="logout()" class="Kirjauduulosnappi">Kirjaudu ulos</button></a>
+						</div>
+
 			      		<li class="nav-item">
 			        		<a class="nav-link" href="#Welcome">Tervetuloa</a>
 			      		</li>
@@ -36,13 +41,9 @@
 					    	<a class="nav-link" href="#Reservation">Tilaus</a>
 					    </li>
 					    <li class="nav-item">
-					    	<a class="nav-link" href="#OurLocation">Sijaintimme ja kirjautuminen</a>
+					    	<a class="nav-link" href="#OurLocation">Sijaintimme</a>
 							
-					    </li>
-					    <li class="nav-item">
-					    	<a href="#" class="language" rel="fi-FI"><img src="images/fi.ico" class="flag" alt="Suomi"></a>
-					    	<a href="index.html" class="language" rel="en-En"><img src="images/UK.ico" class="flag" alt="English"></a>
-					    </li>
+					    </li>					    
 				    </ul>
 				</div>
 			</nav>
@@ -122,7 +123,7 @@
   			<!--- Start of Menu-->
 			<div class="row" id="Menu">
 				<div class="col navMenu">
-	     		 	<h2 class="text-center" >~ Menu ~</h2>
+	     		 	<h2 class="text-center" >~ Ehdotuksiamme ~</h2>
 				</div>
 			</div>
 			<div class="row bg-light">
@@ -138,11 +139,7 @@
 								</script>
 								</head>												  							
 					    	<ul class="list-group list-group-flush">
-							    <li class="list-group-item">Bocconcini di carne in nido di sfoglia</li>
-							    <li class="list-group-item">Bruschette con maiale al curry</li>
-							 	<li class="list-group-item">Uova al prosciutto</li>
-							 	<li class="list-group-item">Vitello tonnato</li>
-							 	<li class="list-group-item">Fesa di tacchino marinata con olive</li>
+							    <li class="list-group-item">tomaattikastike, puoli juustoa, rucolanverso, kirsikkatomaatti, mozzarella</li>							   
 							</ul>
 					  	</div>
 					</div>
@@ -153,26 +150,18 @@
 					  	<div class="card-body">
 							<h5><button type="button" >~ Vege lankku ~</button></h5>
 					    	<ul class="list-group list-group-flush">
-							    <li class="list-group-item">Carpaccio di polpo</li>
-							    <li class="list-group-item">Cozze al verde</li>
-							 	<li class="list-group-item">Cocktail di gamberi</li>
-							 	<li class="list-group-item">Risotto alla crema di scampi</li>
-							 	<li class="list-group-item">Ravioli di pesce con crema di scampi</li>
+							    <li class="list-group-item">hapanjuuripohja, Koskenlaskijajuustoakastike, feta x 2, oliivi, rucolanverso x 2, kirsikkatomaatti, kurpitsansiemen, pikkelöity punasipuli, valkosipulidippi, valkosipulimajoneesi</li>							    
 							</ul>
 					  	</div>
 					</div>
 				</div>
 				<div class="col-md-4" data-aos="slide-up">
 					<div class="card">
-  						<img class="card-img-top img-fluid" src="images/6-2.jpg">
+  						<img class="card-img-top img-fluid" src="images/6-1.jpg">
 					  	<div class="card-body">
-							<h5><button type="button" >~ Mexicana ~</button></h5>
+							<h5><button type="button" >~ Kebab ~</button></h5>
 					    	<ul class="list-group list-group-flush">
-							    <li class="list-group-item">Parmigiana di melanzane</li>
-							    <li class="list-group-item">Strudel con ricotta e spinaci</li>
-							 	<li class="list-group-item">Polpette di spinaci e ricotta</li>
-							 	<li class="list-group-item">Frittata di patate al forno</li>
-							 	<li class="list-group-item">Spaghetti con le polpettine vegetariane</li>
+							    <li class="list-group-item">kebabkastike, puoli juustoa, Kebab-liha x 2, punasipuli, salaatti, valkosipulimajoneesi</li>							    
 							</ul>
 					  	</div>
 					</div>
@@ -183,11 +172,7 @@
 					  	<div class="card-body">
 					  		<h5><button type="button" >~ Americana ~</button></h5>
 					    	<ul class="list-group list-group-flush">
-							    <li class="list-group-item">Parmigiana di melanzane</li>
-							    <li class="list-group-item">Strudel con ricotta e spinaci</li>
-							 	<li class="list-group-item">Polpette di spinaci e ricotta</li>
-							 	<li class="list-group-item">Frittata di patate al forno</li>
-							 	<li class="list-group-item">Spaghetti con le polpettine vegetariane</li>
+							    <li class="list-group-item">tomaattikastike, Kotipizza-juusto, kinkku, ananas, Aura-sinihomejuusto</li>							    
 							</ul>
 					  	</div>
 					</div>
@@ -198,11 +183,7 @@
 					  	<div class="card-body">
 							<h5><button type="button" >~ Lihamestari ~</button></h5>
 					    	<ul class="list-group list-group-flush">
-							    <li class="list-group-item">Parmigiana di melanzane</li>
-							    <li class="list-group-item">Strudel con ricotta e spinaci</li>
-							 	<li class="list-group-item">Polpette di spinaci e ricotta</li>
-							 	<li class="list-group-item">Frittata di patate al forno</li>
-							 	<li class="list-group-item">Spaghetti con le polpettine vegetariane</li>
+							    <li class="list-group-item">tomaattikastike, Kotipizza-juusto, kinkku, paahdettu pekoni, kebabliha, pepperonimakkara, beef'n'toast-naudanjauheliha</li>							   
 							</ul>
 					  	</div>
 					</div>
@@ -213,11 +194,7 @@
 					  	<div class="card-body">
 							<h5><button type="button" >~ Parmiamo ~</button></h5>
 					    	<ul class="list-group list-group-flush">
-							    <li class="list-group-item">Parmigiana di melanzane</li>
-							    <li class="list-group-item">Strudel con ricotta e spinaci</li>
-							 	<li class="list-group-item">Polpette di spinaci e ricotta</li>
-							 	<li class="list-group-item">Frittata di patate al forno</li>
-							 	<li class="list-group-item">Spaghetti con le polpettine vegetariane</li>
+							    <li class="list-group-item">tomaattikastike, puoli juustoa, rucolanverso, kirsikkatomaatti, parmesaanijuusto, ilmakuivattu porsaanniska</li>							   
 							</ul>
 					  	</div>
 					</div>
@@ -350,9 +327,6 @@
 						border-radius: 99px;
 						margin: 50px auto;
 					}
-					.Kirjauduulosnappi{
-                        margin-top: 30;
-					}
 				</style>
 			</head>
 			
@@ -363,10 +337,23 @@
 					<input type="text" id="register-name" required>
 					<label for="register-password">Salasana:</label>
 					<input type="password" id="register-password" required>
+					<p id="password-error" style="color:red"></p>
 					<button type="button" onclick="register()">Kirjaudu sisään</button>
 				</form>
 				<button onclick="switchForm('login-container')">Eikö sinulla ole käyttäjää? Rekisteröidy täältä!</button>
 			</div>
+			<script>
+				document.getElementById('register-password').addEventListener('blur', function() {
+					var password = this.value
+					var error = document.getElementById('password-error')
+
+					if (password.trim() === '') {
+						error.textContent = 'Salasana ei voi olla tyhjä'
+					} else {
+						error.textContent = ''
+					}
+				})
+			</script>
 			
 			<div class="container" id="login-container" style="display:none;">
 				<h2>Kirjaudu sisään</h2>
@@ -378,10 +365,6 @@
 					<button type="button" onclick="login()">Kirjaudu sisään</button>
 				</form>
 				<button onclick="switchForm('register-container')">Eikö sinulla ole käyttäjää? Rekisteröidy täältä!</button>
-			</div>
-			
-			<div id="user-info" style="display:none;">
-				<p>Tervetuloa, <span id="user-name"></span>! <button onclick="logout()" class="Kirjauduulosnappi">Kirjaudu ulos</button></p>
 			</div>
 			
 			<script>
