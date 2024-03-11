@@ -7,4 +7,49 @@
     font-size: 3rem;
 }
 </style>
+<head>
+    <style>
+        body {
+            background-color: rgb(202, 54, 54);
+            
+        }
+
+        .back-button {
+            width: 50px;
+            height: 50px;
+            background-color: white; /* Circle color */
+            border-radius: 50%; /* Make it a circle */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            cursor: pointer;
+        }
+
+        .arrow {
+            width: 20px;
+            height: 20px;
+            border-left: 3px solid black;
+            border-bottom: 3px solid black;
+            transform: rotate(+45deg);
+        }
+
+        .custom-image {
+            position: absolute;
+            top: 100px;
+            left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <button class="back-button" onclick="myFunction()">
+        <div class="arrow"></div>
+    </button>
+    <script>
+        function myFunction() {
+            location.replace("http://127.0.0.1:5501/index.html");
+        }
+    </script>
+    <img src="images/4.jpg" class="custom-image">
+</body>
 </html>

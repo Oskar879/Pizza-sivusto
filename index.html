@@ -131,7 +131,13 @@
 					<div class="card view zoom">
   						<img class="card-img-top img-fluid " src="images/4.jpg">
 					  	<div class="card-body">
-					  		<h5><button type="button" >~ Mozarella ~</button></h5>								  							
+					  		<head><h5><button type="button" onclick="myFunction()">~ Mozarella ~</button></h5>
+							  <script>
+								function myFunction() {
+								  location.replace("http://127.0.0.1:5501/Tilaussivusto.html")
+								}
+								</script>
+								</head>												  							
 					    	<ul class="list-group list-group-flush">
 							    <li class="list-group-item">tomaattikastike, puoli juustoa, rucolanverso, kirsikkatomaatti, mozzarella</li>							   
 							</ul>
@@ -330,11 +336,24 @@
 					<label for="register-name">Nimi:</label>
 					<input type="text" id="register-name" required>
 					<label for="register-password">Salasana:</label>
-					<input type="password" id="register-password" required minlength="3" maxlength="8">
+					<input type="password" id="register-password" required>
+					<p id="password-error" style="color:red"></p>
 					<button type="button" onclick="register()">Kirjaudu sisään</button>
 				</form>
 				<button onclick="switchForm('login-container')">Eikö sinulla ole käyttäjää? Rekisteröidy täältä!</button>
 			</div>
+			<script>
+				document.getElementById('register-password').addEventListener('blur', function() {
+					var password = this.value
+					var error = document.getElementById('password-error')
+
+					if (password.trim() === '') {
+						error.textContent = 'Salasana ei voi olla tyhjä'
+					} else {
+						error.textContent = ''
+					}
+				})
+			</script>
 			
 			<div class="container" id="login-container" style="display:none;">
 				<h2>Kirjaudu sisään</h2>
