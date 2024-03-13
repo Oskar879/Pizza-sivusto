@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <title>MENU</title>
+<link rel="icon" href="images/logo_2.png">
 <style>
 .h2, h2 {
     font-size: 3rem;
@@ -149,19 +150,39 @@
                                 letter-spacing: 0px;
                             }
                             .pizza:hover::before {
-                            content: 'Add to Order'; /* Displayed on hover */
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            width: 100%;
-                            height: 100%;
-                            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            font-weight: bold;
-                            font-size: 1.5rem;
+                                content: 'Add to Order'; /* Displayed on hover */
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                font-weight: bold;
+                                font-size: 1.5rem;
                             }
+                            ul.this {
+                                list-style-type: none;
+                                padding: 0;
+                                display: flex;
+                                justify-content: space-between;
+                                flex-wrap: wrap
+                                
+                            }
+                            ul.this li {
+                                width: 30%;
+                                margin-right: 20px;
+                                display: flex;
+                                align-items: center;
+                            }
+                            ul.this li img {
+                                margin-right: 5px;
+                                max-width: 100%;
+                                height: 220px;
+                                border-radius: 0px;
+                            }                            
                              
                         </style>
                     </head>
@@ -170,7 +191,7 @@
                     <h1>Pizzat</h1>
                     
                     <div class="pizza-container">
-                        <div class="pizza" onclick="addToOrder('Mozarella', '11.10', 'tomaattikastike, puoli juustoa, rucolanverso, kirsikkatomaatti, mozzarella')">
+                        <div class="pizza" onclick="addToOrder('Mozzarella', '11.10', 'tomaattikastike, puoli juustoa, rucolanverso, kirsikkatomaatti, mozzarella')">
                             <img src="images/4.jpg" alt="Pizza 1">
                             <h5><span class="pizza-nimi">Mozzarella</span> <span class="pizza-hinta">11,10 €</span></h5>                            
                             <ul class="list-group list-group-flush">
@@ -247,6 +268,29 @@
                         </div>                        
                         <!-- Voit lisätä lisää pizza-elementtejä samalla tavalla -->
                     </div>
+                    <drinks>
+                        <h4>Valitse juomasi</h4>
+                        <ul class="this">                            
+                            <li>                                
+                                <img src="images/miranda.jpg">
+                                Miranda</li>
+                            <li>
+                                <img src="images/peppi.jpg">
+                                Peppi</li>
+                            <li>
+                                <img src="images/cola.jpg">
+                                cola</li>
+                            <li>
+                                <img src="images/twistup.jpg">
+                                Twist Up</li>
+                            <li>
+                                <img src="images/water.jpg">
+                                Water</li>
+                            <li>
+                                <img src="images/milk.jpg">
+                                Milk</li>
+                        </ul>
+                    </drinks>
                     <script>
                         function addToOrder(name, price, ingredients) {
                             // You can customize this function to add the selected pizza to another page
