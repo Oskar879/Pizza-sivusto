@@ -18,7 +18,7 @@
                     }
                 </script>
                 <img src="images/ostoskori.png">
-                <p id="yhteensa">0.00 €</p>
+                <h3 id="yhteensa">0.00 €</h3>
             </button>            
         </div>
     <script>
@@ -85,14 +85,25 @@
             }
             #ostoskori img {
                 width: 50px;
-                height: 50px;
-                margin-right: 1px;
+                height: 50px;                                    
+
+            }
+            #ostoskori button {
+                background-color:#fff;
+                color: #fff;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;                
             }
             #yhteensa {
                 margin: 0;
-                font-size: 1.5rem;                
-            }
-            
+                font-size: 1.5rem;
+                position: absolute;                                                                              
+            } 
+            h3 {
+                color: #d33b3b;
+            }                       
     </style>
 </head>
 <body>
