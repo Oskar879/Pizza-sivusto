@@ -340,6 +340,7 @@
 					<form id="register-form">
 						<label for="register-name">Nimi:</label>
 						<input type="text" id="register-name" required>
+						<p id="name-error" style="color:red"></p>
 						<label for="register-password">Salasana:</label>
 						<input type="password" id="register-password" required>
 						<p id="password-error" style="color:red"></p>
@@ -347,21 +348,6 @@
 					</form>
 					<button onclick="switchForm('login-container')" id="b1">Onko jo käyttäjä?</button>
 				</div>
-				<script>
-					document.getElementById('register-password').addEventListener('blur', function() {
-						var password = this.value
-						var error = document.getElementById('password-error')
-
-						if (password.trim() === '') {
-							error.textContent = 'Salasana ei voi olla tyhjä'
-						} else if (password.length < 3) {
-							error.textContent = 'Salanan tulee olla enemmän kun 3 kirjainta'
-						} else {
-							error.textContent = ''
-						}
-					})
-				</script>
-				
 				<div class="container" id="login-container" style="display:none;">
 					<h2>Kirjaudu sisään</h2>
 					<form id="login-form">
@@ -378,17 +364,41 @@
 				function register() {
 					var name = document.getElementById('register-name').value;
 					var password = document.getElementById('register-password').value;
-			
-					localStorage.setItem('username', name);
-					localStorage.setItem('password', password);
-			
-					switchForm('login-container');
+					var error = document.getElementById('password-error')
+					var validpass = true 
+					var validname = true
+					var error2 = document.getElementById('name-error')
+
+					if (password.trim() === '') {
+							error.textContent = 'Salasana ei voi olla tyhjä'
+							validpass = false
+						} else if (password.length < 3) {
+							error.textContent = 'Salanan tulee olla vähintään 3 kirjainta'
+							validpass = false
+						} else {
+							error.textContent = ''
+						}
+					if (!name.trim()) {
+						error2.textContent = 'Nimi ei voi olla tyhjä'
+						validname = false
+					}else if (name.length < 3) {
+						error2.textContent = 'Nimen tulee olla vähintään 3 kirjainta'
+						validname = false
+					} else {
+					   error2.textContent = ''
+					}
+					
+					if (validpass && validname) {
+						localStorage.setItem('username', name);
+						localStorage.setItem('password', password);
+				
+						switchForm('login-container', true);
+					}
 				}
 			
 				function login() {
 					var storedName = localStorage.getItem('username');
 					var storedPassword = localStorage.getItem('password');
-			
 					var enteredName = document.getElementById('login-name').value;
 					var enteredPassword = document.getElementById('login-password').value;
 			
@@ -405,7 +415,8 @@
 					switchForm('login-container');
 				}
 			
-				function switchForm(formToShow) {
+				function switchForm(formToShow, isvalidpassword) {
+					
 					document.getElementById('register-container').style.display = 'none';
 					document.getElementById('login-container').style.display = 'none';
 					document.getElementById('user-info').style.display = 'none';
