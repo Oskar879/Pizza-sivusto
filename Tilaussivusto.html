@@ -94,8 +94,11 @@
                                 padding: 1px;
                                 border: 1px solid #ccc;
                                 border-radius: 0px;
+                                max-width: 400px;
                                 padding: -0.25rem 1.25rem;
                                 text-align: left;
+                                position: relative;
+                                cursor: pointer;
                             }
                             .pizza img {
                                 max-width: 100%;
@@ -114,6 +117,20 @@
                                 text-align: right;
                                 font-weight: 600;
                             }
+                            .pizza:hover::before {
+                            content: 'Add to Order'; /* Displayed on hover */
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            font-weight: bold;
+                            font-size: 1.5rem;
+                            }
                              
                         </style>
                     </head>
@@ -122,38 +139,94 @@
                     <h1>Pizzat</h1>
                     
                     <div class="pizza-container">
-                        <div class="pizza">
+                        <div class="pizza" onclick="addToOrder('Mozarella', '11.10', 'tomaattikastike, puoli juustoa, rucolanverso, kirsikkatomaatti, mozzarella')">
                             <img src="images/4.jpg" alt="Pizza 1">
                             <h5>Mozarella 11,10 €</h5>
-                            <p>tomaattikastike, puoli juustoa, rucolanverso, kirsikkatomaatti, mozzarella</p>
+                            <ul class="list-group list-group-flush">
+                                <li>tomaattikastike</li>
+                                <li>puoli juustoa</li>
+                                <li>rucolanverso</li>
+                                <li>kirsikkatomaatti</li>
+                                <li>mozzarella</li>
+                            </ul>
                         </div>
                         <div class="pizza">
                             <img src="images/5.jpg" alt="Pizza 2">
                             <h5>Vege Lankku 11,50 €</h5>
-                            <p>hapanjuuripohja, Koskenlaskijajuustoakastike, feta x 2, oliivi, rucolanverso x 2, kirsikkatomaatti, kurpitsansiemen, pikkelöity punasipuli, valkosipulidippi, valkosipulimajoneesi</p>
+                            <ul class="list-group list-group-flush">
+                                <li>hapanjuuripohja</li>
+                                <li>Koskenlaskijajuustoakastike</li>
+                                <li>feta x 2</li>
+                                <li>oliivi</li>
+                                <li>rucolanverso x 2</li>
+                                <li>kirsikkatomaatti</li>
+                                <li>kurpitsansiemen</li>
+                                <li>pikkelöity punasipuli</li>
+                                <li>valkosipulidippi</li>
+                                <li>valkosipulimajoneesi</li>
+                            </ul>
                         </div>
                         <div class="pizza">
                             <img src="images/6.jpg" alt="Pizza 3">
                             <h5>Kebab 14,60 €</h5>
-                            <p>kebabkastike, puoli juustoa, Kebab-liha x 2, punasipuli, salaatti, valkosipulimajoneesi</p>
+                            <ul class="list-group list-group-flush">
+                                <li>kebabkastike</li>
+                                <li>puoli juustoa</li>
+                                <li>Kebab-liha x 2</li>
+                                <li>punasipuli</li>
+                                <li>salaatti</li>
+                                <li>valkosipulimajoneesi</li>
+                            </ul>
                         </div>
                         <div class="pizza">
                             <img src="images/7.jpg" alt="Pizza 4">
                             <h5>Americana 13,40 €</h5>
-                            <p>tomaattikastike, Kotipizza-juusto, kinkku, ananas, Aura-sinihomejuusto</p>
+                            <ul class="list-group list-group-flush">
+                                <li>tomaattikastike</li>
+                                <li>Kotipizza-juusto</li>
+                                <li>kinkku</li>
+                                <li>ananas</li>
+                                <li>Aura-sinihomejuusto</li>
+                            </ul>
                         </div>
                         <div class="pizza">
                             <img src="images/8.jpg" alt="Pizza 5">
                             <h5>Lihamestari 15,40 €</h5>
-                            <p>tomaattikastike, Kotipizza-juusto, kinkku, paahdettu pekoni, kebabliha, pepperonimakkara, beef'n'toast-naudanjauheliha</p>
+                            <ul class="list-group list-group-flush">
+                                <li>tomaattikastike</li>
+                                <li>Kotipizza-juusto</li>
+                                <li>kinkku</li>
+                                <li>paahdettu pekoni</li>
+                                <li>kebabliha</li>
+                                <li>pepperonimakkara</li>
+                                <li>beef'n'toast-naudanjauheliha</li>
+                            </ul>
                         </div>
                         <div class="pizza">
                             <img src="images/9.jpg" alt="Pizza 6">
                             <h5>Parmiamo 15,40 €</h5>
-                            <p>tomaattikastike, puoli juustoa, rucolanverso, kirsikkatomaatti, parmesaanijuusto, ilmakuivattu porsaanniska</p>
+                            <ul class="list-group list-group-flush">
+                                <li>tomaattikastike</li>
+                                <li>puoli juustoa</li>
+                                <li>rucolanverso</li>
+                                <li>kirsikkatomaatti</li>
+                                <li>parmesaanijuusto</li>
+                                <li>ilmakuivattu porsaanniska</li>
+                            </ul>
                         </div>                        
                         <!-- Voit lisätä lisää pizza-elementtejä samalla tavalla -->
                     </div>
+                    <script>
+                        function addToOrder(name, price, ingredients) {
+                            // You can customize this function to add the selected pizza to another page
+                            // For demonstration purposes, let's just log the selected pizza details
+                            console.log("Added to Order:");
+                            console.log("Name: " + name);
+                            console.log("Price: " + price);
+                            console.log("Ingredients: " + ingredients);
+                        }
+                    </script>
+                    
                     
                     </body>
                     </html>
