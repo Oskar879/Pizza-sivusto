@@ -102,16 +102,19 @@
                                 border-radius: 0px;
                                 max-width: 300px;
                                 padding: -0.25rem 1.25rem;
-                                text-align: left;
+                                text-align: left;                                                                
                             }
                             .pizza img {
                                 max-width: 100%;
                                 height: 220px;
                                 border-radius: 0px;
-                            }
+                            }                            
                             h5 {
+                                display: flex;
                                 -webkit-box-pack: justify;
                                 justify-content: space-between;
+                                align-items: center;
+                                justify-content: right;
 						        padding: 10px;
 						        background-color: #d33b3b;
 						        color: #fff;
@@ -121,9 +124,22 @@
                                 font-size: inherit;
                                 line-height: normal;
                                 text-align: right;
-                                font-weight: 600;                                
-                                
+                                font-weight: 600;                                                                
                             }
+                            h6 {
+                                font-family: Arial, sans-serif;
+                                font-size: inherit;
+                                line-height: normal;
+                                text-align: left;
+                                font-weight: 600;
+                            }
+                            .pizza-name {
+                                text-align: left;
+                                flex-grow: 1;
+                            }
+                            .pizza-hinta {
+                                margin-left: 10px;
+                            }                                                        
                             p {
                                 font-family: Arial, Helvetica, sans-serif;
                                 font-style: normal;
@@ -148,33 +164,33 @@
                     
                     <div class="pizza-container">
                         <div class="pizza">
-                            <img src="images/4.jpg" alt="Pizza 1">
-                            <h5>11,10 €</h5>
+                            <img src="images/4.jpg" alt="Pizza 1">                                                    
+                            <h5><span class="pizza-name">Mozarella</span> <span class="pizza-hinta">11,10 €</span></h5>                                                   
                             <p>tomaattikastike, puoli juustoa, rucolanverso, kirsikkatomaatti, mozzarella</p>
                         </div>
                         <div class="pizza">
                             <img src="images/5.jpg" alt="Pizza 2">
-                            <h5>11,50 €</h5>
+                            <h5><span class="pizza-name">Vege Lankku</span> <span class="pizza-hinta">18,90 €</span></h5>
                             <p>hapanjuuripohja, Koskenlaskijajuustoakastike, feta x 2, oliivi, rucolanverso x 2, kirsikkatomaatti, kurpitsansiemen, pikkelöity punasipuli, valkosipulidippi, valkosipulimajoneesi</p>
                         </div>
                         <div class="pizza">
                             <img src="images/6.jpg" alt="Pizza 3">
-                            <h5>14,60 €</h5>
+                            <h5><span class="pizza-name">Kebab</span> <span class="pizza-hinta">14,60 €</span></h5>
                             <p>kebabkastike, puoli juustoa, Kebab-liha x 2, punasipuli, salaatti, valkosipulimajoneesi</p>
                         </div>
                         <div class="pizza">
                             <img src="images/7.jpg" alt="Pizza 4">
-                            <h5>13,40 €</h5>
+                            <h5><span class="pizza-name">Americana</span> <span class="pizza-hinta">13,40 €</span></h5>
                             <p>tomaattikastike, Kotipizza-juusto, kinkku, ananas, Aura-sinihomejuusto</p>
                         </div>
                         <div class="pizza">
                             <img src="images/8.jpg" alt="Pizza 5">
-                            <h5>15,40 €</h5>
+                            <h5><span class="pizza-name">Lihamestari</span> <span class="pizza-hinta">15,40 €</span></h5>
                             <p>tomaattikastike, Kotipizza-juusto, kinkku, paahdettu pekoni, kebabliha, pepperonimakkara, beef'n'toast-naudanjauheliha</p>
                         </div>
                         <div class="pizza">
                             <img src="images/9.jpg" alt="Pizza 6">
-                            <h5>15,40 €</h5>
+                            <h5><span class="pizza-name">Parmiamo</span> <span class="pizza-hinta">15,40 €</span></h5>
                             <p>tomaattikastike, puoli juustoa, rucolanverso, kirsikkatomaatti, parmesaanijuusto, ilmakuivattu porsaanniska</p>
                         </div>                        
                         <!-- Voit lisätä lisää pizza-elementtejä samalla tavalla -->
