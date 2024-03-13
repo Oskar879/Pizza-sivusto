@@ -125,14 +125,18 @@
                                 line-height: normal;
                                 text-align: right;
                                 font-weight: 600;                            
-                                
+                                border-top-left-radius: calc(1.25rem - 1px);
+                                border-top-right-radius: calc(1.25rem - 1px);
+                                border-bottom-left-radius: calc(1.25rem - 1px);
+                                border-bottom-right-radius: calc(1.25rem - 1px);
+                                float: right;
                             }
                             .pizza-nimi {
                                 text-align: center;
                                 flex-grow: 1;
                             } 
                             .pizza-hinta {
-                                margin-left: 10px;
+                                margin-left: 0px;
                             }                           
                             p {
                                 font-family: Arial, Helvetica, sans-serif;
@@ -193,7 +197,7 @@
                     <div class="pizza-container">
                         <div class="pizza" onclick="addToOrder('Mozzarella', '11.10', 'tomaattikastike, puoli juustoa, rucolanverso, kirsikkatomaatti, mozzarella')">
                             <img src="images/4.jpg" alt="Pizza 1">
-                            <h5><span class="pizza-nimi">Mozzarella</span> <span class="pizza-hinta">11,10 €</span></h5>                            
+                            <h5><span class="pizza-hinta">11,10 €</span></h5>                         
                             <ul class="list-group list-group-flush">
                                 <li>tomaattikastike</li>
                                 <li>puoli juustoa</li>
