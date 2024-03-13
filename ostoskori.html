@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<title>MENU</title>
+<link rel="icon" href="images/logo_2.png">
+<head>
+    <style>
+        body {
+            background-color: rgb(158, 100, 100);            
+        }
+        .container{
+            margin: 50px auto;
+            padding: 200px;
+            background-color: #fff;
+            border-radius: 99px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);            
+            position: relative; 
+        }
+        .bg-light {
+            background-color: #f8f9fa !important;
+        }
+        .back-button {
+            width: 50px;
+            height: 50px;
+            background-color: white; 
+            border-radius: 50%; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            cursor: pointer;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+
+        .arrow {
+            width: 20px;
+            height: 20px;
+            border-left: 3px solid black;
+            border-bottom: 3px solid black;
+            transform: rotate(+45deg);
+        }
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="back-button" onclick="goBack()">
+            <div class="arrow"></div>
+        </button>
+        <h3>Ostoskori on tyhjä</h3>
+    </div>
+    <script>
+        function goBack() {
+            location.replace("Tilaussivusto.html");
+        }
+    </script>
+</body>
+</html>

@@ -8,9 +8,22 @@
 }
 </style>
 <head>
+    
+    <div class="container">
+        <div id="ostoskori">
+            <button type="button" onClick="showOrderSummary()">
+                <script>
+                    function showOrderSummary() {
+                        location.replace("ostoskori.html");
+                    }
+                </script>
+                <img src="images/ostoskori.png">
+                <p id="yhteensa">0.00 €</p>
+            </button>            
+        </div>
     <script>
         function myFunction() {
-            location.replace("http://127.0.0.1:5501/index.html");
+            location.replace("index.html");
         }
     </script>
     <style>
@@ -61,6 +74,23 @@
             }
             .bg-light {
                 background-color: #f8f9fa !important;
+            }
+            #ostoskori {
+                position: absolute;
+                top: 120px;
+                right: 120px;
+                text-align: right;
+                display: flex;
+                align-items: center;
+            }
+            #ostoskori img {
+                width: 50px;
+                height: 50px;
+                margin-right: 1px;
+            }
+            #yhteensa {
+                margin: 0;
+                font-size: 1.5rem;                
             }
             
     </style>
@@ -296,21 +326,33 @@
                         </ul>
                     </drinks>
                     <script>
+                        var selectedItems = []; // Array to store selected items
+
+                        function myFunction() {
+                        location.replace("index.html");
+                        }                                                                        
+
                         function addToOrder(name, price, ingredients) {
-                            // You can customize this function to add the selected pizza to another page
-                            // For demonstration purposes, let's just log the selected pizza details
-                            console.log("Added to Order:");
-                            console.log("Name: " + name);
-                            console.log("Price: " + price);
-                            console.log("Ingredients: " + ingredients);
+                        console.log("Added to Order:");
+                        console.log("Name: " + name);
+                        console.log("Price: " + price);
+                        console.log("Ingredients: " + ingredients);
+
+                        // Add selected item to the array
+                        selectedItems.push(name + " - " + price + " €");
+
+                        // Update the cart display
+                        var cartItem = document.createElement("li");
+                        cartItem.textContent = name + " - " + price + " €";
+                        document.getElementById("cart-items").appendChild(cartItem);
+
+                        // Update the total price
+                        var kokonaishinta = parseFloat(document.getElementById("yhteensa").textContent);
+                        kokonaishinta += parseFloat(price);
+                        document.getElementById("yhteensa").textContent = kokonaishinta.toFixed(2) + " €";
                         }
-                    </script>
-                    
-                    
-                    </body>
-                    </html>
-                    </div>
-            </div>
-          </div>
+                    </script>                                                                            
+            </div>                    
+        </div>
 </body>
 </html>
