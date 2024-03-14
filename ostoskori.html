@@ -31,8 +31,7 @@
             position: absolute;
             top: 50px;
             left: 50px;
-        }
-
+        }                
         .arrow {
             width: 20px;
             height: 20px;
@@ -68,6 +67,8 @@
         <h1 id="empty-message" class="empty-message">Ostoskorisi on tyhjä</h1>
         <h2>Yhteensä: <span id="total"></span></h2>
         <h3 id="cart-items"></h3>
+        <label for="delivery-checkbox">Kuljetus:</label>
+        <input type="checkbox" id="delivery-checkbox" onclick="promptAddress()">
     </div>
 
     <script>
@@ -110,6 +111,15 @@
             localStorage.setItem("order", JSON.stringify(order));
             // Reload the page to reflect the changes
             location.reload();
+        }
+
+        // Function to prompt the user for their address when the checkbox is clicked
+        function promptAddress() {
+            var deliveryCheckbox = document.getElementById("delivery-checkbox");
+            if (deliveryCheckbox.checked) {
+                var address = prompt("Please enter your address:");
+                // You can do something with the address here, such as storing it in localStorage or sending it to a server.
+            }
         }
     </script>
 </body>
