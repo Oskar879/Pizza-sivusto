@@ -98,7 +98,7 @@
             #ostoskori button {
                 background-color:#fff;
                 color: #fff;
-                padding: 10px 0px;
+                padding: 10px 20px;
                 border: none;
                 border-radius: 5px;
                 cursor: pointer;                
@@ -131,7 +131,8 @@
                                 padding: 20px;
                                 line-height: 1.5;
                             }
-                            .pizza-container {
+                            .pizza-container,
+                            .drink-container {
                                 display: flex;
                                 flex-wrap: wrap;
                                 justify-content: center;                               
@@ -142,7 +143,8 @@
                                 width: 100%;                                
                             }
                             .pizza,
-                            .pizza2 {
+                            .pizza2,
+                            .drink {
                                 margin: 20px;
                                 border: 1px solid #ccc;
                                 border-radius: 0px;
@@ -219,7 +221,14 @@
                                 align-items: center;
                                 font-weight: bold;
                                 font-size: 1.5rem;
-                            }                            
+                            }
+                            ul.this {
+                                list-style-type: none;
+                                padding: 0;
+                                display: flex;
+                                justify-content: space-between;
+                                flex-wrap: wrap                                                                
+                            }
                             ul.this li {
                                 width: 30%;
                                 margin-right: 20px;
@@ -235,7 +244,29 @@
                                 max-width: 100%;
                                 height: 200px;
                                 border-radius: 0px;
-                            }                                                                                                                                          
+                            }        
+                            .juoma {
+                                text-align: left;
+                                display: flex;
+                                flex-wrap: wrap;
+                                justify-content: center;                               
+                                -webkit-box-flex: 1;
+                                flex-grow: 1;
+                                align-items: flex-start;
+                                min-height: 5.5rem;
+                                width: 100%;                                
+                            }
+                            .juoma-container {
+                                margin: 20px;
+                                padding: 1px;
+                                border: 1px solid #ccc;
+                                border-radius: 0px;
+                                max-width: 312px;
+                                text-align: left;
+                                position: relative;
+                                cursor: pointer;
+                            }                    
+                             
                             .price-background {
                             display: inline-block;
                             justify-content: space-between;
@@ -269,7 +300,7 @@
                     <h1>Pizzat</h1>
                     
                     <div class="pizza-container">
-                        <div class="pizza" onclick="addToOrder('Mozzarella', '11.10', 'tomaattikastike, puoli juustoa, rucolanverso, kirsikkatomaatti, mozzarella')">
+                        <div class="pizza" onclick="addToOrder('Mozzarella', '11.10')">
                             <img src="images/4.jpg" alt="Pizza 1">
                             <span class="pizza-nimi">Mozarella</span> <span class="pizza-hinta"><span class="price-background">11,10 €</span></span>                       
                             <ul class="list-group list-group-flush">
@@ -356,35 +387,35 @@
                                 })
                             </script>
                             <!-- Voit lisätä lisää pizza-elementtejä samalla tavalla -->
-                    </div>                    
-
-                    <h1>Juomat</h1>                    
-                    <div class="pizza-container">                        
-                        <div class="pizza" onclick="addToOrder('Mirinda', '3.50')">
+                    </div>
+                    
+                    <h1>Juomat</h1>
+                    <div class="drink-container">
+                        <div class="drink" onclick="addToOrder('Mirinda', '3.40')">
                             <img src="images/mirinda.png" alt="mirinda">
                             <span class="pizza-nimi">Mirinda 0,5 l</span> <span class="pizza-hinta"><span class="price-background">3,50 €</span> </span>                                                        
                         </div>
-                        <div class="pizza" onclick="addToOrder('Pepsi', '3.40')">
+                        <div class="drink">
                             <img src="images/pepsi.png" alt="pepsi">
                             <span class="pizza-nimi">Pepsi 450 ml</span> <span class="pizza-hinta"><span class="price-background">3,40 €</span> </span>                            
                         </div>
-                        <div class="pizza" onclick="addToOrder('Coca Cola', '3.60')">
+                        <div class="drink">
                             <img src="images/coca.png" alt="coca">
                             <span class="pizza-nimi">Coca Cola 0,25 l</span> <span class="pizza-hinta"><span class="price-background">3,60 €</span> </span>                            
                         </div>
-                        <div class="pizza" onclick="addToOrder('Twist Up', '3.70')">
+                        <div class="drink">
                             <img src="images/twistup.png" alt="twistup">
                             <span class="pizza-nimi">Twist Up 2 l</span> <span class="pizza-hinta"><span class="price-background">3,70 €</span> </span>                            
                         </div>
-                        <div class="pizza" onclick="addToOrder('Vesi', '2.10')">
+                        <div class="drink">
                             <img src="images/vesi.png" alt="vesi">
                             <span class="pizza-nimi">Vesi 500 ml</span> <span class="pizza-hinta"><span class="price-background">2,10 €</span> </span>                            
                         </div>
-                        <div class="pizza" onclick="addToOrder('Maito', '2.30')">
+                        <div class="drink">
                             <img src="images/maito.png" alt="maito">
                             <span class="pizza-nimi">Maito 1 l</span> <span class="pizza-hinta"><span class="price-background">2,30 €</span> </span>
                         </div>
-                    </div>                    
+                    </div>
 
                     <script>
                         var selectedItems = []; // Array to store selected items
