@@ -70,12 +70,10 @@
         <h2>Toimitustapa:</h2>
         <input type="radio" id="pickup" name="delivery-method" value="pickup" onclick="toggleAddressInput(false)">
         <label for="pickup">Nouto</label><br>
-        <input type="radio" id="delivery" name="delivery-method" value="delivery" onclick="toggleAddressInput(true)">
+        <input type="radio" id="delivery" name="delivery-method" value="delivery" onclick="promptAddress()">
         <label for="delivery">Kuljetus</label><br>
         <input type="text" id="delivery-address" placeholder="Syötä toimitusosoite" style="display: none;"><br>
         <button onclick="confirmOrder()">Vahvista tilaus</button>
-        <label for="delivery-checkbox">Kuljetus: +3 €</label>
-        <input type="checkbox" id="delivery-checkbox" onclick="promptAddress()">
         <div id="clock"></div>
     </div>
 
@@ -124,7 +122,7 @@
         // Function to prompt the user for their address when the checkbox is clicked
         function promptAddress() {
             var deliveryCheckbox = document.getElementById("delivery-checkbox");
-            if (deliveryCheckbox.checked) {
+            if (delivery.checked) {
                 var address = prompt("Please enter your address:");
                 // You can do something with the address here, such as storing it in localStorage or sending it to a server.
             }
