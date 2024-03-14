@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
-<title>Ostoskori</title>
-<link rel="icon" href="images/logo_2.png">
 <head>
+    <title>Ostoskori</title>
+    <link rel="icon" href="images/logo_2.png">
     <style>
         body {
             background-color: rgb(158, 100, 100);            
@@ -48,6 +48,9 @@
         h1 {
             margin: 0;
         }
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -55,11 +58,51 @@
         <button class="back-button" onclick="goBack()">
             <div class="arrow"></div>
         </button>
-        <h3>Ostoskori on tyhjä</h3>
+        <h3 id="empty-message" class="empty-message">Ostoskori on tyhjä</h3>
     </div>
+    <ul id="cart-items"></ul>
+    <h3>Total: <span id="total"></span></h3>
+
     <script>
         function goBack() {
             location.replace("Tilaussivusto.html");
+        }
+
+        // Retrieve the order from localStorage
+        var order = JSON.parse(localStorage.getItem("order")) || [];
+
+        // Display each item in the order
+        var total = 0;
+        var cartItems = document.getElementById("cart-items");
+        order.forEach(function(pizza, index) {
+            var item = document.createElement("li");
+            item.textContent = pizza.name + " - " + pizza.price + " €";
+            var removeButton = document.createElement("button");
+            removeButton.textContent = "Remove";
+            removeButton.onclick = function() {
+                removeItem(index);
+            };
+            item.appendChild(removeButton);
+            cartItems.appendChild(item);
+            total += parseFloat(pizza.price);
+        });
+
+        // Display the total
+        document.getElementById("total").textContent = total.toFixed(2) + " €";
+
+        // Hide the empty message if the order is not empty
+        if (order.length > 0) {
+            document.getElementById("empty-message").classList.add("hidden");
+        }
+
+        // Function to remove an item from the order
+        function removeItem(index) {
+            // Remove the item from the order array
+            order.splice(index, 1);
+            // Update localStorage
+            localStorage.setItem("order", JSON.stringify(order));
+            // Reload the page to reflect the changes
+            location.reload();
         }
     </script>
 </body>
