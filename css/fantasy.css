@@ -1,0 +1,14 @@
+.options
+
+
+.sauce,
+.dough {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    margin-bottom: 5px;
+}
+.sauce input,
+.dough input {
+    margin-right: 10px;
+}

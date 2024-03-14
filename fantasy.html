@@ -9,27 +9,33 @@
         <toppings>
             <h2>Select Toppings</h2>
             <select name="topping" id="topping">
-                <option value="pepperoni">Pepperoni</option>
-                <option value="shrimp">Katkarapu</option>
-                <option value="tuna">Tonnikala</option>
-                <option value="mushroom">Sieniä</option>
-                <option value="pineapple">Ananas</option>
-                <option value="ham">Kinkku</option>
-                <option value="meatball">Lihapulla</option>
-                <option value="pepper">Paprika</option>
-                <option value="onion">Sipuli</option>
-                <option value="bacon">Pekoni</option>
+                <option value="pepperoni">Pepperoni + 1,00€</option>
+                <option value="shrimp">Katkarapu + 1,50€</option>
+                <option value="tuna">Tonnikala + 1,00€</option>
+                <option value="mushroom">Sieniä + 0,50€</option>
+                <option value="pineapple">Ananas + 0,75€</option>
+                <option value="ham">Kinkku + 1,25£</option>
+                <option value="meatball">Lihapulla + 1,50€</option>
+                <option value="pepper">Paprika + 0,75€</option>
+                <option value="onion">Sipuli + 1,00€</option>
+                <option value="bacon">Pekoni + 2,00€</option>
             </select>
             <select name="cheese" id="cheese">
-                <option value="mozzarella">Mozzarella</option>
-                <option value="cheddar">Cheddar</option>
-                <option value="blch">Sinihomejuusto</option>
+                <option value="mozzarella">Mozzarella + 2,00€</option>
+                <option value="cheddar">Cheddar + 1,50€</option>
+                <option value="blch">Sinihomejuusto + 2,50€</option>
             </select>
-            <label><input type="checkbox" name="sauce" value="garlic" class="sauce">Valkosipuli</label>
-            <label><input type="checkbox" name="sauce" value="extra" class="sauce">Extra</label>
-            <label><input type="checkbox" name="sauce" value="none" class="sauce">Ei kastiketta</label>
-            <label><input type="checkbox" name="dough" value="gluten" class="dough">Tavallinen</label>
-            <label><input type="checkbox" name="dough" value="glutent" class="dough">Gluteeniton</label>
+            <options class="options">
+                <sauce class="sauce">
+                    <label><input type="checkbox" name="sauce" value="garlic">Valkosipuli + 1,00€</label>
+                    <label><input type="checkbox" name="sauce" value="extra" class="sauce">Extra + 1,50€</label>
+                    <label><input type="checkbox" name="sauce" value="none" class="sauce">Ei kastiketta + 0,00€</label>
+                </sauce>
+                <dough class="dough">
+                    <label><input type="checkbox" name="dough" value="gluten" class="dough">Tavallinen + 0,00€</label>
+                    <label><input type="checkbox" name="dough" value="glutent" class="dough">Gluteeniton + 1,50€</label>
+                </dough>
+                </options>
             <script>
                 document.addEventListener('DOMContentLoaded', function() {
                     const sauces = document.querySelectorAll('.sauce')
