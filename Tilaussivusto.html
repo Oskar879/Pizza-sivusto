@@ -376,10 +376,16 @@
                             </ul>
                         </div>            
                         <div class="pizza2">
-                            <a href="fantasy.html" class="adios">
-                            <img src="images/pizza.png" alt="Pizza 7">
+                            <img src="images/pizza.png" alt="Pizza 7" id="pizzaimage">
                             <span class="pizza-nimi">Fantasia pizza</span> <span class="pizza-hinta"><span class="price-background">15 €</span></span>            
-                            </a>
+                            <script>
+                                document.addEventListener('DOMContentLoaded', function() {
+                                    const pizzaimage = document.getElementById('pizzaimage')
+                                    pizzaimage.addEventListener('click', function() {
+                                        window.location.href = 'fantasy.html'
+                                    })
+                                })
+                            </script>
                             <!-- Voit lisätä lisää pizza-elementtejä samalla tavalla -->
                     </div>
                     
