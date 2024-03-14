@@ -34,17 +34,7 @@
             
         }
 
-        .back-button {
-            width: 50px;
-            height: 50px;
-            background-color: white; /* Circle color */
-            border-radius: 50%; /* Make it a circle */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border: none;
-            cursor: pointer;
-        }
+
 
         .arrow {
             width: 20px;
@@ -74,6 +64,20 @@
                 border-radius: 99px;
                 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             }
+            .back-button {
+            width: 50px;
+            height: 50px;
+            background-color: white; /* Circle color */
+            border-radius: 50%; /* Make it a circle */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            cursor: pointer;
+            top: calc(120px + 20px);
+            left: 120px;
+            position: fixed;
+        }
             .bg-light {
                 background-color: #f8f9fa !important;
             }
@@ -112,11 +116,9 @@
     <button class="back-button" onclick="myFunction()">
         <div class="arrow"></div>
     </button>
-        <div class="container">        <div class="row" id="Restaurant">
+        <div class="container">        
             <div class="col navMenu">
                   <h2 class="text-center" >~ Valikoima ~</h2>
-                  <div class="row bg-light" ><!DOCTYPE html>
-                    <html lang="en">
                     <head>
                         <meta charset="UTF-8">
                         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -147,6 +149,18 @@
                                 text-align: left;
                                 position: relative;
                                 cursor: pointer;
+                                box-sizing: border-box;
+                            }
+                            .pizza2 {
+                                margin: 20px;
+                                padding: 1px;
+                                border: 1px solid #ccc;
+                                border-radius: 0px;
+                                max-width: 312px;
+                                text-align: left;
+                                position: relative;
+                                cursor: pointer;
+                                box-sizing: border-box;
                             }
                             .pizza img {
                                 max-width: 100%;
@@ -208,7 +222,7 @@
                                 left: 0;
                                 width: 100%;
                                 height: 100%;
-                                background-color: rgba(206, 41, 41, 0.8); /* Semi-transparent white background */
+                                background-color: rgba(207, 207, 207, 0.8); /* Semi-transparent white background */
                                 display: flex;
                                 justify-content: center;
                                 align-items: center;
@@ -220,22 +234,45 @@
                                 padding: 0;
                                 display: flex;
                                 justify-content: space-between;
-                                flex-wrap: wrap
-                                
-                                
+                                flex-wrap: wrap                                                                
                             }
                             ul.this li {
                                 width: 30%;
                                 margin-right: 20px;
                                 display: flex;
                                 align-items: center;
+                                font-family: Arial, sans-serif;
+                                font-size: 1.2em;
+                                color: #d33b3b;
+                                font-weight: 600;
                             }
-                            ul.this li img {
-                                margin-right: 5px;
+                            ul.juoma li img {
+                                
                                 max-width: 100%;
                                 height: 200px;
                                 border-radius: 0px;
-                            }                            
+                            }        
+                            .juoma {
+                                text-align: left;
+                                display: flex;
+                                flex-wrap: wrap;
+                                justify-content: center;                               
+                                -webkit-box-flex: 1;
+                                flex-grow: 1;
+                                align-items: flex-start;
+                                min-height: 5.5rem;
+                                width: 100%;                                
+                            }
+                            .juoma-container {
+                                margin: 20px;
+                                padding: 1px;
+                                border: 1px solid #ccc;
+                                border-radius: 0px;
+                                max-width: 312px;
+                                text-align: left;
+                                position: relative;
+                                cursor: pointer;
+                            }                    
                              
                             .price-background {
                             display: inline-block;
@@ -257,6 +294,11 @@
                             border-bottom-left-radius: calc(1.25rem - 1px);
                             border-bottom-right-radius: calc(1.25rem - 1px);
                             float: right;
+                            }
+                            #pizzaimage {
+                                max-width: 100%;
+                                height: 220px;
+                                border-radius: 0px;
                             }
                         </style>
                     </head>
@@ -339,32 +381,49 @@
                                 <li>parmesaanijuusto</li>
                                 <li>ilmakuivattu porsaanniska</li>
                             </ul>
-                        </div>                        
-                        <!-- Voit lisätä lisää pizza-elementtejä samalla tavalla -->
+                        </div>            
+                        <div class="pizza2">
+                            <img src="images/mystery.png" alt="Pizza 7" id="pizzaimage">
+                            <span class="pizza-nimi">Fantasia pizza</span> <span class="pizza-hinta"><span class="price-background">15 €</span></span>            
+                            <script>
+                                document.addEventListener('DOMContentLoaded', function() {
+                                    const pizzaimage = document.getElementById('pizzaimage')
+                                    pizzaimage.addEventListener('click', function() {
+                                        window.location.href = 'fantasy.html'
+                                    })
+                                })
+                            </script>
+                            <!-- Voit lisätä lisää pizza-elementtejä samalla tavalla -->
                     </div>
-                    <drinks>
-                        <h4>Valitse juomasi</h4>
-                        <ul class="this">                                                      
-                            <li>                                                                 
-                                <img src="images/mirinda.png">
-                                Mirinda</li>
-                            <li>
-                                <img src="images/pepsi.png">
-                                Pepsi</li>
-                            <li>
-                                <img src="images/coca.png">
-                                cola</li>
-                            <li>
-                                <img src="images/twistup.png">
-                                Twist Up</li>
-                            <li>
-                                <img src="images/vesi.png">
-                                Water</li>
-                            <li>
-                                <img src="images/maito.png">
-                                Milk</li>
-                        </ul>
-                    </drinks>
+                    
+                    <h1>Juomat</h1>
+                    <div class="pizza-container">
+                        <div class="pizza" onclick="addToOrder('Mirinda', '3.40')">
+                            <img src="images/mirinda.png" alt="mirinda">
+                            <span class="pizza-nimi">Mirinda 0,5 l</span> <span class="pizza-hinta"><span class="price-background">3,50 €</span> </span>
+                            <ul class="list-group list-group-flush">
+                                <li>Pakkauskoko 0,5 litraa</li>
+                                <li>Pullo</li>
+                            </ul>                            
+                        </div>
+                        <div class="pizza">
+                            <img src="images/pepsi.png" alt="pepsi">
+                            <span class="pizza-nimi">Pepsi 450 ml</span> <span class="pizza-hinta"><span class="price-background">3,40 €</span> </span>
+                            <ul class="list-group list-group-flush">
+                                <li>Pakkauskoko 450 millilitraa</li>
+                                <li>Tölkki</li>
+                            </ul>
+                        </div>
+                        <div class="pizza">
+                            <img src="images/coca.png" alt="coca">
+                            <span class="pizza-nimi">Coca Cola 0,25 l</span> <span class="pizza-hinta"><span class="price-background">3,60 €</span> </span>
+                            <ul class="list-group list-group-flush">
+                                <li>Pakkauskoko 0,25 litraa</li>
+                                <li>Tölkki</li>                                
+                            </ul>
+                        </div>
+                    </div>
+
                     <script>
                         var selectedItems = []; // Array to store selected items
                         var total = 0;
