@@ -145,7 +145,6 @@
                                 text-align: left;
                                 position: relative;
                                 cursor: pointer;
-                                box-sizing: border-box;
                             }
                             .pizza img {
                                 max-width: 100%;
@@ -239,7 +238,7 @@
                     <div class="pizza-container">
                         <div class="pizza" onclick="addToOrder('Mozzarella', '11.10', 'tomaattikastike, puoli juustoa, rucolanverso, kirsikkatomaatti, mozzarella')">
                             <img src="images/4.jpg" alt="Pizza 1">
-                            <h5><span class='pzza-nimi'>Mozarella</span> <span class="pizza-hinta">11,10 €</span></h5>                         
+                            <h5><span class="pizza-hinta">11,10 €</span></h5>                         
                             <ul class="list-group list-group-flush">
                                 <li>tomaattikastike</li>
                                 <li>puoli juustoa</li>
@@ -317,8 +316,7 @@
                     <drinks>
                         <h4>Valitse juomasi</h4>
                         <ul class="this">                                                      
-                            <li>  
-                                <div class="this" onClick="addToOrder ('Mirinda')"></div>                               
+                            <li>                                                                 
                                 <img src="images/miranda2.png">
                                 Miranda</li>
                             <li>
