@@ -34,9 +34,6 @@
             background-color: rgb(158, 100, 100);
             
         }
-
-
-
         .arrow {
             width: 20px;
             height: 20px;
@@ -44,7 +41,6 @@
             border-bottom: 3px solid black;
             transform: rotate(+45deg);
         }
-
         .custom-image {
             position: absolute;
             top: 100px;
@@ -78,7 +74,7 @@
             top: calc(120px + 20px);
             left: 120px;
             position: fixed;
-        }
+            }   
             .bg-light {
                 background-color: #f8f9fa !important;
             }
@@ -98,7 +94,7 @@
             #ostoskori button {
                 background-color:#fff;
                 color: #fff;
-                padding: 10px 20px;
+                padding: 10px 8px;
                 border: none;
                 border-radius: 5px;
                 cursor: pointer;                
@@ -148,14 +144,15 @@
                                 margin: 20px;
                                 border: 1px solid #ccc;
                                 border-radius: 0px;
-                                max-width: 312px;
+                                max-width: 300px;
                                 text-align: left;
                                 position: relative;
                                 cursor: pointer;
                                 box-sizing: border-box;                                
                             }
 
-                            .pizza img {
+                            .pizza img,
+                            .drink img {
                                 max-width: 100%;
                                 height: 220px;
                                 border-radius: 0px;
@@ -180,7 +177,8 @@
                                 border-bottom-right-radius: calc(1.25rem - 1px);
                                 float: none;
                             }
-                            .pizza-nimi {
+                            .pizza-nimi,
+                            .drink-nimi {
                                 text-align: center;
                                 flex-grow: 1;
                                 font-family:  Arial, sans-serif;
@@ -190,7 +188,8 @@
                                 line-height: 2.0;
                                 padding-left: 25px;                                   
                             } 
-                            .pizza-hinta {
+                            .pizza-hinta,
+                            .drink-hinta {
                                 margin-left: 0px;                                
                             }                           
                             p {
@@ -208,7 +207,8 @@
                                 color: rgb(51, 51, 51);
                                 letter-spacing: 0px;
                             }
-                            .pizza:hover::before {
+                            .pizza:hover::before,
+                            .drink:hover::before {
                                 content: 'Add to Order'; /* Displayed on hover */
                                 position: absolute;
                                 top: 0;
@@ -244,28 +244,7 @@
                                 max-width: 100%;
                                 height: 200px;
                                 border-radius: 0px;
-                            }        
-                            .juoma {
-                                text-align: left;
-                                display: flex;
-                                flex-wrap: wrap;
-                                justify-content: center;                               
-                                -webkit-box-flex: 1;
-                                flex-grow: 1;
-                                align-items: flex-start;
-                                min-height: 5.5rem;
-                                width: 100%;                                
-                            }
-                            .juoma-container {
-                                margin: 20px;
-                                padding: 1px;
-                                border: 1px solid #ccc;
-                                border-radius: 0px;
-                                max-width: 312px;
-                                text-align: left;
-                                position: relative;
-                                cursor: pointer;
-                            }                    
+                            }                                                        
                              
                             .price-background {
                             display: inline-block;
@@ -297,7 +276,7 @@
                     </head>
                     <body>
                     
-                    <h1>Pizzat</h1>
+                <h1>Pizzat</h1>
                     
                     <div class="pizza-container">
                         <div class="pizza" onclick="addToOrder('Mozzarella', '11.10')">
@@ -311,7 +290,7 @@
                                 <li>mozzarella</li>
                             </ul>
                         </div>
-                        <div class="pizza" onclick="addToOrder('Vege Lankku','11,50')">
+                        <div class="pizza" onclick="addToOrder('Vege Lankku', '11.50')">
                             <img src="images/5.jpg" alt="Pizza 2">
                             <span class="pizza-nimi">Vege Lankku</span> <span class="pizza-hinta"><span class="price-background">11,50 €</span></span>
                             <ul class="list-group list-group-flush">
@@ -327,7 +306,7 @@
                                 <li>valkosipulimajoneesi</li>
                             </ul>
                         </div>
-                        <div class="pizza" onclick="addToOrder('Kebab','14,60')">
+                        <div class="pizza" onclick="addToOrder('Kebab', '14.60')">
                             <img src="images/6.jpg" alt="Pizza 3">
                             <span class="pizza-nimi">Kebab</span> <span class="pizza-hinta"><span class="price-background">14,60 €</span></span>
                             <ul class="list-group list-group-flush">
@@ -339,7 +318,7 @@
                                 <li>valkosipulimajoneesi</li>
                             </ul>
                         </div>
-                        <div class="pizza" onclick="addToOrder('Americana','13,40')">
+                        <div class="pizza" onclick="addToOrder('Americana', '13.40')">
                             <img src="images/7.jpg" alt="Pizza 4">
                             <span class="pizza-nimi">Americana</span> <span class="pizza-hinta"><span class="price-background">13,40 €</span></span>
                             <ul class="list-group list-group-flush">
@@ -350,7 +329,7 @@
                                 <li>Aura-sinihomejuusto</li>
                             </ul>
                         </div>
-                        <div class="pizza" onclick="addToOrder('Lihamestari','15,40')">
+                        <div class="pizza" onclick="addToOrder('Lihamestari', '15.40')">
                             <img src="images/8.jpg" alt="Pizza 5">
                             <span class="pizza-nimi">Lihamestari</span> <span class="pizza-hinta"><span class="price-background">15,40 €</span></span>
                             <ul class="list-group list-group-flush">
@@ -363,7 +342,7 @@
                                 <li>beef'n'toast-naudanjauheliha</li>
                             </ul>
                         </div>
-                        <div class="pizza" onclick="addToOrder('Parmiamo','15,40')">
+                        <div class="pizza" onclick="addToOrder('Parmiamo', '15.40')">
                             <img src="images/9.jpg" alt="Pizza 6">
                             <span class="pizza-nimi">Parmiamo</span> <span class="pizza-hinta"><span class="price-background">15,40 €</span></span>
                             <ul class="list-group list-group-flush">
@@ -387,33 +366,33 @@
                                 })
                             </script>
                             <!-- Voit lisätä lisää pizza-elementtejä samalla tavalla -->
+                        </div>                    
                     </div>
-                    
-                    <h1>Juomat</h1>
-                    <div class="drink-container">
-                        <div class="drink" onclick="addToOrder('Mirinda', '3.40')">
+                <h1>Juomat</h1>                    
+                    <div class="drink-container">                        
+                        <div class="drink" onclick="addToOrder('Mirinda', '3.50')">
                             <img src="images/mirinda.png" alt="mirinda">
-                            <span class="pizza-nimi">Mirinda 0,5 l</span> <span class="pizza-hinta"><span class="price-background">3,50 €</span> </span>                                                        
+                            <span class="drink-nimi">Mirinda 0,5 l</span> <span class="drink-hinta"><span class="price-background">3,50 €</span> </span>                                                        
                         </div>
-                        <div class="drink">
+                        <div class="drink" onclick="addToOrder('Pepsi', '3.40')">
                             <img src="images/pepsi.png" alt="pepsi">
-                            <span class="pizza-nimi">Pepsi 450 ml</span> <span class="pizza-hinta"><span class="price-background">3,40 €</span> </span>                            
+                            <span class="drink-nimi">Pepsi 450 ml</span> <span class="drink-hinta"><span class="price-background">3,40 €</span> </span>                            
                         </div>
-                        <div class="drink">
+                        <div class="drink" onclick="addToOrder('Coca Cola', '3.60')">
                             <img src="images/coca.png" alt="coca">
-                            <span class="pizza-nimi">Coca Cola 0,25 l</span> <span class="pizza-hinta"><span class="price-background">3,60 €</span> </span>                            
+                            <span class="drink-nimi">Coca Cola 0,25 l</span> <span class="drink-hinta"><span class="price-background">3,60 €</span> </span>                            
                         </div>
-                        <div class="drink">
+                        <div class="drink" onclick="addToOrder('Twist Up', '3.70')">
                             <img src="images/twistup.png" alt="twistup">
-                            <span class="pizza-nimi">Twist Up 2 l</span> <span class="pizza-hinta"><span class="price-background">3,70 €</span> </span>                            
+                            <span class="drink-nimi">Twist Up 2 l</span> <span class="drink-hinta"><span class="price-background">3,70 €</span> </span>                            
                         </div>
-                        <div class="drink">
+                        <div class="drink" onclick="addToOrder('Vesi', '2.10')">
                             <img src="images/vesi.png" alt="vesi">
-                            <span class="pizza-nimi">Vesi 500 ml</span> <span class="pizza-hinta"><span class="price-background">2,10 €</span> </span>                            
+                            <span class="drink-nimi">Vesi 500 ml</span> <span class="drink-hinta"><span class="price-background">2,10 €</span> </span>                            
                         </div>
-                        <div class="drink">
+                        <div class="drink" onclick="addToOrder('Maito', '2.30')">
                             <img src="images/maito.png" alt="maito">
-                            <span class="pizza-nimi">Maito 1 l</span> <span class="pizza-hinta"><span class="price-background">2,30 €</span> </span>
+                            <span class="drink-nimi">Maito 1 l</span> <span class="drink-hinta"><span class="price-background">2,30 €</span> </span>
                         </div>
                     </div>
 
