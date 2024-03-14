@@ -47,12 +47,16 @@
         }
         h1 {
             margin: 0;
+            color: #c9c9c9;
         }
         .hidden {
             display: none;
         }
         li {
             list-style-type: none;
+        }
+        ul{
+            color: #000000;
         }
     </style>
 </head>
@@ -61,9 +65,9 @@
         <button class="back-button" onclick="goBack()">
             <div class="arrow"></div>
         </button>
-        <h1 id="empty-message" class="empty-message">Ostoskori on tyhjä</h1>
-        <h1>Yhteensä: <span id="total"></span></h1>
-        <ul id="cart-items"></ul>
+        <h1 id="empty-message" class="empty-message">Ostoskorisi on tyhjä</h1>
+        <h2>Yhteensä: <span id="total"></span></h2>
+        <h3 id="cart-items"></h3>
     </div>
 
     <script>
