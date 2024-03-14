@@ -145,7 +145,6 @@
                                 text-align: left;
                                 position: relative;
                                 cursor: pointer;
-                            
                             }
                             .pizza img {
                                 max-width: 100%;
@@ -175,6 +174,12 @@
                             .pizza-nimi {
                                 text-align: center;
                                 flex-grow: 1;
+                                font-family:  Arial, sans-serif;
+                                font-size: 1.2em;
+                                font-weight: 600;
+                                color: #d33b3b;
+                                line-height: 2.0;
+                                padding-left: 25px;   
                             } 
                             .pizza-hinta {
                                 margin-left: 0px;
@@ -201,7 +206,7 @@
                                 left: 0;
                                 width: 100%;
                                 height: 100%;
-                                background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+                                background-color: rgba(206, 41, 41, 0.8); /* Semi-transparent white background */
                                 display: flex;
                                 justify-content: center;
                                 align-items: center;
@@ -226,10 +231,31 @@
                             ul.this li img {
                                 margin-right: 5px;
                                 max-width: 100%;
-                                height: 220px;
+                                height: 200px;
                                 border-radius: 0px;
                             }                            
                              
+                            .price-background {
+                            display: inline-block;
+                            justify-content: space-between;
+                            justify-content: right;
+                            padding: 10px;
+                            background-color: #d33b3b;
+                            color: #fff;
+                            border-radius: 5px;
+                            margin-right: 15px; /* Adjust the margin-right value to move the element to the left */
+                            margin-left: 0; /* Reset margin-left */
+                            font-family: Arial, sans-serif;
+                            font-size: inherit;
+                            line-height: normal;
+                            text-align: right;
+                            font-weight: 600;
+                            border-top-left-radius: calc(1.25rem - 1px);
+                            border-top-right-radius: calc(1.25rem - 1px);
+                            border-bottom-left-radius: calc(1.25rem - 1px);
+                            border-bottom-right-radius: calc(1.25rem - 1px);
+                            float: right;
+                            }
                         </style>
                     </head>
                     <body>
@@ -239,7 +265,7 @@
                     <div class="pizza-container">
                         <div class="pizza" onclick="addToOrder('Mozzarella', '11.10', 'tomaattikastike, puoli juustoa, rucolanverso, kirsikkatomaatti, mozzarella')">
                             <img src="images/4.jpg" alt="Pizza 1">
-                            <h5><span class='pzza-nimi'>Mozarella</span> <span class="pizza-hinta">11,10 €</span></h5>                         
+                            <span class="pizza-nimi">Mozarella</span> <span class="pizza-hinta"><span class="price-background">11,10 €</span></span>                       
                             <ul class="list-group list-group-flush">
                                 <li>tomaattikastike</li>
                                 <li>puoli juustoa</li>
@@ -250,7 +276,7 @@
                         </div>
                         <div class="pizza">
                             <img src="images/5.jpg" alt="Pizza 2">
-                            <h5><span class="pizza-nimi">Vege Lankku</span> <span class="pizza-hinta">11,50 €</span></h5>
+                            <span class="pizza-nimi">Vege Lankku</span> <span class="pizza-hinta"><span class="price-background">11,50 €</span></span>
                             <ul class="list-group list-group-flush">
                                 <li>hapanjuuripohja</li>
                                 <li>Koskenlaskijajuustoakastike</li>
@@ -266,7 +292,7 @@
                         </div>
                         <div class="pizza">
                             <img src="images/6.jpg" alt="Pizza 3">
-                            <h5><span class="pizza-nimi">Kebab</span> <span class="pizza-hinta">14,60 €</span></h5>
+                            <span class="pizza-nimi">Kebab</span> <span class="pizza-hinta"><span class="price-background">14,60 €</span></span>
                             <ul class="list-group list-group-flush">
                                 <li>kebabkastike</li>
                                 <li>puoli juustoa</li>
@@ -278,7 +304,7 @@
                         </div>
                         <div class="pizza">
                             <img src="images/7.jpg" alt="Pizza 4">
-                            <h5><span class="pizza-nimi">Americana</span> <span class="pizza-hinta">13,40 €</span></h5>
+                            <span class="pizza-nimi">Americana</span> <span class="pizza-hinta"><span class="price-background">13,40 €</span></span>
                             <ul class="list-group list-group-flush">
                                 <li>tomaattikastike</li>
                                 <li>Kotipizza-juusto</li>
@@ -289,7 +315,7 @@
                         </div>
                         <div class="pizza">
                             <img src="images/8.jpg" alt="Pizza 5">
-                            <h5><span class="pizza-nimi">Lihamestari</span> <span class="pizza-hinta">15,40 €</span></h5>
+                            <span class="pizza-nimi">Lihamestari</span> <span class="pizza-hinta"><span class="price-background">15,40 €</span></span>
                             <ul class="list-group list-group-flush">
                                 <li>tomaattikastike</li>
                                 <li>Kotipizza-juusto</li>
@@ -302,7 +328,7 @@
                         </div>
                         <div class="pizza">
                             <img src="images/9.jpg" alt="Pizza 6">
-                            <h5><span class="pizza-nimi">Parmiamo</span> <span class="pizza-hinta">15,40 €</span></h5>
+                            <span class="pizza-nimi">Parmiamo</span> <span class="pizza-hinta"><span class="price-background">15,40 €</span></span>
                             <ul class="list-group list-group-flush">
                                 <li>tomaattikastike</li>
                                 <li>puoli juustoa</li>
@@ -317,13 +343,12 @@
                     <drinks>
                         <h4>Valitse juomasi</h4>
                         <ul class="this">                                                      
-                            <li>  
-                                <div class="this" onClick="addToOrder ('Mirinda')"></div>                               
-                                <img src="images/miranda2.png">
-                                Miranda</li>
+                            <li>                                                                 
+                                <img src="images/mirinda.png">
+                                Mirinda</li>
                             <li>
-                                <img src="images/pepsii.png">
-                                Peppi</li>
+                                <img src="images/pepsi.png">
+                                Pepsi</li>
                             <li>
                                 <img src="images/coca.png">
                                 cola</li>
