@@ -38,42 +38,42 @@
                 </options>
             <script>
                 document.addEventListener('DOMContentLoaded', function() {
-                    const sauces = document.querySelectorAll('.sauce')
-                    const doughs = document.querySelectorAll('.dough')
+                    const sauces = document.querySelectorAll('.sauce');
+                    const doughs = document.querySelectorAll('.dough');
 
-                    sauces.forEach(function(checkbox){
+                    sauces.forEach(function(checkbox) {
                         checkbox.addEventListener('change', function() {
-                            if(this.checked) {
-                                sauces.forEach(function(checkbox) {
-                                    if (checkbox !== this) {
-                                        checkbox.disabled = true
+                            if (this.checked) {
+                                sauces.forEach(function(cn) {
+                                    if (cb !== this) {
+                                        cb.disabled = true;
                                     }
-                                }, this)
+                                }, this);
                             } else {
-                                sauces.forEach(function(checkbox){
-                                    checkbox.disabled = false
-                                })
+                                sauces.forEach(function(cb) {
+                                    cb.disabled = false;
+                                });
                             }
-                        })
-                    })
-                
+                        });
+                    });
 
                     doughs.forEach(function(checkbox) {
-                        checkbox.addEventListener('change', function(checkbox){
-                            if(this.checked) {
-                                doughs.forEach(function(checkbox){
-                                    if (checkbox !== this) {
-                                        checkbox.disabled = true
+                        checkbox.addEventListener('change', function() {
+                            if (this.checked) {
+                                doughs.forEach(function(cb) {
+                                    if (cb !== this) {
+                                        cb.disabled = true;
                                     }
-                                }, this)
+                                }, this);
                             } else {
-                                doughs.forEach(function(rcheckbox){
-                                    checkbox.disabled = false
-                                })
+                                doughs.forEach(function(cb) {
+                                    cb.disabled = false;
+                                });
                             }
-                        })
-                    })
-                })
+                        });
+                    });
+                });
+
             </script>
         </toppings>
     </body>
