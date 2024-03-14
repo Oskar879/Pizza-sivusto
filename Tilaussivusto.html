@@ -293,6 +293,11 @@
                             border-bottom-right-radius: calc(1.25rem - 1px);
                             float: right;
                             }
+                            #pizzaimage {
+                                max-width: 100%;
+                                height: 220px;
+                                border-radius: 0px;
+                            }
                         </style>
                     </head>
                     <body>
@@ -376,7 +381,7 @@
                             </ul>
                         </div>            
                         <div class="pizza2">
-                            <img src="images/pizza.png" alt="Pizza 7" id="pizzaimage">
+                            <img src="images/mystery.png" alt="Pizza 7" id="pizzaimage">
                             <span class="pizza-nimi">Fantasia pizza</span> <span class="pizza-hinta"><span class="price-background">15 €</span></span>            
                             <script>
                                 document.addEventListener('DOMContentLoaded', function() {
@@ -390,12 +395,31 @@
                     </div>
                     
                     <h1>Juomat</h1>
-                    <div class="juoma-container">
-                        <div class="juoma" onclick="addToOrder('Mirinda', '3.40')">
-                            <img src="images/mi.png" alt="mirinda">
-                            <span class="pizza-nimi">Mirinda</span> <span class="pizza-hinta"><span class="price-background">3,40 €</span> </span>
+                    <div class="pizza-container">
+                        <div class="pizza" onclick="addToOrder('Mirinda', '3.40')">
+                            <img src="images/mirinda.png" alt="mirinda">
+                            <span class="pizza-nimi">Mirinda 0,5 l</span> <span class="pizza-hinta"><span class="price-background">3,50 €</span> </span>
+                            <ul class="list-group list-group-flush">
+                                <li>Pakkauskoko 0,5 litraa</li>
+                                <li></li>
+                            </ul>                            
                         </div>
-                        
+                        <div class="pizza">
+                            <img src="images/pepsi.png" alt="pepsi">
+                            <span class="pizza-nimi">Pepsi 450 ml</span> <span class="pizza-hinta"><span class="price-background">3,40 €</span> </span>
+                            <ul class="list-group list-group-flush">
+                                <li>Pakkauskoko 450 millilitraa</li>
+                                <li>Tölkki</li>
+                            </ul>
+                        </div>
+                        <div class="pizza">
+                            <img src="images/coca.png" alt="coca">
+                            <span class="pizza-nimi">Coca Cola 0,25 l</span> <span class="pizza-hinta"><span class="price-background">3,60 €</span> </span>
+                            <ul class="list-group list-group-flush">
+                                <li>Pakkauskoko 0,25 litraa</li>
+                                <li>Tölkki</li>                                
+                            </ul>
+                        </div>
                     </div>
 
                     <script>
