@@ -59,9 +59,9 @@
             <div class="arrow"></div>
         </button>
         <h3 id="empty-message" class="empty-message">Ostoskori on tyhjä</h3>
+        <h3>Yhteensä: <span id="total"></span></h3>
+        <ul id="cart-items"></ul>
     </div>
-    <ul id="cart-items"></ul>
-    <h3>Total: <span id="total"></span></h3>
 
     <script>
         function goBack() {
@@ -78,7 +78,7 @@
             var item = document.createElement("li");
             item.textContent = pizza.name + " - " + pizza.price + " €";
             var removeButton = document.createElement("button");
-            removeButton.textContent = "Remove";
+            removeButton.textContent = "Poista";
             removeButton.onclick = function() {
                 removeItem(index);
             };
