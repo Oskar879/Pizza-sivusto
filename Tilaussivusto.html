@@ -180,7 +180,8 @@
                                 border-bottom-right-radius: calc(1.25rem - 1px);
                                 float: none;
                             }
-                            .pizza-nimi {
+                            .pizza-nimi,
+                            .drink-nimi {
                                 text-align: center;
                                 flex-grow: 1;
                                 font-family:  Arial, sans-serif;
@@ -190,7 +191,8 @@
                                 line-height: 2.0;
                                 padding-left: 25px;                                   
                             } 
-                            .pizza-hinta {
+                            .pizza-hinta,
+                            .drink-hinta {
                                 margin-left: 0px;                                
                             }                           
                             p {
@@ -244,28 +246,7 @@
                                 max-width: 100%;
                                 height: 200px;
                                 border-radius: 0px;
-                            }        
-                            .juoma {
-                                text-align: left;
-                                display: flex;
-                                flex-wrap: wrap;
-                                justify-content: center;                               
-                                -webkit-box-flex: 1;
-                                flex-grow: 1;
-                                align-items: flex-start;
-                                min-height: 5.5rem;
-                                width: 100%;                                
-                            }
-                            .juoma-container {
-                                margin: 20px;
-                                padding: 1px;
-                                border: 1px solid #ccc;
-                                border-radius: 0px;
-                                max-width: 312px;
-                                text-align: left;
-                                position: relative;
-                                cursor: pointer;
-                            }                    
+                            }                                                        
                              
                             .price-background {
                             display: inline-block;
@@ -387,33 +368,33 @@
                                 })
                             </script>
                             <!-- Voit lisätä lisää pizza-elementtejä samalla tavalla -->
-                    </div>
-                    
-                    <h1>Juomat</h1>
-                    <div class="drink-container">
+                        </div>                    
+
+                    <h1>Juomat</h1>                    
+                    <div class="drink-container">                        
                         <div class="drink" onclick="addToOrder('Mirinda', '3.50')">
                             <img src="images/mirinda.png" alt="mirinda">
-                            <span class="pizza-nimi">Mirinda 0,5 l</span> <span class="pizza-hinta"><span class="price-background">3,50 €</span> </span>                                                        
+                            <span class="drink-nimi">Mirinda 0,5 l</span> <span class="drink-hinta"><span class="price-background">3,50 €</span> </span>                                                        
                         </div>
                         <div class="drink" onclick="addToOrder('Pepsi 450 ml', '3.40')">
                             <img src="images/pepsi.png" alt="pepsi">
-                            <span class="pizza-nimi">Pepsi 450 ml</span> <span class="pizza-hinta"><span class="price-background">3,40 €</span> </span>                            
+                            <span class="drink-nimi">Pepsi 450 ml</span> <span class="drink-hinta"><span class="price-background">3,40 €</span> </span>                            
                         </div>
                         <div class="drink" onclick="addToOrder('Coca Cola 0,25 l', '3.60')">
                             <img src="images/coca.png" alt="coca">
-                            <span class="pizza-nimi">Coca Cola 0,25 l</span> <span class="pizza-hinta"><span class="price-background">3,60 €</span> </span>                            
+                            <span class="drink-nimi">Coca Cola 0,25 l</span> <span class="drink-hinta"><span class="price-background">3,60 €</span> </span>                            
                         </div>
                         <div class="drink" onclick="addToOrder('Twist Up 2 l', '3.70')">
                             <img src="images/twistup.png" alt="twistup">
-                            <span class="pizza-nimi">Twist Up 2 l</span> <span class="pizza-hinta"><span class="price-background">3,70 €</span> </span>                            
+                            <span class="drink-nimi">Twist Up 2 l</span> <span class="drink-hinta"><span class="price-background">3,70 €</span> </span>                            
                         </div>
                         <div class="drink" onclick="addToOrder('Vesi 500 ml', '2.10')">
                             <img src="images/vesi.png" alt="vesi">
-                            <span class="pizza-nimi">Vesi 500 ml</span> <span class="pizza-hinta"><span class="price-background">2,10 €</span> </span>                            
+                            <span class="drink-nimi">Vesi 500 ml</span> <span class="drink-hinta"><span class="price-background">2,10 €</span> </span>                            
                         </div>
                         <div class="drink" onclick="addToOrder('Maito 1 l', '2.30')">
                             <img src="images/maito.png" alt="maito">
-                            <span class="pizza-nimi">Maito 1 l</span> <span class="pizza-hinta"><span class="price-background">2,30 €</span> </span>
+                            <span class="drink-nimi">Maito 1 l</span> <span class="drink-hinta"><span class="price-background">2,30 €</span> </span>
                         </div>
                     </div>
 
