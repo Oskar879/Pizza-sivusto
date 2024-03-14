@@ -244,14 +244,32 @@
                                 color: #d33b3b;
                                 font-weight: 600;
                             }
-                            ul.this li img {
+                            ul.juoma li img {
                                 
                                 max-width: 100%;
                                 height: 200px;
                                 border-radius: 0px;
                             }        
-                            .this {
+                            .juoma {
                                 text-align: left;
+                                display: flex;
+                                flex-wrap: wrap;
+                                justify-content: center;                               
+                                -webkit-box-flex: 1;
+                                flex-grow: 1;
+                                align-items: flex-start;
+                                min-height: 5.5rem;
+                                width: 100%;                                
+                            }
+                            .juoma-container {
+                                margin: 20px;
+                                padding: 1px;
+                                border: 1px solid #ccc;
+                                border-radius: 0px;
+                                max-width: 312px;
+                                text-align: left;
+                                position: relative;
+                                cursor: pointer;
                             }                    
                              
                             .price-background {
@@ -370,29 +388,16 @@
                             </script>
                             <!-- Voit lisätä lisää pizza-elementtejä samalla tavalla -->
                     </div>
-                    <drinks>
-                        <h4>Valitse juomasi</h4>
-                        <ul class="this">                                                      
-                            <li>                                                                 
-                                <img src="images/mirinda.png">
-                                Mirinda <br> 3,40 €</li>
-                            <li>
-                                <img src="images/pepsi.png">
-                                Pepsi <br> 3,50 €</li>
-                            <li>
-                                <img src="images/coca.png">
-                                Coca Cola <br> 3,60 €</li>
-                            <li>
-                                <img src="images/twistup.png">
-                                Twist Up <br> 3,50 €</li>
-                            <li>
-                                <img src="images/vesi.png">
-                                Vesi <br> 1,40 €</li>
-                            <li>
-                                <img src="images/maito.png">
-                                Maito <br>2,70 €</li>
-                        </ul>
-                    </drinks>
+                    
+                    <h1>Juomat</h1>
+                    <div class="juoma-container">
+                        <div class="juoma" onclick="addToOrder('Mirinda', '3.40')">
+                            <img src="images/mi.png" alt="mirinda">
+                            <span class="pizza-nimi">Mirinda</span> <span class="pizza-hinta"><span class="price-background">3,40 €</span> </span>
+                        </div>
+                        
+                    </div>
+
                     <script>
                         var selectedItems = []; // Array to store selected items
 
