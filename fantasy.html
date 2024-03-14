@@ -41,38 +41,39 @@
                     const sauces = document.querySelectorAll('.sauce');
                     const doughs = document.querySelectorAll('.dough');
 
-                    sauces.forEach(function(checkbox) {
-                        checkbox.addEventListener('change', function() {
+                    sauces.forEach(checkbox => {
+                        checkbox.onclick = function() {
                             if (this.checked) {
-                                sauces.forEach(function(cn) {
-                                    if (cb !== this) {
-                                        cb.disabled = true;
+                                sauces.forEach(cb => {
+                                    if (checkbox !== this) {
+                                        checkbox.disabled = true;
                                     }
-                                }, this);
-                            } else {
-                                sauces.forEach(function(cb) {
-                                    cb.disabled = false;
                                 });
-                            }
-                        });
-                    });
+                            } else {
+                                sauces.forEach(cb => {
+                                checkbox.disabled = false;
+                            });
+                        }
+                    };
+                });
+            
 
                     doughs.forEach(function(checkbox) {
-                        checkbox.addEventListener('change', function() {
+                        checkbox.onclick = function() {
                             if (this.checked) {
-                                doughs.forEach(function(cb) {
-                                    if (cb !== this) {
-                                        cb.disabled = true;
+                                doughs.forEach(function(cob) {
+                                    if (checkbox !== this) {
+                                        checkbox.disabled = true;
                                     }
                                 }, this);
                             } else {
                                 doughs.forEach(function(cb) {
-                                    cb.disabled = false;
+                                    checkbox.disabled = false;
                                 });
                             }
-                        });
+                        };
                     });
-                });
+                })
 
             </script>
         </toppings>
