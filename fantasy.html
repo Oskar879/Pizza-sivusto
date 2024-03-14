@@ -25,12 +25,50 @@
                 <option value="cheddar">Cheddar</option>
                 <option value="blch">Sinihomejuusto</option>
             </select>
-            <select name="sauce" id="sauce">
-                    <option value="garlic">Valkosipuli</option>
-                    <option value="extra">Extra</option>
-                    <option value="none">Ei kastiketta</option>
-                </option>
-            </select>
+            <label><input type="checkbox" name="sauce" value="garlic" class="sauce">Valkosipuli</label>
+            <label><input type="checkbox" name="sauce" value="extra" class="sauce">Extra</label>
+            <label><input type="checkbox" name="sauce" value="none" class="sauce">Ei kastiketta</label>
+            <label><input type="checkbox" name="dough" value="gluten" class="dough">Tavallinen</label>
+            <label><input type="checkbox" name="dough" value="glutent" class="dough">Gluteeniton</label>
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const sauces = document.querySelectorAll('.sauce')
+                    const doughs = document.querySelectorAll('.dough')
+
+                    sauces.forEach(function(checkbox){
+                        checkbox.addEventListener('change', function() {
+                            if(this.checked) {
+                                sauces.forEach(function(checkbox) {
+                                    if (checkbox !== this) {
+                                        checkbox.disabled = true
+                                    }
+                                }, this)
+                            } else {
+                                sauces.forEach(function(checkbox){
+                                    checkbox.disabled = false
+                                })
+                            }
+                        })
+                    })
+                
+
+                    doughs.forEach(function(checkbox) {
+                        checkbox.addEventListener('change', function(checkbox){
+                            if(this.checked) {
+                                doughs.forEach(function(checkbox){
+                                    if (checkbox !== this) {
+                                        checkbox.disabled = true
+                                    }
+                                }, this)
+                            } else {
+                                doughs.forEach(function(rcheckbox){
+                                    checkbox.disabled = false
+                                })
+                            }
+                        })
+                    })
+                })
+            </script>
         </toppings>
     </body>
 </html>
