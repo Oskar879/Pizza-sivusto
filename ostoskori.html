@@ -100,7 +100,20 @@
             cartItems.appendChild(item);
             total += parseFloat(pizza.price);
         });
-
+        var total = 0;
+        var cartItems = document.getElementById("cart-items");
+        order.forEach(function(drink, index) {
+            var item = document.createElement("li");
+            item.textContent = drink.name + " - " + drink.price + " €";
+            var removeButton = document.createElement("button");
+            removeButton.textContent ="Poista";
+            removeButton.onclick = function() {
+                removeItem(index);
+            };
+            item.appendChild(removeButton);
+            cartItems.appendChild(item);
+            total +- parseFloat(drink.price) * drink.quanity;
+        });
         // Display the total
         document.getElementById("total").textContent = total.toFixed(2) + " €";
 

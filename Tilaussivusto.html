@@ -80,7 +80,9 @@
                 margin-top: 5px;
                 margin-left: 10px;                
                 margin-right: 10px;
-                justify-content: flex-end;
+                display: flex;
+                justify-content: flex-end;                
+                align-items: center;
             }
             .quanity-btn:first-child {
                 margin-left: 5px;                
@@ -435,6 +437,21 @@
                         document.getElementById("yhteensa").textContent = total.toFixed(2) + " €";
                         }
 
+                        function addToOrder(name, price, quanity) {
+                            var drink = {
+                                name: name,
+                                price: price,
+                                quanity: quanity
+                            };
+                            var oder = JSON.parse(localStorage.getItem("order")) || [];
+                            order.push(drink);
+                            localStorage.setItem("order", JSON,stringify(order));
+
+                            total += parseFloat(price) * quanity;
+
+                            document.getElementById("yhteensa").textContent = total.toFixed(2) + " €";
+                        }
+
                         function incrementQuanity(drinkId) {
                             var quanityElement = document.getElementById(drinkId).getElementsByClassName("quanity")[0];
                             var quanity = parseInt(quanityElement.textContent);
@@ -460,6 +477,7 @@
                             total += totalPrice;
                             document.getElementById("yhteensa").textContent = total.toFixed(2) + " €"
                         }
+                        
                         function initializeTotal() {
                         document.getElementById("yhteensa").textContent = total.toFixed(2) + " €";
                         }
