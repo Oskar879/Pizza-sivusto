@@ -74,7 +74,17 @@
             top: calc(120px + 20px);
             left: 120px;
             position: fixed;
-            }   
+            }
+               
+            .quanity-btn {
+                margin-top: 5px;
+                margin-left: 10px;                
+                margin-right: 10px;
+                justify-content: flex-end;
+            }
+            .quanity-btn:first-child {
+                margin-left: 5px;                
+            }
             .bg-light {
                 background-color: #f8f9fa !important;
             }
@@ -207,8 +217,7 @@
                                 color: rgb(51, 51, 51);
                                 letter-spacing: 0px;
                             }
-                            .pizza:hover::before,
-                            .drink:hover::before {
+                            .pizza:hover::before {
                                 content: 'Add to Order'; /* Displayed on hover */
                                 position: absolute;
                                 top: 0;
@@ -370,10 +379,16 @@
                     </div>
                 <h1>Juomat</h1>                    
                     <div class="drink-container">                        
-                        <div class="drink" onclick="addToOrder('Mirinda', '3.50')">
+                        <div class="drink" id="mirinda">
                             <img src="images/mirinda.png" alt="mirinda">
-                            <span class="drink-nimi">Mirinda 0,5 l</span> <span class="drink-hinta"><span class="price-background">3,50 €</span> </span>                                                        
-                        </div>
+                            <span class="drink-nimi">Mirinda 0,5 l</span>
+                            <span class="drink-hinta"><span class="price-background">3,50 €</span>
+                                <ul class="quanity-btn">
+                                    <button class="quanity-btn" onClick="decrementQuanity('mirinda')">-</button>
+                                    <span class="quanity">0</span>
+                                    <button class="quanity-btn" onClick="incrementQuanity('mirinda')">+</button>                            
+                                </ul>
+                        </div>                            
                         <div class="drink" onclick="addToOrder('Pepsi', '3.40')">
                             <img src="images/pepsi.png" alt="pepsi">
                             <span class="drink-nimi">Pepsi 450 ml</span> <span class="drink-hinta"><span class="price-background">3,40 €</span> </span>                            
@@ -420,6 +435,31 @@
                         document.getElementById("yhteensa").textContent = total.toFixed(2) + " €";
                         }
 
+                        function incrementQuanity(drinkId) {
+                            var quanityElement = document.getElementById(drinkId).getElementsByClassName("quanity")[0];
+                            var quanity = parseInt(quanityElement.textContent);
+                            quanity++;
+                            quanityElement.textContent = quanity;
+                            updateToTalPrice(drinkId, quanity);
+                        }
+
+                        function decrementQuanity(drinkId) {
+                            var quanityElement = document.getElementById(drinkId).getElementsByClassName("quanity")[0];
+                            var quanity = parseInt(quanityElement.textContent);
+                            if(quanity > 0) {
+                                quanity--;
+                                quanityElement.textContent = quanity;
+                                updateToTalPrice(drinkId, quanity);
+                            }
+                        }
+
+                        function updateToTalPrice(drinkId, quanity) {
+                            var priceElement = document.getElementById(drinkId).getElementsByClassName("drink-hinta")[0].getElementsByTagName("span")[0];
+                            var price = parseFloat(priceElement.textContent.replace(" €", "").replace(",", "."));
+                            var totalPrice = price * quanity;
+                            total += totalPrice;
+                            document.getElementById("yhteensa").textContent = total.toFixed(2) + " €"
+                        }
                         function initializeTotal() {
                         document.getElementById("yhteensa").textContent = total.toFixed(2) + " €";
                         }
