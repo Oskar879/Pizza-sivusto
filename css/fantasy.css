@@ -6,12 +6,12 @@
 
 .sauces,
 .doughs {
-    display: block;
-    /*align-items: center;*/
-    margin-bottom: 5px;
+    margin-right: 10px;
+    margin-left: auto; 
 }
 .sauces input,
 .doughs input {
-    margin-right: 10px;
-    margin-left: auto;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
 }
