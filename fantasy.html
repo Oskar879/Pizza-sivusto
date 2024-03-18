@@ -27,31 +27,27 @@
                 <option value="blch">Sinihomejuusto + 2,50€</option>
             </select>
             <options class="options">
-                <sauce class="sauce">
-                    <label><input type="checkbox" name="sauce" value="garlic" class="sauce">Valkosipuli + 1,00€</label>
-                    <label><input type="checkbox" name="sauce" value="extra" class="sauce">Extra + 1,50€</label>
-                    <label><input type="checkbox" name="sauce" value="none" class="sauce">Ei kastiketta + 0,00€</label>
-                </sauce>
-                <dough class="dough">
-                    <label><input type="checkbox" name="dough" value="gluten" class="dough">Tavallinen + 0,00€</label>
-                    <label><input type="checkbox" name="dough" value="glutent" class="dough">Gluteeniton + 1,50€</label>
-                </dough>
+                    <label><input type="checkbox" name="sauce" value="garlic" class="sauces">Valkosipuli + 1,00€</label>
+                    <label><input type="checkbox" name="sauce" value="extra" class="sauces">Extra + 1,50€</label>
+                    <label><input type="checkbox" name="sauce" value="none" class="sauces">Ei kastiketta + 0,00€</label>
+                    <label><input type="checkbox" name="dough" value="gluten" class="doughs">Tavallinen + 0,00€</label>
+                    <label><input type="checkbox" name="dough" value="glutent" class="doughs">Gluteeniton + 1,50€</label>
                 </options>
             <script>
                 document.addEventListener('DOMContentLoaded', function() {
-                    const sauces = document.querySelectorAll('.sauce');
-                    const doughs = document.querySelectorAll('.dough');
+                    const sauces = document.querySelectorAll('.sauces');
+                    const doughs = document.querySelectorAll('.doughs');
 
                     sauces.forEach(checkbox => {
                         checkbox.onclick = function() {
                             if (this.checked) {
-                                sauces.forEach(cb => {
+                                sauces.forEach(checkbox => {
                                     if (checkbox !== this) {
                                         checkbox.disabled = true;
                                     }
                                 });
                             } else {
-                                sauces.forEach(cb => {
+                                sauces.forEach(checkbox => {
                                 checkbox.disabled = false;
                             });
                         }
@@ -62,13 +58,13 @@
                     doughs.forEach(function(checkbox) {
                         checkbox.onclick = function() {
                             if (this.checked) {
-                                doughs.forEach(function(cob) {
+                                doughs.forEach(function(checkbox) {
                                     if (checkbox !== this) {
                                         checkbox.disabled = true;
                                     }
                                 }, this);
                             } else {
-                                doughs.forEach(function(cb) {
+                                doughs.forEach(function(checkbox) {
                                     checkbox.disabled = false;
                                 });
                             }
