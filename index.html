@@ -124,6 +124,7 @@
 			<div class="row" id="Menu">
 				<div class="col navMenu">
 	     		 	<h2 class="text-center" >~ Ehdotuksiamme ~</h2>
+					  <button type="button" id="changemenu" onclick="myFunction()">Siirry menuun -></button>
 				</div>
 			</div>
 			<div class="row bg-light">
@@ -131,7 +132,7 @@
 					<div class="card view zoom">
   						<img class="card-img-top img-fluid " src="images/4.jpg">
 					  	<div class="card-body">
-					  		<head><h5><button type="button" onclick="myFunction()">~ Mozzarella ~</button></h5>
+					  		<head><h5>~ Mozzarella ~</h5>
 							  <script>
 								function myFunction() {
 								  location.replace("Tilaussivusto.html")
@@ -148,7 +149,7 @@
 					<div class="card">
   						<img class="card-img-top img-fluid " src="images/5.jpg">
 					  	<div class="card-body">
-							<h5><button type="button" onclick="myFunction()">~ Vege Lankku ~</button></h5>
+							<h5>~ Vege Lankku ~</h5>
 					    	<ul class="list-group list-group-flush">
 							    <li class="list-group-item">hapanjuuripohja, Koskenlaskijajuustoakastike, feta x 2, oliivi, rucolanverso x 2, kirsikkatomaatti, kurpitsansiemen, pikkelöity punasipuli, valkosipulidippi, valkosipulimajoneesi</li>							    
 							</ul>
@@ -159,46 +160,14 @@
 					<div class="card">
   						<img class="card-img-top img-fluid" src="images/6-1.jpg">
 					  	<div class="card-body">
-							<h5><button type="button" onclick="myFunction()">~ Kebab ~</button></h5>
+							<h5>~ Kebab ~</h5>
 					    	<ul class="list-group list-group-flush">
 							    <li class="list-group-item">kebabkastike, puoli juustoa, Kebab-liha x 2, punasipuli, salaatti, valkosipulimajoneesi</li>							    
 							</ul>
 					  	</div>
 					</div>
 				</div>
-				<div class="col-md-4" data-aos="slide-up">
-					<div class="card">
-  						<img class="card-img-top img-fluid" src="images/7.jpg">
-					  	<div class="card-body">
-					  		<h5><button type="button" onclick="myFunction()">~ Americana ~</button></h5>
-					    	<ul class="list-group list-group-flush">
-							    <li class="list-group-item">tomaattikastike, Kotipizza-juusto, kinkku, ananas, Aura-sinihomejuusto</li>							    
-							</ul>
-					  	</div>
-					</div>
-				</div>
-				<div class="col-md-4" data-aos="slide-up">
-					<div class="card">
-  						<img class="card-img-top img-fluid" src="images/8.jpg">
-					  	<div class="card-body">
-							<h5><button type="button" onclick="myFunction()">~ Lihamestari ~</button></h5>
-					    	<ul class="list-group list-group-flush">
-							    <li class="list-group-item">tomaattikastike, Kotipizza-juusto, kinkku, paahdettu pekoni, kebabliha, pepperonimakkara, beef'n'toast-naudanjauheliha</li>							   
-							</ul>
-					  	</div>
-					</div>
-				</div>
-				<div class="col-md-4" data-aos="slide-up">
-					<div class="card">
-  						<img class="card-img-top img-fluid" src="images/9.jpg">
-					  	<div class="card-body">
-							<h5><button type="button" onclick="myFunction()">~ Parmiamo ~</button></h5>
-					    	<ul class="list-group list-group-flush">
-							    <li class="list-group-item">tomaattikastike, puoli juustoa, rucolanverso, kirsikkatomaatti, parmesaanijuusto, ilmakuivattu porsaanniska</li>							   
-							</ul>
-					  	</div>
-					</div>
-				</div>
+				
 			</div>
 			<!--- End of Menu -->
 			<!--- Start of Reservation-->
@@ -249,9 +218,11 @@
 						background-color: #4caf50;
 						color: #fff;
 						border: none;
-						border-radius: 5px;
+						border-radius: 20px;
 						cursor: pointer;
+						text-align: center;
 					}
+
 					button:hover {
 						background-color: #45a049;
 					}
@@ -260,6 +231,17 @@
 						box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 						border-radius: 99px;
 						margin: 50px auto;
+					}
+					#changemenu {
+						padding: 10px;
+						background-color: #4caf50;
+						color: #fff;
+						border: none;
+						border-radius: 20px;
+						cursor: pointer;
+						text-align: center;
+						position: inherit;
+						left: 300px;
 					}
 				</style>
 			</head>
