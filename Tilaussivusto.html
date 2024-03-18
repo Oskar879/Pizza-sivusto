@@ -396,7 +396,7 @@
                             <span class="drink-nimi">Pepsi 450 ml</span> <span class="drink-hinta"><span class="price-background">3,40 €</span> </span>                            
                             <ul class="quantity-btn">
                                 <button class="quantity-btn" onClick="decrementQuantity('pepsi')">-</button>
-                                <span id="mirindaQuantity" class="quantity">0</span>
+                                <span id="pepsiQuantity" class="quantity">0</span>
                                 <button class="quantity-btn" onClick="incrementQuantity('pepsi')">+</button>                            
                             </ul>
                         </div>
@@ -405,7 +405,7 @@
                             <span class="drink-nimi">Coca Cola 0,25 l</span> <span class="drink-hinta"><span class="price-background">3,60 €</span> </span>                            
                             <ul class="quantity-btn">
                                 <button class="quantity-btn" onClick="decrementQuantity('coca')">-</button>
-                                <span class="quantity">0</span>
+                                <span class="cocaQuantity" class="quantity">0</span>
                                 <button class="quantity-btn" onClick="incrementQuantity('coca')">+</button>                            
                             </ul>
                         </div>
@@ -414,7 +414,7 @@
                             <span class="drink-nimi">Twist Up 2 l</span> <span class="drink-hinta"><span class="price-background">3,70 €</span> </span>                            
                             <ul class="quantity-btn">
                                 <button class="quantity-btn" onClick="decrementQuantity('twistup')">-</button>
-                                <span class="quantity">0</span>
+                                <span class="twistupQuantity" class="quantity">0</span>
                                 <button class="quantity-btn" onClick="incrementQuantity('twistup)">+</button>                            
                             </ul>
                         </div>
@@ -423,7 +423,7 @@
                             <span class="drink-nimi">Vesi 500 ml</span> <span class="drink-hinta"><span class="price-background">2,10 €</span> </span>                            
                             <ul class="quantity-btn">
                                 <button class="quantity-btn" onClick="decrementQuantity('vesi')">-</button>
-                                <span class="quantity">0</span>
+                                <span class="vesiQuantity" class="quantity">0</span>
                                 <button class="quantity-btn" onClick="incrementQuantity('vesi')">+</button>                            
                             </ul>
                         </div>
@@ -432,7 +432,7 @@
                             <span class="drink-nimi">Maito 1 l</span> <span class="drink-hinta"><span class="price-background">2,30 €</span> </span>
                             <ul class="quantity-btn">
                                 <button class="quantity-btn" onClick="decrementQuantity('maito')">-</button>
-                                <span class="quantity">0</span>
+                                <span class="maitoQuantity" class="quan">0</span>
                                 <button class="quantity-btn" onClick="incrementQuantity('maito')">+</button>                            
                             </ul>
                         </div>
@@ -475,11 +475,8 @@
                             var currentQuantity = parseInt(quantityElement.textContent);
                             if (currentQuantity > 0) {
                                 quantityElement.textContent = currentQuantity - 1;
-                                if (currentQuantity === 1)                                                                 {
-                                    removeFromOrder(drinkId);
-                                    if (window.opener) {
-                                        window.opener.removeItemFromCart(drinkId);                                        
-                                    }
+                                if (currentQuantity === 1) {
+                                    removeFromOrder(drinkId);                                    
                                 }
                             }
                         }  

@@ -129,35 +129,6 @@
         // Reload the page to reflect the changes
         location.reload();
     }
-
-    function removeItemFromCart(drinkId) {
-    // Find the corresponding item in the cart and remove it    
-    var cartItems = document.getElementById("cart-items");
-    var items = cartItems.getElementsByTagName("li");
-    for (var i = 0; i < items.length; i++) {
-        var itemName = items[i].textContent.split(" - ")[0];
-        if (itemName === drinkId) {
-            cartItems.removeChild(items[i]);
-            break;
-        }
-    }
-    // Recalculate and update the total price
-    var total = parseFloat(localStorage.getItem("total"));
-    var order = JSON.parse(localStorage.getItem("order")) || [];
-    for (var j = 0; j < order.length; j++) {
-        if (order[j].name === drinkId) {
-            total -= parseFloat(order[j].price);
-            order.splice(j, 1);
-            break;
-        }
-    }
-    localStorage.setItem("total", total);
-    localStorage.setItem("order", JSON.stringify(order));
-    document.getElementById("total").textContent = total.toFixed(2) + " €";
-}
-
-
-
         // Function to prompt the user for their address when the checkbox is clicked
         function promptAddress() {
             var deliveryCheckbox = document.getElementById("delivery-checkbox");
