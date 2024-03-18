@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<htlm>
+    <head>
+        <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link href='https://fonts.googleapis.com/css?family=Merienda' rel='stylesheet'>
+		<link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+    </head>
+    <body>
+        <login id="login">
+            <div class="container1" id="register-container">
+                <h2>Rekisteröidy</h2>
+                <form id="register-form">
+                    <label for="register-name">Nimi:</label>
+                    <input type="text" id="register-name" required>
+                    <p id="name-error" style="color:red"></p>
+                    <label for="register-password">Salasana:</label>
+                    <input type="password" id="register-password" required>
+                    <p id="password-error" style="color:red"></p>
+                    <button type="button" onclick="register()">Rekisteröidy</button>
+                </form>
+                <button onclick="switchForm('login-container')" id="b1">Onko jo käyttäjä? Kirjaudu tästä sisään!</button>
+            </div>
+            <div class="container" id="login-container" style="display:none;">
+                <h2>Kirjaudu sisään</h2>
+                <form id="login-form">
+                    <label for="login-name">Nimi:</label>
+                    <input type="text" id="login-name" required>
+                    <label for="login-password">Salasana:</label>
+                    <input type="password" id="login-password" required>
+                    <button type="button" onclick="login()">Kirjaudu sisään</button>
+                </form>
+                <button onclick="switchForm('register-container')">Eikö sinulla ole käyttäjää? Rekisteröidy täältä!</button>
+            </div>
+        </login>
+        <script>
+            function register() {
+                var name = document.getElementById('register-name').value;
+                var password = document.getElementById('register-password').value;
+                var error = document.getElementById('password-error')
+                var validpass = true 
+                var validname = true
+                var error2 = document.getElementById('name-error')
+
+                if (password.trim() === '') {
+                        error.textContent = 'Salasana ei voi olla tyhjä'
+                        validpass = false
+                    } else if (password.length < 3) {
+                        error.textContent = 'Salasana tulee olla vähintään 3 kirjainta'
+                        validpass = false
+                    } else {
+                        error.textContent = ''
+                    }
+                if (!name.trim()) {
+                    error2.textContent = 'Nimi ei voi olla tyhjä'
+                    validname = false
+                }else if (name.length < 3) {
+                    error2.textContent = 'Nimen tulee olla vähintään 3 kirjainta'
+                    validname = false
+                } else {
+                   error2.textContent = ''
+                }
+                
+                if (validpass && validname) {
+                    localStorage.setItem('username', name);
+                    localStorage.setItem('password', password);
+            
+                    switchForm('login-container', true);
+                }
+            }
+        
+            function login() {
+                var storedName = localStorage.getItem('username');
+                var storedPassword = localStorage.getItem('password');
+                var enteredName = document.getElementById('login-name').value;
+                var enteredPassword = document.getElementById('login-password').value;
+        
+                if (enteredName === storedName && enteredPassword === storedPassword) {
+                    document.getElementById('user-name').innerText = storedName;
+                    switchForm('user-info');
+                } else {
+                    alert('Salasana tai nimi on väärin tai sinulla ei ole olemassa olevaa käyttäjää. Yritä uudelleen!');
+                }
+            }
+        
+            function logout() {
+                document.getElementById('user-name').innerText = '';
+                switchForm('login-container');
+            }
+        
+            function switchForm(formToShow) {
+                
+                document.getElementById('register-container').style.display = 'none';
+                document.getElementById('login-container').style.display = 'none';
+                document.getElementById('user-info').style.display = 'none';
+        
+                document.getElementById(formToShow).style.display = 'block';
+
+                document.getElementById('b1').style.display = 'none'
+            }
+        </script>
+          <head>
+            <style>
+                body {
+						font-family: Arial, sans-serif;
+						margin: 0;
+						padding: 0;
+						background-color: #da4949;
+					}
+             button {
+						padding: 10px;
+						background-color: #4caf50;
+						color: #fff;
+						border: none;
+						border-radius: 20px;
+						cursor: pointer;
+						text-align: center;
+					}
+            </style>
+          </head>						
+			
+    </div>
+    </body>
+</htlm>
