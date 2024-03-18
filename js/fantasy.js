@@ -67,3 +67,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     })
 })
+function back() {
+    location.replace('Tilaussivusto.html')
+}
