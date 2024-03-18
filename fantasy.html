@@ -7,9 +7,11 @@
         <link rel="stylesheet" href="css/fantasy.css">
     </head>
     <body>
+        <button class="back" onclick="back()">
+        </button>
         <toppings>
             <h2>Select Toppings</h2>
-            <select name="topping" id="topping">
+            <select name="topping" id="topping" multiple>
                 <option value="pepperoni">Pepperoni + 1,00€</option>
                 <option value="shrimp">Katkarapu + 1,50€</option>
                 <option value="tuna">Tonnikala + 1,00€</option>
@@ -21,61 +23,23 @@
                 <option value="onion">Sipuli + 1,00€</option>
                 <option value="bacon">Pekoni + 2,00€</option>
             </select>
-            <select name="cheese" id="cheese">
+            <select name="cheese" id="cheese" multiple>
                 <option value="mozzarella">Mozzarella + 2,00€</option>
                 <option value="cheddar">Cheddar + 1,50€</option>
                 <option value="blch">Sinihomejuusto + 2,50€</option>
             </select>
             <options class="options">
-                <sauce class="sauce">
-                    <label><input type="checkbox" name="sauce" value="garlic" class="sauce">Valkosipuli + 1,00€</label>
-                    <label><input type="checkbox" name="sauce" value="extra" class="sauce">Extra + 1,50€</label>
-                    <label><input type="checkbox" name="sauce" value="none" class="sauce">Ei kastiketta + 0,00€</label>
-                </sauce>
-                <dough class="dough">
-                    <label><input type="checkbox" name="dough" value="gluten" class="dough">Tavallinen + 0,00€</label>
-                    <label><input type="checkbox" name="dough" value="glutent" class="dough">Gluteeniton + 1,50€</label>
-                </dough>
+                    <label><input type="checkbox" name="sauce" value="garlic" class="sauces">Valkosipuli + 1,00€</label>
+                    <label><input type="checkbox" name="sauce" value="extra" class="sauces">Extra + 1,50€</label>
+                    <label><input type="checkbox" name="sauce" value="none" class="sauces">Ei kastiketta + 0,00€</label>
+
+                    <label><input type="checkbox" name="dough" value="gluten" class="doughs">Tavallinen + 0,00€</label>
+                    <label><input type="checkbox" name="dough" value="glutent" class="doughs">Gluteeniton + 1,50€</label>
                 </options>
-            <script>
-                document.addEventListener('DOMContentLoaded', function() {
-                    const sauces = document.querySelectorAll('.sauce');
-                    const doughs = document.querySelectorAll('.dough');
 
-                    sauces.forEach(checkbox => {
-                        checkbox.onclick = function() {
-                            if (this.checked) {
-                                sauces.forEach(cb => {
-                                    if (checkbox !== this) {
-                                        checkbox.disabled = true;
-                                    }
-                                });
-                            } else {
-                                sauces.forEach(cb => {
-                                checkbox.disabled = false;
-                            });
-                        }
-                    };
-                });
-            
-
-                    doughs.forEach(function(checkbox) {
-                        checkbox.onclick = function() {
-                            if (this.checked) {
-                                doughs.forEach(function(cob) {
-                                    if (checkbox !== this) {
-                                        checkbox.disabled = true;
-                                    }
-                                }, this);
-                            } else {
-                                doughs.forEach(function(cb) {
-                                    checkbox.disabled = false;
-                                });
-                            }
-                        };
-                    });
-                })
-
+                <div id="opt"></div>
+                <div id="che"></div>
+            <script src="js/fantasy.js">
             </script>
         </toppings>
     </body>

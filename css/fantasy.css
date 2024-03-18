@@ -4,14 +4,14 @@
     width: 30%;
 }
 
-.sauce,
-.dough {
-    display: block;
-    /*align-items: center;*/
-    margin-bottom: 5px;
-}
-.sauce input,
-.dough input {
+.sauces,
+.doughs {
     margin-right: 10px;
-    margin-left: auto;
+    margin-left: auto; 
+}
+.sauces input,
+.doughs input {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
 }

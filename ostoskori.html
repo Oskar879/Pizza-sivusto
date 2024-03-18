@@ -66,16 +66,7 @@
         </button>
         <h1 id="empty-message" class="empty-message">Ostoskorisi on tyhjä</h1>
         <h2>Yhteensä: <span id="total"></span></h2>
-        <h3 id="cart-items"></h3>
-        <h2>Toimitustapa:</h2>
-        <input type="radio" id="pickup" name="delivery-method" value="pickup" onclick="toggleAddressInput(false)">
-        <label for="pickup">Nouto</label><br>
-        <input type="radio" id="delivery" name="delivery-method" value="delivery" onclick="toggleAddressInput(true)">
-        <label for="delivery">Kuljetus</label><br>
-        <input type="text" id="delivery-address" placeholder="Syötä toimitusosoite" style="display: none;"><br>
-        <button onclick="confirmOrder()">Vahvista tilaus</button>
-        <label for="delivery-checkbox">Kuljetus: +3 €</label>
-        <input type="checkbox" id="delivery-checkbox" onclick="promptAddress()">
+        <h3 id="cart-items"></h3>        
     </div>
 
     <script>
@@ -123,11 +114,24 @@
         // Function to prompt the user for their address when the checkbox is clicked
         function promptAddress() {
             var deliveryCheckbox = document.getElementById("delivery-checkbox");
-            if (deliveryCheckbox.checked) {
+            if (delivery.checked) {
                 var address = prompt("Please enter your address:");
                 // You can do something with the address here, such as storing it in localStorage or sending it to a server.
             }
         }
+        function updateClock() {
+            var now = new Date();
+            var minutesToAdd = order.length * 15; // Assuming each pizza takes 15 minutes
+            now.setMinutes(now.getMinutes() + minutesToAdd);
+
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var timeString = hours + ":" + (minutes < 10 ? "0" : "") + minutes;
+            document.getElementById("clock").textContent = "Estimated Time: " + timeString;
+        }
+
+        // Update the clock initially
+        updateClock();
     </script>
 </body>
 </html>
