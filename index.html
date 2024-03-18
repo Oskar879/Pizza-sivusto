@@ -124,7 +124,7 @@
 			<div class="row" id="Menu">
 				<div class="col navMenu">
 	     		 	<h2 class="text-center" >~ Ehdotuksiamme ~</h2>
-					  <button type="button" onclick="myFunction()">Siirry menuun -></button>
+					  <button type="button" id="changemenu" onclick="myFunction()">Siirry menuun -></button>
 				</div>
 			</div>
 			<div class="row bg-light">
@@ -222,6 +222,7 @@
 						cursor: pointer;
 						text-align: center;
 					}
+
 					button:hover {
 						background-color: #45a049;
 					}
@@ -230,6 +231,17 @@
 						box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 						border-radius: 99px;
 						margin: 50px auto;
+					}
+					#changemenu {
+						padding: 10px;
+						background-color: #4caf50;
+						color: #fff;
+						border: none;
+						border-radius: 20px;
+						cursor: pointer;
+						text-align: center;
+						position: inherit;
+						left: 300px;
 					}
 				</style>
 			</head>
