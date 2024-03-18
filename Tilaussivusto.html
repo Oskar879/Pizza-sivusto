@@ -394,22 +394,47 @@
                         <div class="drink" onclick="addToOrder('Pepsi', '3.40', 'drink', getQuantity('pepsi'))">
                             <img src="images/pepsi.png" alt="pepsi">
                             <span class="drink-nimi">Pepsi 450 ml</span> <span class="drink-hinta"><span class="price-background">3,40 €</span> </span>                            
+                            <ul class="quanity-btn">
+                                <button class="quanity-btn" onClick="decrementQuanity('pepsi')">-</button>
+                                <span class="quanity">0</span>
+                                <button class="quanity-btn" onClick="incrementQuanity('pepsi')">+</button>                            
+                            </ul>
                         </div>
                         <div class="drink" onclick="addToOrder('Coca Cola', '3.60', 'drink', getQuantity('coca'))">
                             <img src="images/coca.png" alt="coca">
                             <span class="drink-nimi">Coca Cola 0,25 l</span> <span class="drink-hinta"><span class="price-background">3,60 €</span> </span>                            
+                            <ul class="quanity-btn">
+                                <button class="quanity-btn" onClick="decrementQuanity('coca')">-</button>
+                                <span class="quanity">0</span>
+                                <button class="quanity-btn" onClick="incrementQuanity('coca')">+</button>                            
+                            </ul>
                         </div>
                         <div class="drink" onclick="addToOrder('Twist Up', '3.70', 'drink', getQuantity('twistup'))">
                             <img src="images/twistup.png" alt="twistup">
                             <span class="drink-nimi">Twist Up 2 l</span> <span class="drink-hinta"><span class="price-background">3,70 €</span> </span>                            
+                            <ul class="quanity-btn">
+                                <button class="quanity-btn" onClick="decrementQuanity('twistup')">-</button>
+                                <span class="quanity">0</span>
+                                <button class="quanity-btn" onClick="incrementQuanity('twistup)">+</button>                            
+                            </ul>
                         </div>
                         <div class="drink" onclick="addToOrder('Vesi', '2.10', 'drink', getQuantity('vesi'))">
                             <img src="images/vesi.png" alt="vesi">
                             <span class="drink-nimi">Vesi 500 ml</span> <span class="drink-hinta"><span class="price-background">2,10 €</span> </span>                            
+                            <ul class="quanity-btn">
+                                <button class="quanity-btn" onClick="decrementQuanity('vesi')">-</button>
+                                <span class="quanity">0</span>
+                                <button class="quanity-btn" onClick="incrementQuanity('vesi')">+</button>                            
+                            </ul>
                         </div>
                         <div class="drink" onclick="addToOrder('Maito', '2.30', 'drink'.getQuantity('maito'))">
                             <img src="images/maito.png" alt="maito">
                             <span class="drink-nimi">Maito 1 l</span> <span class="drink-hinta"><span class="price-background">2,30 €</span> </span>
+                            <ul class="quanity-btn">
+                                <button class="quanity-btn" onClick="decrementQuanity('maito')">-</button>
+                                <span class="quanity">0</span>
+                                <button class="quanity-btn" onClick="incrementQuanity('maito')">+</button>                            
+                            </ul>
                         </div>
                     </div>
 
@@ -421,52 +446,25 @@
                         location.replace("index.html");
                         }                                                                        
 
-                        function addToOrder(name, price, ingredients, quanity) {
+                        function addToOrder(name, price, ingredients) {
                         // Create an object representing the pizza
-                        var item = {
+                        var pizza = {
                         name: name,
                         price: price,
-                        ingredients: ingredients,
-                        quanity: quanity
-                        
+                        ingredients: ingredients                                             
                         };
                         var order = JSON.parse(localStorage.getItem("order")) || [];
-                        order.push(item);
-                        localStorage.setItem("order", JSON.stringify(order));
+                        order.push(pizza);
+                        localStorage.setItem("order", JSON.stringify(order));                    
                         
-                        total += parseFloat(price) * item.quanity;
-
+                        total += parseFloat(price);
+                        localStorage.setItem("total", total);
                         document.getElementById("yhteensa").textContent = total.toFixed(2) + " €";
-                        }                        
-
-                        function incrementQuanity(drinkId) {
-                            var quanityElement = document.getElementById(drinkId).getElementsByClassName("quanity")[0];
-                            var quanity = parseInt(quanityElement.textContent);
-                            quanity++;
-                            quanityElement.textContent = quanity;
-                            updateToTalPrice(drinkId, quanity);
-                        }
-
-                        function decrementQuanity(drinkId) {
-                            var quanityElement = document.getElementById(drinkId).getElementsByClassName("quanity")[0];
-                            var quanity = parseInt(quanityElement.textContent);
-                            if(quanity > 0) {
-                                quanity--;
-                                quanityElement.textContent = quanity;
-                                updateToTalPrice(drinkId, quanity);
-                            }
-                        }
-
-                        function updateToTalPrice(drinkId, quanity) {
-                            var priceElement = document.getElementById(drinkId).getElementsByClassName("drink-hinta")[0].getElementsByTagName("span")[0];
-                            var price = parseFloat(priceElement.textContent.replace(" €", "").replace(",", "."));
-                            var totalPrice = price * quanity;
-                            total += totalPrice;
-                            document.getElementById("yhteensa").textContent = total.toFixed(2) + " €"
-                        }
-                        
-                        function initializeTotal() {
-                        document.getElementById("yhteensa").textContent = total.toFixed(2) + " €";
+                        }                                                
+                    
+                        function initializeTotal() {                            
+                            total = parseFloat(localStorage.getItem("total")) || 0;
+                            document.getElementById("yhteensa").textContent = total.toFixed(2) + " €";
                         }
                         window.onload = initializeTotal;
                     </script>                                                                            

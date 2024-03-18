@@ -88,7 +88,7 @@
         // Display each item in the order
         var total = 0;
         var cartItems = document.getElementById("cart-items");
-        order.forEach(function(item, index) {
+        order.forEach(function(pizza, index) {
             var item = document.createElement("li");
             item.textContent = pizza.name + " - " + pizza.price + " €";
             var removeButton = document.createElement("button");
