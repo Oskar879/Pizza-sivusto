@@ -1,0 +1,87 @@
+
+$backgroundColor: rgb(158, 100, 100);
+$marginRight: 180px;
+$margin: 0; 
+$display: flex;
+$flexdirection: column;
+$alignitems: center;
+$justifycontent: center;
+$fontfamily: Arial, sans-serif;
+$text-align: webkit-center;
+$text-align2: -moz-center;
+$padding: 50px;
+$width: 30%;
+$textalign: inherit;
+$marginright: 180px;
+$marginbottom: -15px; 
+$margin-right: 10px;
+$height: 40px;
+$width2: 40px;
+$background-Color: #fff;
+$border-radius: 50%;
+$border: none;
+$cursor: pointer;
+$top: 20px;
+$left: 20px;
+$position: fixed;
+$width3: 20px;
+$borderleft: 3px solid #000000;
+$borderbottom: 3px solid #000000;
+$transform: rotate(+45deg);
+body {
+    background-color: $backgroundColor;
+    font-family: $fontfamily;
+    text-align: $text-align;
+    text-align: $text-align2;
+    padding: $padding;
+    flex-direction:  $flexdirection; 
+}
+h2 {
+    margin: $margin; 
+}
+
+.options,
+.sauces,
+.doughs,
+#label {  
+    display: $display; 
+    flex-direction: $flexdirection; 
+    width: $width;
+    align-items: $alignitems; 
+    justify-content: $justifycontent; 
+    text-align: $textalign;
+}
+
+.sauces,
+.doughs {
+    margin-right: $marginright;
+    margin-bottom: $marginbottom; 
+    
+}
+.sauces input,
+.doughs input {
+    display: $display; 
+    align-items: $alignitems; 
+    margin-right: $margin-right;
+}
+.back {
+    height: $height;
+    width: $width2;
+    background-color: $background-Color; /* Circle color */
+    border-radius: $border-radius; /* Make it a circle */
+    display:  $display; 
+    justify-content: $justifycontent; 
+    align-items: $alignitems; 
+    border: $border;
+    cursor: $cursor;
+    top: $top;
+    left: $left;
+    position: $position;
+}
+.arrow {
+    width: $width3;
+    height: $height - 20px;
+    border-left: $borderleft;
+    border-bottom: $borderbottom;
+    transform: $transform;
+}
