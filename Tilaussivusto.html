@@ -290,7 +290,7 @@
                 <h1>Pizzat</h1>
                     
                     <div class="pizza-container">
-                        <div class="pizza" onclick="addToOrder('Mozzarella', '11.10')">
+                        <div class="pizza" onclick="addToOrder('Mozzarella', '11.10', 'pizza')">
                             <img src="images/4.jpg" alt="Pizza 1">
                             <span class="pizza-nimi">Mozarella</span> <span class="pizza-hinta"><span class="price-background">11,10 €</span></span>                       
                             <ul class="list-group list-group-flush">
@@ -301,7 +301,7 @@
                                 <li>mozzarella</li>
                             </ul>
                         </div>
-                        <div class="pizza" onclick="addToOrder('Vege Lankku', '11.50')">
+                        <div class="pizza" onclick="addToOrder('Vege Lankku', '11.50', 'pizza')">
                             <img src="images/5.jpg" alt="Pizza 2">
                             <span class="pizza-nimi">Vege Lankku</span> <span class="pizza-hinta"><span class="price-background">11,50 €</span></span>
                             <ul class="list-group list-group-flush">
@@ -317,7 +317,7 @@
                                 <li>valkosipulimajoneesi</li>
                             </ul>
                         </div>
-                        <div class="pizza" onclick="addToOrder('Kebab', '14.60')">
+                        <div class="pizza" onclick="addToOrder('Kebab', '14.60', 'pizza')">
                             <img src="images/6.jpg" alt="Pizza 3">
                             <span class="pizza-nimi">Kebab</span> <span class="pizza-hinta"><span class="price-background">14,60 €</span></span>
                             <ul class="list-group list-group-flush">
@@ -329,7 +329,7 @@
                                 <li>valkosipulimajoneesi</li>
                             </ul>
                         </div>
-                        <div class="pizza" onclick="addToOrder('Americana', '13.40')">
+                        <div class="pizza" onclick="addToOrder('Americana', '13.40', 'pizza')">
                             <img src="images/7.jpg" alt="Pizza 4">
                             <span class="pizza-nimi">Americana</span> <span class="pizza-hinta"><span class="price-background">13,40 €</span></span>
                             <ul class="list-group list-group-flush">
@@ -340,7 +340,7 @@
                                 <li>Aura-sinihomejuusto</li>
                             </ul>
                         </div>
-                        <div class="pizza" onclick="addToOrder('Lihamestari', '15.40')">
+                        <div class="pizza" onclick="addToOrder('Lihamestari', '15.40', 'pizza')">
                             <img src="images/8.jpg" alt="Pizza 5">
                             <span class="pizza-nimi">Lihamestari</span> <span class="pizza-hinta"><span class="price-background">15,40 €</span></span>
                             <ul class="list-group list-group-flush">
@@ -353,7 +353,7 @@
                                 <li>beef'n'toast-naudanjauheliha</li>
                             </ul>
                         </div>
-                        <div class="pizza" onclick="addToOrder('Parmiamo', '15.40')">
+                        <div class="pizza" onclick="addToOrder('Parmiamo', '15.40', 'pizza')">
                             <img src="images/9.jpg" alt="Pizza 6">
                             <span class="pizza-nimi">Parmiamo</span> <span class="pizza-hinta"><span class="price-background">15,40 €</span></span>
                             <ul class="list-group list-group-flush">
@@ -381,7 +381,7 @@
                     </div>
                 <h1>Juomat</h1>                    
                     <div class="drink-container">                        
-                        <div class="drink" id="mirinda">
+                        <div class="drink" onclick="addToOrder('Mirinda', '3.50', 'drink', getQuantity('mirinda'))">
                             <img src="images/mirinda.png" alt="mirinda">
                             <span class="drink-nimi">Mirinda 0,5 l</span>
                             <span class="drink-hinta"><span class="price-background">3,50 €</span>
@@ -421,36 +421,22 @@
                         location.replace("index.html");
                         }                                                                        
 
-                        function addToOrder(name, price, ingredients) {
+                        function addToOrder(name, price, ingredients, quanity) {
                         // Create an object representing the pizza
-                        var pizza = {
+                        var item = {
                         name: name,
                         price: price,
-                        ingredients: ingredients
+                        ingredients: ingredients,
+                        quanity: quanity || 1
                         };
                         var order = JSON.parse(localStorage.getItem("order")) || [];
-                        order.push(pizza);
+                        order.push(item);
                         localStorage.setItem("order", JSON.stringify(order));
                         
-                        total += parseFloat(price);
+                        total += parseFloat(price) * item.quanity;
 
                         document.getElementById("yhteensa").textContent = total.toFixed(2) + " €";
-                        }
-
-                        function addToOrder(name, price, quanity) {
-                            var drink = {
-                                name: name,
-                                price: price,
-                                quanity: quanity
-                            };
-                            var oder = JSON.parse(localStorage.getItem("order")) || [];
-                            order.push(drink);
-                            localStorage.setItem("order", JSON,stringify(order));
-
-                            total += parseFloat(price) * quanity;
-
-                            document.getElementById("yhteensa").textContent = total.toFixed(2) + " €";
-                        }
+                        }                        
 
                         function incrementQuanity(drinkId) {
                             var quanityElement = document.getElementById(drinkId).getElementsByClassName("quanity")[0];

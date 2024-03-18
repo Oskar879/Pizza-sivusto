@@ -106,13 +106,13 @@
             var item = document.createElement("li");
             item.textContent = drink.name + " - " + drink.price + " €";
             var removeButton = document.createElement("button");
-            removeButton.textContent ="Poista";
+            removeButton.textContent = "Poista";
             removeButton.onclick = function() {
                 removeItem(index);
             };
             item.appendChild(removeButton);
             cartItems.appendChild(item);
-            total +- parseFloat(drink.price) * drink.quanity;
+            total += parseFloat(drink.price);
         });
         // Display the total
         document.getElementById("total").textContent = total.toFixed(2) + " €";
