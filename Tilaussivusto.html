@@ -440,19 +440,18 @@
 
                     <script>
                         function incrementQuantity(drinkId) {
-                        var quantityElement = document.getElementById(drinkId + 'incrementQuantity');
-                        var currentQuantity = parseInt(quantityElement.textContent);
-                        quantityElement.textContent = currentQuantity + 1;
+                            var quantityElement = document.getElementById(drinkId + "Quantity");
+                            var currentQuantity = parseInt(quantityElement.textContent);
+                            quantityElement.textContent = currentQuantity + 1;
                         }
 
                         function decrementQuantity(drinkId) {
-                        var quantityElement = document.getElementById(drinkId + 'decrementQuantity');
-                        var currentQuantity = parseInt(quantityElement.textContent);
-                        if (currentQuantity > 0) {
-                        quantityElement.textContent = currentQuantity - 1;
+                            var quantityElement = document.getElementById(drinkId + "Quantity");
+                            var currentQuantity = parseInt(quantityElement.textContent);
+                            if (currentQuantity > 0) {
+                                quantityElement.textContent = currentQuantity - 1;
                             }
-                        }
-
+                        }                        
                         var selectedItems = []; // Array to store selected items
                         var total = 0;
 
@@ -490,6 +489,13 @@
                             document.getElementById("yhteensa").textContent = total.toFixed(2) + " €";
                         }
                         window.onload = initializeTotal;
+                    </script>
+                    <script>
+                        // Function to update the total price on the parent page
+                        function updateTotal(newTotal) {
+                            total = newTotal;
+                            document.getElementById("yhteensa").textContent = total.toFixed(2) + " €";
+                        }
                     </script>                                                                            
             </div>                    
         </div>
