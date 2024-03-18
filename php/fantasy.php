@@ -1,5 +1,12 @@
+<?php lang=="TS"; ?>
+header("Content-type: text/css");
+
+$backgroundColor = "rgb(158, 100, 100)";
+$mari = "180px";
+
+
 body {
-    background-color: rgb(158, 100, 100);
+    background-color: <?php echo $backgroundColor; ?>;
     font-family: Arial, sans-serif;
     text-align: -webkit-center;
     text-align: -moz-center;
@@ -13,18 +20,18 @@ h2 {
 .options,
 .sauces,
 .doughs,
-#label {  
+label {  
     display: flex;
     flex-direction: column;
     width: 30%;
     align-items: center;
     justify-content: center;
-    text-align: center;
+    text-align: inherit;
 }
 
 .sauces,
 .doughs {
-    margin-right: 180px;
+    margin-right: <?php echo $mari; ?>;
     margin-bottom: -15px; 
     
 }
@@ -37,8 +44,8 @@ h2 {
 .back {
     height: 40px;
     width: 40px;
-    background-color: white; /* Circle color */
-    border-radius: 50%; /* Make it a circle */
+    background-color: white; 
+    border-radius: 50%; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -55,3 +62,4 @@ h2 {
     border-bottom: 3px solid black;
     transform: rotate(+45deg);
 }
+?>
