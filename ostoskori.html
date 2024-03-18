@@ -88,7 +88,7 @@
         // Display each item in the order
         var total = 0;
         var cartItems = document.getElementById("cart-items");
-        order.forEach(function(pizza, index) {
+        order.forEach(function(item, index) {
             var item = document.createElement("li");
             item.textContent = pizza.name + " - " + pizza.price + " €";
             var removeButton = document.createElement("button");
@@ -100,20 +100,7 @@
             cartItems.appendChild(item);
             total += parseFloat(pizza.price);
         });
-        var total = 0;
-        var cartItems = document.getElementById("cart-items");
-        order.forEach(function(drink, index) {
-            var item = document.createElement("li");
-            item.textContent = drink.name + " - " + drink.price + " €";
-            var removeButton = document.createElement("button");
-            removeButton.textContent = "Poista";
-            removeButton.onclick = function() {
-                removeItem(index);
-            };
-            item.appendChild(removeButton);
-            cartItems.appendChild(item);
-            total += parseFloat(drink.price);
-        });
+        
         // Display the total
         document.getElementById("total").textContent = total.toFixed(2) + " €";
 

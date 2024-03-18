@@ -427,7 +427,8 @@
                         name: name,
                         price: price,
                         ingredients: ingredients,
-                        quanity: quanity || 1
+                        quanity: quanity
+                        
                         };
                         var order = JSON.parse(localStorage.getItem("order")) || [];
                         order.push(item);
