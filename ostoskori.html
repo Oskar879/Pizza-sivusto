@@ -67,7 +67,14 @@
         <h1 id="empty-message" class="empty-message">Ostoskorisi on tyhjä</h1>
         <h2>Yhteensä: <span id="total"></span></h2>
         <h3 id="cart-items"></h3>
-        <label for="delivery-checkbox">Kuljetus:</label>
+        <h2>Toimitustapa:</h2>
+        <input type="radio" id="pickup" name="delivery-method" value="pickup" onclick="toggleAddressInput(false)">
+        <label for="pickup">Nouto</label><br>
+        <input type="radio" id="delivery" name="delivery-method" value="delivery" onclick="toggleAddressInput(true)">
+        <label for="delivery">Kuljetus</label><br>
+        <input type="text" id="delivery-address" placeholder="Syötä toimitusosoite" style="display: none;"><br>
+        <button onclick="confirmOrder()">Vahvista tilaus</button>
+        <label for="delivery-checkbox">Kuljetus: +3 €</label>
         <input type="checkbox" id="delivery-checkbox" onclick="promptAddress()">
     </div>
 
