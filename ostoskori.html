@@ -100,7 +100,8 @@
             cartItems.appendChild(item);
             total += parseFloat(pizza.price);
         });
-
+        var total = 0;
+        var cartItems = document.getElementById("cart-items");
         order.forEach(function(drink, index) {
             var item = document.createElement("li");
             item.textContent = drink.name + " - " + drink.price + " €";
