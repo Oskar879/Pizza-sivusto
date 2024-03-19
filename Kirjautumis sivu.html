@@ -35,6 +35,9 @@
                 </form>
                 <button onclick="switchForm('register-container')">Eikö sinulla ole käyttäjää? Rekisteröidy täältä!</button>
             </div>
+            <div id="user-info" style="display:none;">
+                <a>Tervetuloa, <span id="user-name"></span>! <button onclick="logout()" class="Kirjauduulosnappi">Kirjaudu ulos</button></a>
+            </div>
         </login>
         <script>
             function register() {
@@ -115,7 +118,7 @@
 						background-color: #4caf50;
 						color: #fff;
 						border: none;
-						border-radius: 20px;
+						border-radius: 10px;
 						cursor: pointer;
 						text-align: center;
 					}
