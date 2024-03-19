@@ -115,11 +115,11 @@
         // Function to remove an item from the order
         function removeItem(index) {
             // Remove the item from the order array
-            var removedItem = order.splice(index, 1)[0]; // Fixed typo here
+            var removedItem = order.splice(index, 1)[0]; 
             // Update localStorage
             localStorage.setItem("order", JSON.stringify(order));
             // Calculate the new total price
-            total -= parseFloat(removedItem.price); // Fixed typo here
+            total -= parseFloat(removedItem.price); 
             // Update the displayed total on the current page
             document.getElementById("total").textContent = total.toFixed(2) + " €";
             // Update the total price on the parent page (tilaussivusto)
