@@ -471,16 +471,20 @@
                         }
 
                         function decrementQuantity(drinkId) {
-                            var quantityElement = document.getElementById(drinkId + "Quantity");
-                            var currentQuantity = parseInt(quantityElement.textContent);
-                            if (currentQuantity > 0) {
-                                quantityElement.textContent = currentQuantity - 1;
-                                if (currentQuantity === 1) {
-                                    removeFromOrder(drinkId);                                    
+                        var quantityElement = document.getElementById(drinkId + "Quantity");
+                        var currentQuantity = parseInt(quantityElement.textContent);
+                        if (currentQuantity > 0) {
+                        quantityElement.textContent = currentQuantity - 1;
+                        if (currentQuantity === 1) {
+                            removeFromOrder(drinkId);
+                            // Call removeDrinkItem function in the parent window (ostoskori.html)
+                            if (window.opener) {
+                                window.opener.removeDrinkItem(drinkId);
                                 }
                             }
-                        }  
-                        
+                        }
+                    }  
+                    
                         function removeFromOrder(drinkId) {
                             var order = JSON.parse(localStorage.getItem("order")) || [];
                             var indexToRemove = -1;

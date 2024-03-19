@@ -110,7 +110,7 @@
         // Hide the empty message if the order is not empty
         if (order.length > 0) {
             document.getElementById("empty-message").classList.add("hidden");
-        }
+        }        
 
         // Function to remove an item from the order
         function removeItem(index) {
@@ -125,8 +125,8 @@
             // Update the total price on the parent page (tilaussivusto)
             if (window.opener) {
             window.opener.updateTotal(total);
-        }
-        // Reload the page to reflect the changes
+            }
+            // Reload the page to reflect the changes
         location.reload();
     }
         // Function to prompt the user for their address when the checkbox is clicked
