@@ -381,13 +381,13 @@
                     </div>
                 <h1>Juomat</h1>                    
                     <div class="drink-container">                        
-                        <div class="drink" id="mirinda" onclick="addToOrder('Mirinda', '3.50')">
+                        <div class="drink" id="mirinda">
                             <img src="images/mirinda.png" alt="mirinda">
                             <span class="drink-nimi">Mirinda 0,5 l</span> <span class="drink-hinta"><span class="price-background">3,50 €</span> </span>                            
                             <ul class="quantity-btn">
-                                <button class="quantity-btn" onClick="decrementQuantity('mirinda')">-</button>
+                                <button class="quantity-btn" onClick="decrementQuantity('mirinda', '3.50')">-</button>
                                 <span id="mirindaQuantity" class="quantity">0</span>
-                                <button class="quantity-btn" onclick="incrementQuantity('mirinda')">+</button>                            
+                                <button class="quantity-btn" onclick="incrementQuantity('Mirinda', 'mirinda', '3.50')">+</button>                            
                             </ul>
                         </div>                            
                         <div class="drink" id="pepsi" onclick="addToOrder('Pepsi', '3.40')">
@@ -463,14 +463,20 @@
                         document.getElementById("yhteensa").textContent = total.toFixed(2) + " €";
                         }     
 
-                        function incrementQuantity(drinkId) {
+                        function incrementQuantity(drinkId, name, price) {
+                            var drink = {
+                                drinkId: drinkId,
+                                name: name,
+                                price
+                            }
                             var quantityElement = document.getElementById(drinkId + "Quantity");
                             var currentQuantity = parseInt(quantityElement.textContent);                            
                             quantityElement.textContent = currentQuantity + 1;
+                            addToOrder(drinkId, name, price);
                                                        
                         }
 
-                        function decrementQuantity(drinkId) {
+                        function decrementQuantity(drinkId, name, price) {
                             var quantityElement = document.getElementById(drinkId + "Quantity");
                             var currentQuantity = parseInt(quantityElement.textContent);
                             quantityElement.textContent = currentQuantity - 1;
