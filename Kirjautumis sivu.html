@@ -82,11 +82,12 @@
                 var storedPassword = localStorage.getItem('password');
                 var enteredName = document.getElementById('login-name').value;
                 var enteredPassword = document.getElementById('login-password').value;
-                window.location.href = "index.html"
+               
         
                 if (enteredName === storedName && enteredPassword === storedPassword) {
                     document.getElementById('user-name').innerText = storedName;
                     switchForm('user-info');
+                    window.location.href = "index.html"
                 } else {
                     alert('Salasana tai nimi on väärin tai sinulla ei ole olemassa olevaa käyttäjää. Yritä uudelleen!');
                 }
