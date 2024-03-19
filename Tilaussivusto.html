@@ -402,28 +402,28 @@
                         </div>
                         <div class="drink" id="coca" onclick="addToOrder('Coca Cola', '3.60')">
                             <img src="images/coca.png" alt="coca">
-                            <span class="drink-nimi">Coca Cola 0,25 l</span> <span class="drink-hinta"><span class="price-background">3,60 €</span> </span>                            
+                            <span class="drink-nimi">Coca Cola 0,25 l</span> <span class="drink-hinta"><span class="price-background">3,60 €</span> </span>
                             <ul class="quantity-btn">
                                 <button class="quantity-btn" onClick="decrementQuantity('coca')">-</button>
-                                <span class="cocaQuantity" class="quantity">0</span>
+                                <span id="cocaQuantity" class="quantity">0</span> 
                                 <button class="quantity-btn" onClick="incrementQuantity('coca')">+</button>                            
                             </ul>
                         </div>
-                        <div class="drink" id="twistup" onclick="addToOrder('Twist Up', '3.70')">
+                        <div class="drink" id="twistup" onclick="addToOrder('Twist Up', '2.70')">
                             <img src="images/twistup.png" alt="twistup">
-                            <span class="drink-nimi">Twist Up 2 l</span> <span class="drink-hinta"><span class="price-background">3,70 €</span> </span>                            
+                            <span class="drink-nimi">Twist Up 2 l</span> <span class="drink-hinta"><span class="price-background">2,70 €</span> </span>
                             <ul class="quantity-btn">
                                 <button class="quantity-btn" onClick="decrementQuantity('twistup')">-</button>
-                                <span class="twistupQuantity" class="quantity">0</span>
+                                <span id="twistupQuantity" class="quantity">0</span> 
                                 <button class="quantity-btn" onClick="incrementQuantity('twistup')">+</button>                            
                             </ul>
                         </div>
                         <div class="drink" id="vesi" onclick="addToOrder('Vesi', '2.10')">
                             <img src="images/vesi.png" alt="vesi">
-                            <span class="drink-nimi">Vesi 500 ml</span> <span class="drink-hinta"><span class="price-background">2,10 €</span> </span>                            
+                            <span class="drink-nimi">Vesi 500 ml</span> <span class="drink-hinta"><span class="price-background">2,10 €</span> </span>
                             <ul class="quantity-btn">
                                 <button class="quantity-btn" onClick="decrementQuantity('vesi')">-</button>
-                                <span class="vesiQuantity" class="quantity">0</span>
+                                <span id="vesiQuantity" class="quantity">0</span> 
                                 <button class="quantity-btn" onClick="incrementQuantity('vesi')">+</button>                            
                             </ul>
                         </div>
@@ -432,7 +432,7 @@
                             <span class="drink-nimi">Maito 1 l</span> <span class="drink-hinta"><span class="price-background">2,30 €</span> </span>
                             <ul class="quantity-btn">
                                 <button class="quantity-btn" onClick="decrementQuantity('maito')">-</button>
-                                <span class="maitoQuantity" class="quan">0</span>
+                                <span id="maitoQuantity" class="quantity">0</span> 
                                 <button class="quantity-btn" onClick="incrementQuantity('maito')">+</button>                            
                             </ul>
                         </div>
