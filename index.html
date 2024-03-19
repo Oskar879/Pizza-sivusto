@@ -23,10 +23,6 @@
 			  	<div class="collapse navbar-collapse" id="navbarText">
 			    	<ul class="navbar-nav ml-auto">
 
-						<div id="user-info" style="display:none;">
-							<a>Tervetuloa, <span id="user-name"></span>! <button onclick="logout()" class="Kirjauduulosnappi">Kirjaudu ulos</button></a>
-						</div>
-
 			      		<li class="nav-item">
 			        		<a class="nav-link" href="#Welcome">Tervetuloa</a>
 			      		</li>
@@ -40,10 +36,7 @@
 					    <li class="nav-item">
 					    	<a class="nav-link" href="#OurLocation">Sijaintimme</a>
 							
-					    </li>				
-						<li class="nav-item">
-							<a class="nav-link" href="#login">Rekisteröidy</a>
-						</li>	    
+					    </li>					    
 				    </ul>
 				</div>
 			</nav>
@@ -188,11 +181,8 @@
 					<p style="font-size: 7px">ps, this address is real</p>
 				</div>
 			</div>
-
+			<!--- End of Our Location -->
 			<head>
-				<meta charset="UTF-8">
-				<meta name="viewport" content="width=device-width, initial-scale=1.0">
-				<title>Login and Registration</title>
 				<style>
 					body {
 						font-family: Arial, sans-serif;
@@ -245,100 +235,7 @@
 					}
 				</style>
 			</head>
-			
-			<login id="login">
-				<div class="container1" id="register-container">
-					<h2>Rekisteröidy</h2>
-					<form id="register-form">
-						<label for="register-name">Nimi:</label>
-						<input type="text" id="register-name" required>
-						<p id="name-error" style="color:red"></p>
-						<label for="register-password">Salasana:</label>
-						<input type="password" id="register-password" required>
-						<p id="password-error" style="color:red"></p>
-						<button type="button" onclick="register()">Rekisteröidy</button>
-					</form>
-					<button onclick="switchForm('login-container')" id="b1">Onko jo käyttäjä? Kirjaudu tästä sisään!</button>
-				</div>
-				<div class="container" id="login-container" style="display:none;">
-					<h2>Kirjaudu sisään</h2>
-					<form id="login-form">
-						<label for="login-name">Nimi:</label>
-						<input type="text" id="login-name" required>
-						<label for="login-password">Salasana:</label>
-						<input type="password" id="login-password" required>
-						<button type="button" onclick="login()">Kirjaudu sisään</button>
-					</form>
-					<button onclick="switchForm('register-container')">Eikö sinulla ole käyttäjää? Rekisteröidy täältä!</button>
-				</div>
-			</login>
-			<script>
-				function register() {
-					var name = document.getElementById('register-name').value;
-					var password = document.getElementById('register-password').value;
-					var error = document.getElementById('password-error')
-					var validpass = true 
-					var validname = true
-					var error2 = document.getElementById('name-error')
-
-					if (password.trim() === '') {
-							error.textContent = 'Salasana ei voi olla tyhjä'
-							validpass = false
-						} else if (password.length < 3) {
-							error.textContent = 'Salasana tulee olla vähintään 3 kirjainta'
-							validpass = false
-						} else {
-							error.textContent = ''
-						}
-					if (!name.trim()) {
-						error2.textContent = 'Nimi ei voi olla tyhjä'
-						validname = false
-					}else if (name.length < 3) {
-						error2.textContent = 'Nimen tulee olla vähintään 3 kirjainta'
-						validname = false
-					} else {
-					   error2.textContent = ''
-					}
-					
-					if (validpass && validname) {
-						localStorage.setItem('username', name);
-						localStorage.setItem('password', password);
-				
-						switchForm('login-container', true);
-					}
-				}
-			
-				function login() {
-					var storedName = localStorage.getItem('username');
-					var storedPassword = localStorage.getItem('password');
-					var enteredName = document.getElementById('login-name').value;
-					var enteredPassword = document.getElementById('login-password').value;
-			
-					if (enteredName === storedName && enteredPassword === storedPassword) {
-						document.getElementById('user-name').innerText = storedName;
-						switchForm('user-info');
-					} else {
-						alert('Salasana tai nimi on väärin tai sinulla ei ole olemassa olevaa käyttäjää. Yritä uudelleen!');
-					}
-				}
-			
-				function logout() {
-					document.getElementById('user-name').innerText = '';
-					switchForm('login-container');
-				}
-			
-				function switchForm(formToShow) {
-					
-					document.getElementById('register-container').style.display = 'none';
-					document.getElementById('login-container').style.display = 'none';
-					document.getElementById('user-info').style.display = 'none';
-			
-					document.getElementById(formToShow).style.display = 'block';
-
-					document.getElementById('b1').style.display = 'none'
-				}
-			</script>						
-			<!--- End of Our Location -->			
+												
 		</div>
 	
 	
