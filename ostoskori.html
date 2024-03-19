@@ -121,14 +121,10 @@
             // Calculate the new total price
             total -= parseFloat(removedItem.price); 
             // Update the displayed total on the current page
-            document.getElementById("total").textContent = total.toFixed(2) + " €";
-            // Update the total price on the parent page (tilaussivusto)
-            if (window.opener) {
-            window.opener.updateTotal(total);
-            }
+            document.getElementById("total").textContent = total.toFixed(2) + " €";           
             // Reload the page to reflect the changes
-        location.reload();
-    }
+            location.reload();
+        }
         // Function to prompt the user for their address when the checkbox is clicked
         function promptAddress() {
             var deliveryCheckbox = document.getElementById("delivery-checkbox");

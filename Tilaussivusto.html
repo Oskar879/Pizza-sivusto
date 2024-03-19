@@ -471,38 +471,16 @@
                         }
 
                         function decrementQuantity(drinkId) {
-                        var quantityElement = document.getElementById(drinkId + "Quantity");
-                        var currentQuantity = parseInt(quantityElement.textContent);
-                        if (currentQuantity > 0) {
-                        quantityElement.textContent = currentQuantity - 1;
-                        if (currentQuantity === 1) {
-                            removeFromOrder(drinkId);
-                            // Call removeDrinkItem function in the parent window (ostoskori.html)
-                            if (window.opener) {
-                                window.opener.removeDrinkItem(drinkId);
+                            var quantityElement = document.getElementById(drinkId + "Quantity");
+                            var currentQuantity = parseInt(quantityElement.textContent);
+                            if (currentQuantity > 0) {
+                                quantityElement.textContent = currentQuantity - 1;
+                                if (currentQuantity === 1) {
+                                    removeItem(drinkId);                                                                        
                                 }
                             }
-                        }
-                    }  
-                    
-                        function removeFromOrder(drinkId) {
-                            var order = JSON.parse(localStorage.getItem("order")) || [];
-                            var indexToRemove = -1;
-                            for (var i = 0; i < order.length; i++) {
-                                if (order[i].name === drinkId) {
-                                    indexToRemove = i;
-                                    break;
-                                }
-                            }
-                            if (indexToRemove !== -1) {
-                                var removedItem = order.splice(indexToRemove, 1)[0];
-                                total -= parseFloat(removedItem.price);
-                                localStorage.setItem("order", JSON.stringify(order)); // Update order in localStorage
-                                localStorage.setItem("total", total); // Update total in localStorage
-                                document.getElementById("yhteensa").textContent = total.toFixed(2) + " €"; // Update displayed total
-                            }
-                        }
-                        
+                        }  
+                                                                                            
                         function initializeTotal() {                            
                             total = parseFloat(localStorage.getItem("total")) || 0;
                             document.getElementById("yhteensa").textContent = total.toFixed(2) + " €";
