@@ -9,7 +9,7 @@
 		<link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
     </head>
  <body>
-        <div class="container">
+      <div class="container">
         <login id="login">
             <div class="container1" id="register-container">
                 <h2>Rekisteröidy</h2>
@@ -22,6 +22,7 @@
                     <p id="password-error" style="color:red"></p>
                     <button type="button" onclick="register()">Rekisteröidy</button>
                 </form>
+                <p></p>
                 <button onclick="switchForm('login-container')" id="b1">Onko jo käyttäjä? Kirjaudu tästä sisään!</button>
             </div>
             <div class="container" id="login-container" style="display:none;">
@@ -33,6 +34,7 @@
                     <input type="password" id="login-password" required>
                     <button type="button" onclick="login()">Kirjaudu sisään</button>
                 </form>
+                <p></p>
                 <button onclick="switchForm('register-container')">Eikö sinulla ole käyttäjää? Rekisteröidy täältä!</button>
             </div>
             <div id="user-info" style="display:none;">
@@ -80,6 +82,7 @@
                 var storedPassword = localStorage.getItem('password');
                 var enteredName = document.getElementById('login-name').value;
                 var enteredPassword = document.getElementById('login-password').value;
+                window.location.href = "index.html"
         
                 if (enteredName === storedName && enteredPassword === storedPassword) {
                     document.getElementById('user-name').innerText = storedName;
@@ -112,6 +115,9 @@
 						margin: 0;
 						padding: 0;
 						background-color: #da4949;
+                        font-size: 15px;
+                        position: inherit;
+                        line-height: 1.5;
 					}
              button {
 						padding: 10px;
@@ -135,9 +141,15 @@
 						border-radius: 99px;
 						margin: 50px auto;
 					}
+                    input {
+                        width: 100%;
+                        padding: 10px;
+                        margin-bottom: 15px;
+                        box-sizing: border-box;
+                    }
             </style>
           </head>						
-        </div>
+      </div>
     </div>
   </div>
 </body>
