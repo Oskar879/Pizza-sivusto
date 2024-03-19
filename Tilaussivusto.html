@@ -470,16 +470,10 @@
                                                        
                         }
 
-                        function decrementQuantity() {
+                        function decrementQuantity(drinkId) {
                             var quantityElement = document.getElementById(drinkId + "Quantity");
                             var currentQuantity = parseInt(quantityElement.textContent);
-                            if (currentQuantity > 0) {
-                                currentQuantity--;
-                                quantityElement.textContent = currentQuantity;                                
-                            localStorage.setItem(drinkId + 'Quantity', currentQuantity);
-                            } else {
-                                alert('No more items to remove!');
-                            }
+                            quantityElement.textContent = currentQuantity - 1;
                         }
                                                                                             
                         function initializeTotal() {                            
