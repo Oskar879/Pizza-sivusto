@@ -11,33 +11,42 @@
             <span class="arrow"></span>
         </button>
 
-        <toppings>
+        <toppings class="toppings">
+            <div class="head">
             <h2>Select Toppings</h2>
-            <select name="topping" id="topping" multiple>
-                <option value="pepperoni">Pepperoni + 1,00€</option>
-                <option value="shrimp">Katkarapu + 1,50€</option>
-                <option value="tuna">Tonnikala + 1,00€</option>
-                <option value="mushroom">Sieniä + 0,50€</option>
-                <option value="pineapple">Ananas + 0,75€</option>
-                <option value="ham">Kinkku + 1,25£</option>
-                <option value="meatball">Lihapulla + 1,50€</option>
-                <option value="pepper">Paprika + 0,75€</option>
-                <option value="onion">Sipuli + 1,00€</option>
-                <option value="bacon">Pekoni + 2,00€</option>
-            </select>
-            <select name="cheese" id="cheese" multiple>
-                <option value="mozzarella">Mozzarella + 2,00€</option>
-                <option value="cheddar">Cheddar + 1,50€</option>
-                <option value="blch">Sinihomejuusto + 2,50€</option>
-            </select>
-            <options class="options">
+            </div>
+            <div class="options">
+                <div class="category">
+                    <label id="label"><input type="checkbox" name="topping" value="pepperoni" class="topping">Pepperoni + 1,00€</label>
+                    <label id="label"><input type="checkbox" name="topping" value="shrimp" class="topping">Katkarapu + 1,50€</label>
+                    <label id="label"><input type="checkbox" name="topping" value="tuna" class="topping">Tonnikala + 1,00€</label>
+                    <label id="label"><input type="checkbox" name="topping"  value="mushroom" class="topping">Sieniä + 0,50€</label>
+                    <label id="label"><input type="checkbox" name="topping"value="pineapple" class="topping">Ananas + 0,75€</label>
+                    <label id="label"><input type="checkbox" name="topping"value="ham" class="topping">Kinkku + 1,25£</label>
+                    <label id="label"><input type="checkbox" name="topping"value="meatball" class="topping">Lihapulla + 1,50€</label>
+                    <label id="label"><input type="checkbox" name="topping"value="pepper" class="topping">Paprika + 0,75€</label>
+                    <label id="label"><input type="checkbox" name="topping"value="onion" class="topping">Sipuli + 1,00€</label>
+                    <label id="label"><input type="checkbox" name="topping"value="bacon" class="topping">Pekoni + 2,00€</label>
+                    </div>
+                    <div class="head">
+                    <h2>Select Cheese(s)</h2>
+                    </div>
+                    <label id="label"><input type="checkbox" name="cheese" value="mozzarella" class="cheese">Mozzarella + 2,00€</label>
+                    <label id="label"><input type="checkbox" name="cheese" value="cheddar" class="cheese">Cheddar + 1,50€</label>
+                    <label id="label"><input type="checkbox" name="cheese" value="blch" class="cheese">Sinihomejuusto + 2,50€</label>
+                    <label id="label"><input type="checkbox" name="cheese" value="montasio" class="cheese">Montasio + 3,00€</label>
+                    <div class="head">
+                    <h2>Select Sauce</h2>
+                    </div>
                     <label id="label"><input type="checkbox" name="sauce" value="garlic" class="sauces">Valkosipuli + 1,00€</label>
                     <label id="label"><input type="checkbox" name="sauce" value="extra" class="sauces">Extra + 1,50€</label>
                     <label id="label"><input type="checkbox" name="sauce" value="none" class="sauces">Ei kastiketta + 0,00€</label>
-
+                    <div class="head">
+                    <h2>Select dough</h2>
+                    </div>
                     <label id="label"><input type="checkbox" name="dough" value="gluten" class="doughs">Tavallinen + 0,00€</label>
                     <label id="label"><input type="checkbox" name="dough" value="glutent" class="doughs">Gluteeniton + 1,50€</label>
-                </options>
+            </div>
 
                 <div id="opt"></div>
                 <div id="che"></div>

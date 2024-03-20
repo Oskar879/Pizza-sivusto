@@ -32,6 +32,7 @@ $marginpx: 50px;
 $padding: 200px;
 $borderradius: 99px;
 $boxshadow: 0 0 10px rgba(0, 0, 0, 0.1);
+$flex: 0 1;
 body {
     background-color: $backgroundColor;
     font-family: $fontfamily;
@@ -57,13 +58,17 @@ h2 {
 }
 
 .sauces,
-.doughs {
+.doughs,
+.topping,
+.cheese {
     margin-right: $marginright;
     margin-bottom: $marginbottom; 
     
 }
 .sauces input,
-.doughs input {
+.doughs input,
+.topping input,
+.cheese input {
     display: $display; 
     align-items: $alignitems; 
     margin-right: $margin-right;
@@ -90,3 +95,11 @@ h2 {
     transform: $transform;
 }
 
+.category {
+    flex: $flex calc(50% -10px);
+    margin-bottom: calc($marginbottom +35)
+}
+.head {
+    flex: 0 1 100%;
+    margin-top: 20px;
+}
