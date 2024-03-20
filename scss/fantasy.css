@@ -15,22 +15,25 @@ h2 {
 .sauces,
 .doughs,
 #label {
-  display: flex;
-  flex-direction: column;
+  display: inline-grid;
   width: 30%;
   align-items: center;
   justify-content: center;
-  text-align: inherit;
+  text-align: right ;
 }
 
 .sauces,
-.doughs {
+.doughs,
+.topping,
+.cheese {
   margin-right: 180px;
   margin-bottom: -15px;
 }
 
 .sauces input,
-.doughs input {
+.doughs input,
+.topping input,
+.cheese input {
   display: flex;
   align-items: center;
   margin-right: 10px;
@@ -57,4 +60,19 @@ h2 {
   border-left: 3px solid #000000;
   border-bottom: 3px solid #000000;
   transform: rotate(45deg);
+}
+
+.category {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+}
+
+.head {
+  flex: 0 1 100%;
+  margin-top: 20px;
 }/*# sourceMappingURL=fantasy.css.map */
+.toppings {
+  display:flex;
+  flex-direction: row;
+}
