@@ -492,18 +492,37 @@
                             var quantityElement = document.getElementById(drinkId + 'Quantity');
                             var currentQuantity = parseInt(quantityElement.textContent);
                             if (currentQuantity > 0) {
-                                quantityElement.textContent = currentQuantity - 1;                                
+                                quantityElement.textContent = currentQuantity - 1;
+
+                                // Remove the corresponding drink item from the order list
+                                var order = JSON.parse(localStorage.getItem("order")) || [];
+                                var indexToRemove = -1;
+                                order.forEach(function(item, index) {
+                                    if (item.name === drinkId && parseFloat(item.price) === parseFloat(price)) {
+                                        indexToRemove = index;
+                                    }
+                                });
+                                if (indexToRemove !== -1) {
+                                    order.splice(indexToRemove, 1);
+                                    localStorage.setItem("order", JSON.stringify(order));
+                                }
+
+                                // Calculate the new total price
+                                total -= parseFloat(price);
+                                localStorage.setItem("total", total);
+                                document.getElementById("yhteensa").textContent = total.toFixed(2) + " €";
+        
+                                // Remove the corresponding drink item from the displayed order
+                                var cartItems = document.getElementById("cart-items");
+                                var items = cartItems.getElementsByTagName("ul");
+                                for (var i = 0; i < items.length; i++) {
+                                        var itemText = items[i].textContent;
+                                        if (itemText.includes(drinkId)) {
+                                        items[i].remove();
+                                        break;
+                                    }
+                                }
                             }
-                            var item = document.createElement("ul");
-                            item.textContent = drink.drinkId + " - " + drinkId.price + " €";
-                            var removeButton = document.createElement("button");
-                            removeButton.textContent = "-";
-                            removeButton.onclick = function() {
-                                removeItem(index);
-                            };
-                            item.appendChild(removeButton);
-                            cartItems.appendChild(item);
-                            total += parseFloat(drinkId.price);
                         }
                                                                     
                         function initializeTotal() {                            
