@@ -63,6 +63,14 @@ sauces.forEach(checkbox => {
                 }
             });
             
+        }else if (val.includes('extra')) {
+            sauces.forEach(checkbox => {
+                if (checkbox.value === 'garlic') {
+                    checkbox.disabled = false
+                } else if (checkbox.value === 'none') {
+                    checkbox.disabled = true;
+                }
+            })
         } else {
             sauces.forEach(checkbox => {
                 checkbox.disabled = false;
