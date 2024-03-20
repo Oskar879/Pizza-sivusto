@@ -381,13 +381,13 @@
                     </div>
                 <h1>Juomat</h1>                    
                     <div class="drink-container">                        
-                        <div class="drink" id="mirinda">
+                        <div class="drink" id="mirinda" onclick="addToOrder ('Mirinda', '3.50')">
                             <img src="images/mirinda.png" alt="mirinda">
                             <span class="drink-nimi">Mirinda 0,5 l</span> <span class="drink-hinta"><span class="price-background">3,50 €</span> </span>                            
                             <ul class="quantity-btn">
-                                <button class="quantity-btn" onClick="decrementQuantity('mirinda', '3.50')">-</button>
+                                <button class="quantity-btn" onClick="decrementQuantity('mirinda')">-</button>
                                 <span id="mirindaQuantity" class="quantity">0</span>
-                                <button class="quantity-btn" onclick="incrementQuantity('Mirinda', 'mirinda', '3.50')">+</button>                            
+                                <button class="quantity-btn" onclick="incrementQuantity('mirinda')">+</button>                            
                             </ul>
                         </div>                            
                         <div class="drink" id="pepsi" onclick="addToOrder('Pepsi', '3.40')">
@@ -462,24 +462,31 @@
                         localStorage.setItem("total", total);
                         document.getElementById("yhteensa").textContent = total.toFixed(2) + " €";
                         }     
-
-                        function incrementQuantity(drinkId, name, price) {
-                            var drink = {
-                                drinkId: drinkId,
-                                name: name,
-                                price
-                            }
-                            var quantityElement = document.getElementById(drinkId + "Quantity");
-                            var currentQuantity = parseInt(quantityElement.textContent);                            
-                            quantityElement.textContent = currentQuantity + 1;
-                            addToOrder(drinkId, name, price);
-                                                       
+                        
+                        function incrementQuantity(drinkId) {
+                            var quantityElement = document.getElementById(drinkId).getElementsByClassName("quantity")[0];
+                            var quantity = parseInt(quantityElement.textContent);
+                            quantity++;
+                            quantityElement.textContent = quantity;
+                            updateTotalPrice(drinkId, quantity);
                         }
 
-                        function decrementQuantity(drinkId, name, price) {
-                            var quantityElement = document.getElementById(drinkId + "Quantity");
-                            var currentQuantity = parseInt(quantityElement.textContent);
-                            quantityElement.textContent = currentQuantity - 1;
+                        function decrementQuantity(drinkId) {
+                            var quantityElement = document.getElementById(drinkId).getElementsByClassName("quantity")[0];
+                            var quantity = parseInt(quantityElement.textContent);
+                            if (quantity > 0) {
+                                quantity--;
+                                quantityElement.textContent = quantity;
+                                updateTotalPrice(drinkId, quantity);
+                            }
+                        }
+
+                        function updateTotalPrice(drinkId, quantity) {
+                            var priceElement = document.getElementById(drinkId).getElementsByClassName("drink-hinta")[0].getElementsByTagName("span")[0];
+                            var price = parseFloat(priceElement.textContent.replace(" €", "").replace(",", "."));
+                            var totalPrice = price * quantity;
+                            total += totalPrice;
+                            document.getElementById("yhteensa").textContent = total.toFixed(2) + " €";
                         }
                                                                                             
                         function initializeTotal() {                            
