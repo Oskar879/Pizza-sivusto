@@ -23,7 +23,9 @@
 			  	<div class="collapse navbar-collapse" id="navbarText">
 			    	<ul class="navbar-nav ml-auto" id="user-name">
 						<div id="user-info">
-							<a>Tervetuloa, <span id="login-name"></span>! <button onclick="logout()" class="Kirjauduulosnappi">Kirjaudu ulos</button></a>
+							<li class="nav-item" id="logged">
+						Tervetuloa,	<a><span id="login-name"></span>! <button onclick="logout()" class="Kirjauduulosnappi">Kirjaudu ulos</button></a>
+							</li>
 						</div>
 			      		<li class="nav-item">
 			        		<a class="nav-link" href="#Welcome">Tervetuloa</a>
@@ -38,10 +40,29 @@
 					    <li class="nav-item">
 					    	<a class="nav-link" href="#OurLocation">Sijaintimme</a>
 							
-					    </li>					    
+					    </li>					   
+						<li class="nav-item">
+							<a class="nav-link" href="kirjautumissivu.html">Kirjautuminen</a>
+						</li> 
 				    </ul>
 				</div>
 			</nav>
+
+			<script>
+				window.onload = function () {
+					var username = localStorage.getItem('username');
+					if (username) {
+						document.getElementById('login-name').textContent = username;
+						document.getElementById('user-info').style.display = 'block';
+					} else {
+						document.getElementById('user-info').style.display = 'none';
+					}
+				}
+
+				function logout() {
+                document.getElementById('logged').innerText = '';
+            }
+			</script>
 			<!--- End Navigation Bar -->
 			<!--- Start Carousel -->
 			<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
