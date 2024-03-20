@@ -211,13 +211,19 @@
 				</div>				
 			</div>
 			<div class="row">
-				<form action="/submit_feedback" method="post">
-					<label for="name">Nimi: </label><br>
-					<input type="text" id="name" name="name" required><br>
-					<label for="email">Sähköposti:</label><br>
-					<input type="email" id="email" name="email" required><br>
-					<label for="feedback">Palaute:</label><br>
-					<textarea id="feedback" name="feedback" rows="4" cols="50" required></textarea><br><br>
+				<form action="/submit_feedback" method="post" class="feedback-form">
+					<div class="form-group">
+						<label for="name">Nimi: </label><br>
+						<input type="text" id="name" name="name" required><br>
+					</div>
+					<div class="form-group">
+						<label for="email">Sähköposti:</label><br>
+						<input type="email" id="email" name="email" required><br>
+					</div>
+					<div class="form-group">
+						<label for="feedback">Palaute:</label><br>
+						<textarea id="feedback" name="feedback" rows="4" cols="50" required></textarea><br><br>
+					</div>
 					<input type="submit" value="Lähetä">
 				</form>
 			</div>
@@ -272,6 +278,16 @@
 						text-align: center;
 						position: inherit;
 						left: 300px;
+					}
+					.feedback-form {
+						margin: 0 auto;
+						align-items: center;
+					}
+					.form-group {
+						margin-bottom: 20px;
+					}
+					.text.left {
+						text-align: left;
 					}
 				</style>
 			</head>
