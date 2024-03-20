@@ -454,7 +454,8 @@
                             var pizza = {
                                 name: name,
                                 price: price,                                
-                                ingredients: ingredients                                             
+                                ingredients: ingredients,  
+                                quantity: 1                                           
                         };
                         
                         var order = JSON.parse(localStorage.getItem("order")) || [];
@@ -469,7 +470,7 @@
                         function incrementQuantity(drinkId, price) {
                             var drink = {
                                 drinkId: drinkId,
-                                price: price
+                                price: price                                
                             };
                         var quantityElement = document.getElementById(drinkId + 'Quantity');
                         var currentQuantity = parseInt(quantityElement.textContent);
