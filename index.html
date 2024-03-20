@@ -215,15 +215,15 @@
 			<div class="row">
 				<form action="palaute.html" method="post" class="feedback-form">
 					<div class="form-group">
-						<label for="name">Nimi: </label><br>
+						<label for="name"><strong>Nimi</strong> <span style="color: red;">*</span> </label><br>
 						<input type="text" id="name" name="name" required><br>
 					</div>
 					<div class="form-group">
-						<label for="email">Sähköposti:</label><br>
+						<label for="email"><strong>Sähköposti</strong> <span style="color: red;">*</span> </label><br>
 						<input type="email" id="email" name="email" required><br>
 					</div>
 					<div class="form-group">
-						<label for="satisfaction">Valittu yleinen tyytyväisyyden taso (1-5):</label><br>
+						<label for="satisfaction"><strong>Valittu yleinen tyytyväisyyden taso (1-5):</strong></label><br>
 						<div class="satisfaction-level">
 							<input type="radio" id="satisfaction1" name="satisfaction" value="1" required>
 							<label for="satisfaction1" class="circle">1</label>
@@ -238,7 +238,7 @@
 						</div>			
 					</div>
 					<div class="form-group">
-						<label for="feedback">Palaute:</label><br>
+						<label for="feedback"><strong>Kirjoita palautteesi: </strong> <span style="color: red;">*</span></label><br>
 						<textarea id="feedback" name="feedback" rows="4" cols="50" required></textarea><br><br>
 					</div>					
 					<input type="submit" value="Lähetä">
@@ -339,7 +339,7 @@
     				display: none; /* Hide the actual radio buttons */
 					}
 
-					input[type="radio"]:checked:hover + label {
+					input[type="radio"]:checked + label {
     				background-color: #4caf50; /* Change color when selected */
     				color: #fff; /* Change text color when selected */
 					}														
@@ -356,8 +356,7 @@
 		<script type="text/javascript" src="js/map.js"></script>
 		<script type="text/javascript" src="js/smooth-scroll.js"></script>
 		<script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
-		<script type="text/javascript" src="js/image-effect.js"></script>
-		
+		<script type="text/javascript" src="js/image-effect.js"></script>		
 	    </script>
   	</body>
 </html>
