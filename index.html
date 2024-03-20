@@ -221,9 +221,13 @@
 						<input type="email" id="email" name="email" required><br>
 					</div>
 					<div class="form-group">
+						<label for="satisfaction">Valittu yleinen tyytyväisyyden taso (1-5):</label><br>
+						<input type="number" id="satisfaction" name="satisfaction" min="1" max="5" required><br><br>
+					</div>
+					<div class="form-group">
 						<label for="feedback">Palaute:</label><br>
 						<textarea id="feedback" name="feedback" rows="4" cols="50" required></textarea><br><br>
-					</div>
+					</div>					
 					<input type="submit" value="Lähetä">
 				</form>
 			</div>
@@ -289,6 +293,19 @@
 					.text.left {
 						text-align: left;
 					}
+					input[type="submit"] {
+					padding: 10px;
+    				background-color: #4caf50;
+    				color: #fff;
+    				border: none;
+    				border-radius: 20px;
+    				cursor: pointer;
+    				text-align: center;
+					}
+
+					input[type="submit"]:hover {
+    				background-color: #45a049;
+					}					
 				</style>
 			</head>
 			</script>									
