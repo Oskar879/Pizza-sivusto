@@ -198,7 +198,7 @@
 				<div id="map" class="col-md-9 map"></div>
 				<div class="col-md-3">
 					<h3>Osoite:</h3>
-					<p>Viale Enrico Fermi, 20159 Milan, Mailand (Lombardia) </p>
+					<p>Keskikatu 3, 04200 Kerava </p>
 					<h3>Sähköposti:</h3>
 					<p>pizzaplaceb@gmail.com</p>
 					<p style="font-size: 7px">ps, this address is real</p>
@@ -222,7 +222,18 @@
 					</div>
 					<div class="form-group">
 						<label for="satisfaction">Valittu yleinen tyytyväisyyden taso (1-5):</label><br>
-						<input type="number" id="satisfaction" name="satisfaction" min="1" max="5" required><br><br>
+						<div class="satisfaction-level">
+							<input type="radio" id="satisfaction1" name="satisfaction" value="1" required>
+							<label for="satisfaction1" class="circle">1</label>
+							<input type="radio" id="satisfaction2" name="satisfaction" value="2">
+							<label for="satisfaction2" class="circle">2</label>
+							<input type="radio" id="satisfaction3" name="satisfaction" value="3">
+							<label for="satisfaction3" class="circle">3</label>
+							<input type="radio" id="satisfaction4" name="satisfaction" value="4">
+							<label for="satisfaction4" class="circle">4</label>
+							<input type="radio" id="satisfaction5" name="satisfaction" value="5">
+							<label for="satisfaction5" class="circle">5</label>
+						</div>			
 					</div>
 					<div class="form-group">
 						<label for="feedback">Palaute:</label><br>
@@ -305,7 +316,31 @@
 
 					input[type="submit"]:hover {
     				background-color: #45a049;
-					}					
+					}
+					.satisfaction-level {
+    				display: flex;
+					}
+
+					.circle {
+    				display: inline-block;
+    				width: 30px;
+    				height: 30px;
+    				border-radius: 50%;
+    				border: 2px solid #4caf50;
+    				line-height: 30px;
+    				text-align: center;
+    				cursor: pointer;
+    				margin-right: 10px;
+					}
+
+					input[type="radio"] {
+    				display: none; /* Hide the actual radio buttons */
+					}
+
+					input[type="radio"]:checked + label {
+    				background-color: #4caf50; /* Change color when selected */
+    				color: #fff; /* Change text color when selected */
+					}														
 				</style>
 			</head>
 			</script>									
