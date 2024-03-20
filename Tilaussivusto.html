@@ -511,8 +511,16 @@
                                 localStorage.setItem("total", total);
                                 document.getElementById("yhteensa").textContent = total.toFixed(2) + " €";
         
-                                // Reload the page to reflect the changes
-                                location.reload();
+                                // Remove the corresponding drink item from the displayed order
+                                var cartItems = document.getElementById("cart-items");
+                                var items = cartItems.getElementsByTagName("ul");
+                                for (var i = 0; i < items.length; i++) {
+                                        var itemText = items[i].textContent;
+                                        if (itemText.includes(drinkId)) {
+                                        items[i].remove();
+                                        break;
+                                    }
+                                }
                             }
                         }
                                                                     
