@@ -28,6 +28,10 @@ $width3: 20px;
 $borderleft: 3px solid #000000;
 $borderbottom: 3px solid #000000;
 $transform: rotate(+45deg);
+$marginpx: 50px;
+$padding: 200px;
+$borderradius: 99px;
+$boxshadow: 0 0 10px rgba(0, 0, 0, 0.1);
 body {
     background-color: $backgroundColor;
     font-family: $fontfamily;
@@ -84,4 +88,11 @@ h2 {
     border-left: $borderleft;
     border-bottom: $borderbottom;
     transform: $transform;
+}
+.container {
+    margin: $marginpx;
+    padding: $padding;
+    background-color: $background-Color;
+    border-radius: $borderradius;
+    box-shadow: $boxshadow;
 }

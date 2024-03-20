@@ -3,7 +3,7 @@ body {
   font-family: Arial, sans-serif;
   text-align: webkit-center;
   text-align: -moz-center;
-  padding: 50px;
+  padding: 200px;
   flex-direction: column;
 }
 
@@ -57,4 +57,12 @@ h2 {
   border-left: 3px solid #000000;
   border-bottom: 3px solid #000000;
   transform: rotate(45deg);
+}
+
+.container {
+  margin: 50px;
+  padding: 200px;
+  background-color: #fff;
+  border-radius: 99px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }/*# sourceMappingURL=fantasy.css.map */
