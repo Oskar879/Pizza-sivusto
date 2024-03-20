@@ -34,7 +34,7 @@ h2 {
 .doughs input,
 .topping input,
 .cheese input {
-  display: flex;
+  display: grid;
   align-items: center;
   margin-right: 10px;
 }
@@ -73,6 +73,6 @@ h2 {
   margin-top: 20px;
 }/*# sourceMappingURL=fantasy.css.map */
 .toppings {
-  display:flex;
+  display:inherit;
   flex-direction: row;
 }
