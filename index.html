@@ -39,9 +39,11 @@
 					    	<a class="nav-link" href="#Menu">Menu</a>
 					    </li>
 					    <li class="nav-item">
-					    	<a class="nav-link" href="#OurLocation">Sijaintimme</a>
-							
-					    </li>					   
+					    	<a class="nav-link" href="#OurLocation">Sijaintimme</a>							
+					    </li>
+						<li class="nav-item">
+							<a class="nav-link" href="#Palaute">Palaute</a>
+						</li>					   
 				    </ul>
 				</div>
 			</nav>
@@ -201,6 +203,23 @@
 					<p>pizzaplaceb@gmail.com</p>
 					<p style="font-size: 7px">ps, this address is real</p>
 				</div>
+			</div>
+
+			<div class="row" id="Palaute">
+				<div class="col navMenu">
+					<h2 class="text-center">~ Palaute ~</h2>
+				</div>				
+			</div>
+			<div class="row">
+				<form action="/submit_feedback" method="post">
+					<label for="name">Nimi: </label><br>
+					<input type="text" id="name" name="name" required><br>
+					<label for="email">Sähköposti:</label><br>
+					<input type="email" id="email" name="email" required><br>
+					<label for="feedback">Palaute:</label><br>
+					<textarea id="feedback" name="feedback" rows="4" cols="50" required></textarea><br><br>
+					<input type="submit" value="Lähetä">
+				</form>
 			</div>
 			<!--- End of Our Location -->
 			<head>
