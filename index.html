@@ -195,10 +195,12 @@
 				</div>
 			</div>
 			<div class="row">
-				<div id="map" class="col-md-9 map"></div>
-				<div class="col-md-3">
+				<div id="map" class="col-md-9 map">
+					<iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1989.6177120012246!2d24.9706178!3d60.405847399999995!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4692007fb215e3e3%3A0xa83f9f479fcffb9d!2sKeskikatu%203%2C%2004200%20Kerava!5e0!3m2!1sen!2sfi!4v1586812096955!5m2!1sen!2sfi" style="width: 100%; height: 100%;"></iframe>
+				</div>				
+				<div class="col-md-3">					
 					<h3>Osoite:</h3>
-					<p>Viale Enrico Fermi, 20159 Milan, Mailand (Lombardia) </p>
+					<p>Keskikatu 3, 04200 Kerava </p>
 					<h3>Sähköposti:</h3>
 					<p>pizzaplaceb@gmail.com</p>
 					<p style="font-size: 7px">ps, this address is real</p>
@@ -337,7 +339,7 @@
     				display: none; /* Hide the actual radio buttons */
 					}
 
-					input[type="radio"]:checked + label {
+					input[type="radio"]:checked:hover + label {
     				background-color: #4caf50; /* Change color when selected */
     				color: #fff; /* Change text color when selected */
 					}														
@@ -355,7 +357,7 @@
 		<script type="text/javascript" src="js/smooth-scroll.js"></script>
 		<script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
 		<script type="text/javascript" src="js/image-effect.js"></script>
-		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFZjOV0KA68G2YAh-rn7I3qKqCQEh_Ja0&callback=myMap">
+		
 	    </script>
   	</body>
 </html>
