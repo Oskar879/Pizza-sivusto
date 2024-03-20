@@ -57,6 +57,13 @@
         ul{
             color: #000000;
         }
+        #delivery-address {
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            margin-top: 10px;
+            width: 200px;
+        }
     </style>
 </head>
 <body>
@@ -161,6 +168,7 @@
             // Reload the page to reflect the changes
             location.reload();
         }
+        
         // Function to prompt the user for their address when the checkbox is clicked
         function promptAddress() {
             var deliveryCheckbox = document.getElementById("delivery-checkbox");

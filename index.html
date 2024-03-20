@@ -39,9 +39,11 @@
 					    	<a class="nav-link" href="#Menu">Menu</a>
 					    </li>
 					    <li class="nav-item">
-					    	<a class="nav-link" href="#OurLocation">Sijaintimme</a>
-							
-					    </li>					   
+					    	<a class="nav-link" href="#OurLocation">Sijaintimme</a>							
+					    </li>
+						<li class="nav-item">
+							<a class="nav-link" href="#Palaute">Palaute</a>
+						</li>					   
 				    </ul>
 				</div>
 			</nav>
@@ -202,6 +204,33 @@
 					<p style="font-size: 7px">ps, this address is real</p>
 				</div>
 			</div>
+
+			<div class="row" id="Palaute">
+				<div class="col navMenu">
+					<h2 class="text-center">~ Palaute ~</h2>
+				</div>				
+			</div>
+			<div class="row">
+				<form action="/submit_feedback" method="post" class="feedback-form">
+					<div class="form-group">
+						<label for="name">Nimi: </label><br>
+						<input type="text" id="name" name="name" required><br>
+					</div>
+					<div class="form-group">
+						<label for="email">Sähköposti:</label><br>
+						<input type="email" id="email" name="email" required><br>
+					</div>
+					<div class="form-group">
+						<label for="satisfaction">Valittu yleinen tyytyväisyyden taso (1-5):</label><br>
+						<input type="number" id="satisfaction" name="satisfaction" min="1" max="5" required><br><br>
+					</div>
+					<div class="form-group">
+						<label for="feedback">Palaute:</label><br>
+						<textarea id="feedback" name="feedback" rows="4" cols="50" required></textarea><br><br>
+					</div>					
+					<input type="submit" value="Lähetä">
+				</form>
+			</div>
 			<!--- End of Our Location -->
 			<head>
 				<style>
@@ -254,6 +283,29 @@
 						position: inherit;
 						left: 300px;
 					}
+					.feedback-form {
+						margin: 0 auto;
+						align-items: center;
+					}
+					.form-group {
+						margin-bottom: 20px;
+					}
+					.text.left {
+						text-align: left;
+					}
+					input[type="submit"] {
+					padding: 10px;
+    				background-color: #4caf50;
+    				color: #fff;
+    				border: none;
+    				border-radius: 20px;
+    				cursor: pointer;
+    				text-align: center;
+					}
+
+					input[type="submit"]:hover {
+    				background-color: #45a049;
+					}					
 				</style>
 			</head>
 			</script>									
