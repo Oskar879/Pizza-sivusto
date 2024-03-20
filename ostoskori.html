@@ -68,21 +68,57 @@
         <h2>Yhteensä: <span id="total"></span></h2>
         <h3 id="cart-items"></h3> 
         <h2>Toimitustapa:</h2>
-        <input type="radio" id="pickup" name="delivery-method" value="pickup" onclick="toggleAddressInput(false)">
+        <input type="radio" id="pickup" name="delivery-method" value="pickup" onclick="toggleDeliveryOptions(false)">
         <label for="pickup">Nouto</label><br>
-        <input type="radio" id="delivery" name="delivery-method" value="delivery" onclick="promptAddress()">
+        <input type="radio" id="delivery" name="delivery-method" value="delivery" onclick="toggleDeliveryOptions(true)">
         <label for="delivery">Kuljetus</label><br>
         <input type="text" id="delivery-address" placeholder="Syötä toimitusosoite" style="display: none;"><br>
+        <div id="delivery-options" style="display: none;">
+            <button onclick="setDeliveryTime(5)">3 km tai vähemmän (5 min)</button>
+            <button onclick="setDeliveryTime(10)">3-10 km (10 min)</button>
+            <button onclick="setDeliveryTime(20)">10-20 km (20 min)</button>
+            <button onclick="setDeliveryTime(30)">Yli 20 km (30 min)</button>
+        </div>
         <button onclick="confirmOrder()">Vahvista tilaus</button>
         <div id="clock"></div>       
     </div>
 
     <script>
+        var selectedItems = []; // Array to store selected items
+        var total = 0;
+        var deliveryTime = 0; // Delivery time in minutes
+
         function goBack() {
             location.replace("Tilaussivusto.html");
         }
 
-        // Retrieve the order from localStorage
+        // Function to handle toggling delivery options and address input
+        function toggleDeliveryOptions(showOptions) {
+            var deliveryOptionsDiv = document.getElementById("delivery-options");
+            var deliveryAddressInput = document.getElementById("delivery-address");
+            if (showOptions) {
+                deliveryOptionsDiv.style.display = "block";
+                deliveryAddressInput.style.display = "block";
+            } else {
+                deliveryOptionsDiv.style.display = "none";
+                deliveryAddressInput.style.display = "none";
+                resetDeliveryTime();
+                updateClock(0);
+            }
+        }
+
+        // Function to set the delivery time based on the selected distance range
+        function setDeliveryTime(time) {
+            updateClock(time);
+            deliveryTime = time;
+        }
+
+        // Function to reset the delivery time
+        function resetDeliveryTime() {
+            deliveryTime = 0;
+        }
+
+        // Function to add an item to the order
         var order = JSON.parse(localStorage.getItem("order")) || [];
 
         // Display each item in the order
@@ -133,19 +169,37 @@
                 // You can do something with the address here, such as storing it in localStorage or sending it to a server.
             }
         }
-        function updateClock() {
-            var now = new Date();
-            var minutesToAdd = order.length * 15; // Assuming each pizza takes 15 minutes
-            now.setMinutes(now.getMinutes() + minutesToAdd);
 
-            var hours = now.getHours();
-            var minutes = now.getMinutes();
-            var timeString = hours + ":" + (minutes < 10 ? "0" : "") + minutes;
-            document.getElementById("clock").textContent = "Estimated Time: " + timeString;
+        
+        function updateClock(time) {
+        var now = new Date();
+        var minutesToAdd = time + order.length * 15; // Adding the selected time and time for each pizza
+        now.setMinutes(now.getMinutes() + minutesToAdd);
+
+        var hours = now.getHours();
+        var minutes = now.getMinutes();
+        var timeString = hours + ":" + (minutes < 10 ? "0" : "") + minutes;
+        document.getElementById("clock").textContent = "Estimated Time: " + timeString;
         }
 
-        // Update the clock initially
-        updateClock();
+        // Function to confirm the order
+        function confirmOrder() {
+            // Implement order confirmation logic here
+            // For example, you can save the order to localStorage or send it to a server
+            // Reset selectedItems and total after confirmation
+            selectedItems = [];
+            total = 0;
+            document.getElementById("total").textContent = "0.00 €"; // Reset total display
+            document.getElementById("cart-items").innerHTML = ""; // Clear cart items display
+            resetDeliveryTime(); // Reset delivery time
+            updateClock(0); // Reset clock
+            alert("Tilaus vahvistettu!");
+        }
+
+        // Initialize the clock with the current time
+        updateClock(0);
+
+        // Update the clock every second to show real-time
     </script>
 </body>
 </html>
