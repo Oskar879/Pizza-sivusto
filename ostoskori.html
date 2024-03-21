@@ -116,6 +116,8 @@
         <button id="confirm-button" onclick="confirmOrder()" disabled>Vahvista tilaus</button>
         <div id="clock"></div>
         <h3 id="item-count">(0)</h3><h4 id="Tuotetta">Tuotetta</h4>       
+
+            <button onclick="clear()">Tyhjennä ostoskori</button>
     </div>
 
     <script>
@@ -250,6 +252,11 @@
             } else {
                 confirmButton.disabled = true;
             }
+        }
+
+        function clear() {
+            localStorage.removeItem("order");
+            location.reload();
         }
 
         // Call the function to update the button state initially
