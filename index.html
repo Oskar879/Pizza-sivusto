@@ -210,11 +210,10 @@
 			<div class="row" id="Palaute">
 				<div class="col navMenu">
 					<h2 class="text-center">~ Palaute ~</h2>
-				</div>				
+				</div>                
 			</div>
-			<div class="row"><script>				
-				</script>
-				<form method="post" action="palaute.html" class="feedback-form">
+			<div class="row">
+				<form method="post" class="feedback-form">
 					<div class="form-group">
 						<label for="name"><strong>Nimi</strong> <span style="color: red;">*</span> </label><br>
 						<input type="text" id="name" name="name" required><br>
@@ -236,22 +235,22 @@
 							<label for="satisfaction4" class="circle">4</label>
 							<input type="radio" id="satisfaction5" name="satisfaction" value="5">
 							<label for="satisfaction5" class="circle">5</label>
-						</div>			
+						</div>            
 					</div>
 					<div class="form-group">
 						<label for="feedback"><strong>Kirjoita palautteesi: </strong> <span style="color: red;">*</span></label><br>
 						<textarea id="feedback" name="feedback" rows="4" cols="50" required></textarea><br><br>
-						<button type="submit" class="button" >Lähetä</button>	
+						<button class="button" onclick="myFunction()">Lähetä</button>
 						<script>
-							function rev() {
-								window.location.href = 'palaute.html'
-								return false;
-						}
-						</script>	
-			
-					</div>																				
+							function myFunction() {
+								location.replace("palaute.html");
+								return false; // Prevent form submission
+							}
+						</script>                                                                   
+					</div>                                                                              
 				</form>
-			</div>			
+			</div>
+													
 			<!--- End of Our Location -->
 			<head>
 				<style>
