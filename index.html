@@ -213,7 +213,7 @@
 			</div>
 			<div class="row"><script>				
 				</script>
-				<form method="post" action="palaute.html" class="feedback-form" id="feedbackForm">
+				<form method="post" action="palaute.html" class="feedback-form" id="feedbackForm" onsubmit="return validateForm()">
 					<div class="form-group">
 						<label for="name"><strong>Nimi</strong> <span style="color: red;">*</span> </label><br>
 						<input type="text" id="name" name="name" required><br>
@@ -240,10 +240,24 @@
 					<div class="form-group">
 						<label for="feedback"><strong>Kirjoita palautteesi: </strong> <span style="color: red;">*</span></label><br>
 						<textarea id="feedback" name="feedback" rows="4" cols="50" required></textarea><br><br>
-						<a class="button" href="palaute.html">Lähetä</a>																									
+						<a class="button" class="button">Lähetä</a>																									
 					</div>																				
 				</form>
-			</div>								
+			</div>	
+			<script>
+				function validateForm() {
+					var name = document.getElementById("name").value;
+					var email = document.getElementById("email").value;
+					var satisfaction = document.querySelector('input[name="satisfaction"]:checked');
+					var feedback = document.getElementById("feedback").value;
+			
+					if (name == "" || email == "" || !satisfaction || feedback == "") {
+						alert("Kaikki kentät ovat pakollisia!");
+						return false;
+					}
+					return true;
+				}
+			</script>							
 			<!--- End of Our Location -->
 			<head>
 				<style>
