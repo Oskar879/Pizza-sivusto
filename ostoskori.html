@@ -86,11 +86,12 @@
             <button onclick="setDeliveryTime(20)">10-20 km (20 min)</button>
             <button onclick="setDeliveryTime(30)">Yli 20 km (30 min)</button>
         </div>
-        <button onclick="confirmOrder()">Vahvista tilaus</button>
+        <button id="confirm-button" onclick="confirmOrder()" disabled>Vahvista tilaus</button>
         <div id="clock"></div>       
     </div>
 
     <script>
+        
         var selectedItems = []; // Array to store selected items
         var total = 0;
         var deliveryTime = 0; // Delivery time in minutes
@@ -173,7 +174,7 @@
         function promptAddress() {
             var deliveryCheckbox = document.getElementById("delivery-checkbox");
             if (delivery.checked) {
-                var address = prompt("Please enter your address:");
+                var address = prompt("Anna osoitteesi:");
                 // You can do something with the address here, such as storing it in localStorage or sending it to a server.
             }
         }
@@ -187,7 +188,7 @@
         var hours = now.getHours();
         var minutes = now.getMinutes();
         var timeString = hours + ":" + (minutes < 10 ? "0" : "") + minutes;
-        document.getElementById("clock").textContent = "Estimated Time: " + timeString;
+        document.getElementById("clock").textContent = "Arvioitu aika: " + timeString;
         }
 
         // Function to confirm the order
@@ -206,6 +207,17 @@
 
         // Initialize the clock with the current time
         updateClock(0);
+        function updateConfirmButton() {
+            var confirmButton = document.getElementById("confirm-button");
+            if (order.length > 0) {
+                confirmButton.disabled = false;
+            } else {
+                confirmButton.disabled = true;
+            }
+        }
+
+        // Call the function to update the button state initially
+        updateConfirmButton();
 
         // Update the clock every second to show real-time
     </script>
