@@ -64,6 +64,33 @@
             margin-top: 10px;
             width: 200px;
         }
+        #item-count{
+            position: fixed;
+            top: 715px; /* Adjust the top position as needed */
+            left: 870px; /* Adjust the right position as needed */
+            color: black;
+            padding: 5px 10px;
+            border-radius: 50%;
+            font-size: 1rem;
+        }
+        #Tuotetta{
+            position: fixed;
+            top: 710px; /* Adjust the top position as needed */
+            left: 890px; /* Adjust the right position as needed */
+            color: black;
+            padding: 5px 10px;
+            border-radius: 50%;
+            font-size: 1rem;  
+        }
+        #clock{
+            position: fixed;
+            top: 700px; /* Adjust the top position as needed */
+            left: 850px; /* Adjust the right position as needed */
+            color: black;
+            padding: 5px 10px;
+            border-radius: 50%;
+            font-size: 1rem;  
+        }
     </style>
 </head>
 <body>
@@ -88,7 +115,7 @@
         </div>
         <button id="confirm-button" onclick="confirmOrder()" disabled>Vahvista tilaus</button>
         <div id="clock"></div>
-        <span id="item-count">(0)</span>       
+        <h3 id="item-count">(0)</h3><h4 id="Tuotetta">Tuotetta</h4>       
     </div>
 
     <script>
