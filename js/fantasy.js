@@ -43,41 +43,28 @@ cheeses.forEach(checkbox => {
 })
 
 sauces.forEach(checkbox => {
-    checkbox.onclick = function() {
-        const val = Array.from(sauces)
-        .filter(checkbox => checkbox.checked)
-        .map(checkbox => checkbox.value);
-        
-        if(val.includes('none')) {
-            sauces.forEach(checkbox => {
-                if (checkbox.value !== 'none') {
-                    checkbox.disabled = true;
+    checkbox.addEventListener('change', function() {
+        const val = this.name;
+        if (val === 'none') {
+            sauces.forEach(cb => {
+                if (cb !== checkbox) {
+                    cb.disabled = true;
                 }
             });
-        } else if (val.includes('garlic')) {
-            sauces.forEach(checkbox => {
-                if (checkbox.value === 'extra') {
-                    checkbox.disabled = false;
-                } else if (checkbox.value === 'none') {
-                    checkbox.disabled = true;
+        } else if (val === 'garlic' || val === 'extra') {
+            sauces.forEach(cb => {
+                if (cb.name !== val && cb.name !== 'none') {
+                    cb.disabled = true;
                 }
             });
-            
-        }else if (val.includes('extra')) {
-            sauces.forEach(checkbox => {
-                if (checkbox.value === 'garlic') {
-                    checkbox.disabled = false
-                } else if (checkbox.value === 'none') {
-                    checkbox.disabled = true;
-                }
-            })
         } else {
-            sauces.forEach(checkbox => {
-                checkbox.disabled = false;
-            })
+            sauces.forEach(cb => {
+                cb.disabled = false;
+            });
         }
-    }
-})
+    });
+});
+
 
 
     doughs.forEach(function(checkbox) {
@@ -102,57 +89,55 @@ function back() {
     location.replace('Tilaussivusto.html')
 }
 function jobanilistus() {
-    document.addEventListener('DOMContentLoaded', function() {
     // Gather the selected checkboxes
-    const selectedToppings = [];
-    const selectedCheeses = [];
-    const selectedSauces = [];
-    const selectedDoughs = [];
+    const topping = document.querySelectorAll('.topping');
+    const cheese = document.querySelectorAll('.cheese');
+    const sauce = document.querySelectorAll('.sauces');
+    const dough = document.querySelectorAll('.doughs');
     const totalPriceDisplay = document.getElementById('totalPrice');
     
-    let totalPrice = 0;
     function calculateTotalPrice() {
+        let totalPrice = 0;
 
         // Iterate over toppings
-        toppings.forEach(topping => {
+        topping.forEach(topping => {
             if (topping.checked) {
                 totalPrice += parseFloat(topping.value);
             }
         });
 
         // Iterate over cheeses
-        cheeses.forEach(cheese => {
+        cheese.forEach(cheese => {
             if (cheese.checked) {
                 totalPrice += parseFloat(cheese.value);
             }
         });
 
         // Iterate over sauces
-        sauces.forEach(sauce => {
+        sauce.forEach(sauce => {
             if (sauce.checked) {
                 totalPrice += parseFloat(sauce.value);
             }
         });
 
         // Iterate over doughs
-        doughs.forEach(dough => {
+        dough.forEach(dough => {
             if (dough.checked) {
                 totalPrice += parseFloat(dough.value);
             }
         });
 
         // Update the display of total price
-        totalPriceDisplay.textContent = `Total Price: ${totalPrice.toFixed(2)}€`;
+        totalPriceDisplay.textContent = `Hinta Yhteensä: ${totalPrice.toFixed(2)}€`;
     }
 
     // Attach onclick event listeners to all checkboxes
-    [toppings, cheeses, sauces, doughs].forEach(group => {
+    [topping, cheese, sauce, dough].forEach(group => {
         group.forEach(checkbox => {
             checkbox.addEventListener('click', calculateTotalPrice);
         });
     });
     calculateTotalPrice();
 
-    })
 }
-document.addEventListener('DOMContentLoaded', send);
+document.addEventListener('DOMContentLoaded', jobanilistus);
