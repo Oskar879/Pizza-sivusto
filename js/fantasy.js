@@ -102,7 +102,7 @@ function jobanilistus() {
     const totalPriceDisplay = document.getElementById('totalPrice');
     
     function calculateTotalPrice() {
-        let totalPrice = 0;
+        let totalPrice = 15;
 
         // Iterate over toppings
         topping.forEach(topping => {
