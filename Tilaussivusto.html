@@ -20,6 +20,8 @@
                 <img src="images/ostoskori.png">
                 <h3>Ostoskori</h3>
                 <h3 id="yhteensa">0.00 €</h3>
+                <h3 id="item-count" class="item-count">0</h3>
+                <h3 id="tuotteita">Tuotteita</h3>
             </button> 
             
                        
@@ -113,13 +115,35 @@
                 cursor: pointer;                
             }
             #yhteensa {
-                margin: 0;
-                font-size: 1.5rem;
-                position: absolute;                                                                              
+            position: fixed;
+            top: 200px; /* Adjust the top position as needed */
+            right: 100px; /* Adjust the right position as needed */
+            color: #ce3c3c;
+            padding: 5px 10px;
+            border-radius: 50%;
+            font-size: 2rem;                                                                             
             } 
             h3 {
                 color: #d33b3b;
-            }                       
+            }
+            #item-count {
+            position: fixed;
+            top: 250px; /* Adjust the top position as needed */
+            right: 170px; /* Adjust the right position as needed */
+            color: #ce3c3c;
+            padding: 5px 10px;
+            border-radius: 50%;
+            font-size: 1rem;
+            }
+            #tuotteita{
+            position: fixed;
+            top: 250px; /* Adjust the top position as needed */
+            right: 100px; /* Adjust the right position as needed */
+            color: #ce3c3c;
+            padding: 5px 10px;
+            border-radius: 50%;
+            font-size: 1rem; 
+            }                   
     </style>
 </head>
 <body>
@@ -436,38 +460,51 @@
 
                     <script>
                        
-                       var selectedItems = []; // Array to store selected items
+                        var selectedItems = []; // Array to store selected items
                         var total = 0;
-
-                        function myFunction() {
-                        location.replace("index.html");
-                        }                                                                        
-
-                        function addToOrder(name, price, ingredients) {
-                            name = name.charAt(0).toUpperCase() + name.slice(1);
-                        // Create an object representing the pizza
-                            var pizza = {
-                                name: name,
-                                price: price,                                
-                                ingredients: ingredients,                                                                          
-                        };
-                        
-                        var order = JSON.parse(localStorage.getItem("order")) || [];
-                        order.push(pizza);
-                        localStorage.setItem("order", JSON.stringify(order));                    
-                        
-                        total += parseFloat(price);
-                        localStorage.setItem("total", total);
-                        document.getElementById("yhteensa").textContent = total.toFixed(2) + " €";
-                        }                                                     
-
-                                                                                            
-                        function initializeTotal() {                            
-                            total = parseFloat(localStorage.getItem("total")) || 0;
-                            document.getElementById("yhteensa").textContent = total.toFixed(2) + " €";
-                        }
-                        window.onload = initializeTotal;
-                    </script>
+ 
+                 function addToOrder(name, price, ingredients) {
+                     name = name.charAt(0).toUpperCase() + name.slice(1);
+                     // Create an object representing the pizza
+                     var pizza = {
+                         name: name,
+                         price: price,
+                         ingredients: ingredients,
+                     };
+ 
+                     var order = JSON.parse(localStorage.getItem("order")) || [];
+                     order.push(pizza);
+                     localStorage.setItem("order", JSON.stringify(order));
+ 
+                     total += parseFloat(price);
+                     localStorage.setItem("total", total.toFixed(2));
+                     document.getElementById("yhteensa").textContent = total.toFixed(2) + " €";
+ 
+                     updateItemCount(); // Update item count when adding an item
+                 }
+ 
+                 function initializeTotal() {
+                     total = parseFloat(localStorage.getItem("total")) || 0;
+                     document.getElementById("yhteensa").textContent = total.toFixed(2) + " €";
+                     updateItemCount(); // Update item count on page load
+                 }
+ 
+                 function updateItemCount() {
+                     var itemCount = document.getElementById("item-count");
+                     var order = JSON.parse(localStorage.getItem("order")) || [];
+                     itemCount.textContent = "(" + order.length + ")";
+                 }
+ 
+                 // Call the function initially to set the initial count
+                 initializeTotal();
+ 
+                 // Function to navigate to the order summary page
+                 function showOrderSummary() {
+                     location.replace("ostoskori.html");
+                 }
+ 
+                 window.onload = initializeTotal;
+                     </script>
                                                                                                
             </div>                    
         </div>

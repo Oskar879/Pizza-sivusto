@@ -64,6 +64,33 @@
             margin-top: 10px;
             width: 200px;
         }
+        #item-count{
+            position: fixed;
+            top: 715px; /* Adjust the top position as needed */
+            left: 870px; /* Adjust the right position as needed */
+            color: black;
+            padding: 5px 10px;
+            border-radius: 50%;
+            font-size: 1rem;
+        }
+        #Tuotetta{
+            position: fixed;
+            top: 710px; /* Adjust the top position as needed */
+            left: 890px; /* Adjust the right position as needed */
+            color: black;
+            padding: 5px 10px;
+            border-radius: 50%;
+            font-size: 1rem;  
+        }
+        #clock{
+            position: fixed;
+            top: 700px; /* Adjust the top position as needed */
+            left: 850px; /* Adjust the right position as needed */
+            color: black;
+            padding: 5px 10px;
+            border-radius: 50%;
+            font-size: 1rem;  
+        }
     </style>
 </head>
 <body>
@@ -87,7 +114,8 @@
             <button onclick="setDeliveryTime(30)">Yli 20 km (30 min)</button>
         </div>
         <button id="confirm-button" onclick="confirmOrder()" disabled>Vahvista tilaus</button>
-        <div id="clock"></div>       
+        <div id="clock"></div>
+        <h3 id="item-count">(0)</h3><h4 id="Tuotetta">Tuotetta</h4>       
     </div>
 
     <script>
@@ -99,6 +127,14 @@
         function goBack() {
             location.replace("Tilaussivusto.html");
         }
+        function updateItemCount() {
+            var itemCount = document.getElementById("item-count");
+            var order = JSON.parse(localStorage.getItem("order")) || [];
+            itemCount.textContent = "(" + order.length + ")";
+        }
+
+        // Call the function initially to set the initial count
+        updateItemCount();
 
         // Function to handle toggling delivery options and address input
         function toggleDeliveryOptions(showOptions) {
