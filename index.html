@@ -240,21 +240,7 @@
 					<div class="form-group">
 						<label for="feedback"><strong>Kirjoita palautteesi: </strong> <span style="color: red;">*</span></label><br>
 						<textarea id="feedback" name="feedback" rows="4" cols="50" required></textarea><br><br>
-						<button type="submit" href="palaute.html">Lähetä</button>
-						<script>
-							function validateForm() {
-								var name = document.getElementById("name").value;
-								var email = document.getElementById("email").value;
-								var satisfaction = document.querySelector('input[name="satisfaction"]:checked');
-								var feedback = document.getElementById("feedback").value;
-						
-								if (name.trim() === "" || email.trim() === "" || !satisfaction || feedback.trim() === "") {
-									alert("Kaikki kentät ovat pakollisia!");
-									return false;
-								}
-								return true;
-							}
-						</script>																															
+						<button type="submit" href="palaute.html">Lähetä</button>																																					
 					</div>																				
 				</form>
 			</div>								
