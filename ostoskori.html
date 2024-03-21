@@ -117,7 +117,7 @@
         <div id="clock"></div>
         <h3 id="item-count">(0)</h3><h4 id="Tuotetta">Tuotetta</h4>       
 
-            <button onclick="clear()">Tyhjennä ostoskori</button>
+            <button onclick="clearCart()">Tyhjennä ostoskori</button>
     </div>
 
     <script>
@@ -254,7 +254,7 @@
             }
         }
 
-        function clear() {
+        function clearCart() {
             localStorage.removeItem("order");
             location.reload();
         }
