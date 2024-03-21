@@ -240,15 +240,14 @@
 					</div>
 					<div class="form-group">
 						<label for="feedback"><strong>Kirjoita palautteesi: </strong> <span style="color: red;">*</span></label><br>
-						<textarea id="feedback" name="feedback" rows="4" cols="50" required></textarea><br><br>
-						<form method="POST" action="php/fix.php" class="feedback-form" onsubmit="rev()">
+						<textarea id="feedback" name="feedback" rows="4" cols="50" required></textarea><br><br>						
 						<button type="submit" class="button" >Lähetä</button>	
 						</form>
 						<script>
-							function rev() {
-								console.log('Yee yee')
-								window.location.href = 'palaute.html'
-						}
+							function myFunction() {
+								location.replace("palaute.html");
+								return false;
+							}						
 						</script>	
 			
 					</div>																				
