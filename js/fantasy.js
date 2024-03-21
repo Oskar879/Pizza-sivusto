@@ -156,3 +156,7 @@ function jobanilistus() {
     })
 }
 document.addEventListener('DOMContentLoaded', send);
+
+function send() {
+    location.replace("ostoskori.html");
+}
