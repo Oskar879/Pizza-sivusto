@@ -101,7 +101,8 @@ sauces.forEach(checkbox => {
 function back() {
     location.replace('Tilaussivusto.html')
 }
-function send() {
+function jobanilistus() {
+    document.addEventListener('DOMContentLoaded', function() {
     // Gather the selected checkboxes
     const selectedToppings = [];
     const selectedCheeses = [];
@@ -111,7 +112,6 @@ function send() {
     
     let totalPrice = 0;
     function calculateTotalPrice() {
-        totalPrice = 0;
 
         // Iterate over toppings
         toppings.forEach(topping => {
@@ -151,38 +151,8 @@ function send() {
             checkbox.addEventListener('click', calculateTotalPrice);
         });
     });
+    calculateTotalPrice();
 
-
-    document.querySelectorAll('.topping:checked').forEach(checkbox => {
-        selectedToppings.push(checkbox.value);
-    });
-
-    document.querySelectorAll('.cheese:checked').forEach(checkbox => {
-        selectedCheeses.push(checkbox.value);
-    });
-
-    document.querySelectorAll('.sauces:checked').forEach(checkbox => {
-        selectedSauces.push(checkbox.value);
-    });
-
-    document.querySelectorAll('.doughs:checked').forEach(checkbox => {
-        selectedDoughs.push(checkbox.value);
-    });
-
-    // Prepare the data to send to the shopping cart
-    const data = {
-        toppings: selectedToppings,
-        cheeses: selectedCheeses,
-        sauces: selectedSauces,
-        doughs: selectedDoughs
-    };
-
-    // Send the data to your shopping cart backend (replace 'your/shopping/cart/url' with your actual URL)
-    fetch('ostoskori.html', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
     })
 }
+document.addEventListener('DOMContentLoaded', send);
