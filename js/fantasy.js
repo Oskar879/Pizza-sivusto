@@ -46,25 +46,30 @@ sauces.forEach(checkbox => {
     checkbox.addEventListener('change', function() {
         const val = this.name;
         if (val === 'none') {
-            sauces.forEach(cb => {
-                if (cb !== checkbox) {
-                    cb.disabled = true;
-                }
-            });
-        } else if (val === 'garlic' || val === 'extra') {
-            sauces.forEach(cb => {
-                if (cb.name !== val && cb.name !== 'none') {
-                    cb.disabled = true;
-                }
-            });
-        } else {
-            sauces.forEach(cb => {
-                cb.disabled = false;
-            });
+            if (this.checked) {
+                sauces.forEach(cb => {
+                    if (cb !== checkbox) {
+                        cb.checked = false;
+                        cb.disabled = true;
+                    }
+                });
+            } else {
+                sauces.forEach(cb => {
+                    cb.disabled = false;
+                });
+            }
+        } else if (val === 'garlic') {
+            if (this.checked) {
+                document.querySelector('input[name="none"]').disabled = true;
+            } else {
+                let noneChecked = document.querySelector('input[name="none"]').checked;
+                sauces.forEach(cb => {
+                    cb.disabled = noneChecked;
+                });
+            }
         }
     });
-});
-
+})
 
 
     doughs.forEach(function(checkbox) {
@@ -142,7 +147,7 @@ function jobanilistus() {
 }
 
 document.addEventListener('DOMContentLoaded', jobanilistus);
-document.addEventListener('DOMContentLoaded', send);
+
 
 function send() {
     location.replace('ostoskori.html');
