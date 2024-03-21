@@ -170,6 +170,10 @@
         // Display each item in the order
         var total = 0;
         var cartItems = document.getElementById("cart-items");
+            // Retrieve the selected pizzas and total price from localStorage
+            const selectedPizza = localStorage.getItem('selectedPizza') || 'Fantasia Pizza';
+            const totalPrice = localStorage.getItem('totalPrice') || '0.00';
+            
         order.forEach(function(pizza, index) {
             var item = document.createElement("li");
             item.textContent = pizza.name + " - " + pizza.price + " €";

@@ -1,3 +1,5 @@
+let totalPrice = 0;
+
 document.addEventListener('DOMContentLoaded', function() {
     const sauces = document.querySelectorAll('.sauces');
     const doughs = document.querySelectorAll('.doughs');
@@ -102,7 +104,7 @@ function jobanilistus() {
     const totalPriceDisplay = document.getElementById('totalPrice');
     
     function calculateTotalPrice() {
-        let totalPrice = 15;
+        totalPrice = 15;
 
         // Iterate over toppings
         topping.forEach(topping => {
@@ -150,15 +152,20 @@ document.addEventListener('DOMContentLoaded', jobanilistus);
 
 
 function send() {
-    const pizza = 'Fantasia pizza'; // You can change this to dynamically get the selected pizza name
-    const totalPrice = document.getElementById('totalPrice').textContent;
+    console.log("balls")
+    addToOrder('Fantasia Pizza', totalPrice);
 
-    // Store the pizza name and total price in localStorage
-    localStorage.setItem('selectedPizza', pizza);
-    localStorage.setItem('totalPrice', totalPrice);
-
-    // Redirect to the shopping cart page
+    localStorage.setItem('selectedPizza', 'Fantasy Pizza');
+    localStorage.setItem('totalPrice', totalPrice.toFixed(2));
     window.location.href = 'ostoskori.html';
     
 }
 
+function addToOrder(name, price) {
+    name = name.charAt(0).toUpperCase() + name.slice(1);
+    // Create an object representing the pizza
+    var pizza = {
+        name: name,
+        price: price,
+    };
+}
