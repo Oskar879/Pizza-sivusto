@@ -8,12 +8,12 @@
             background-color: rgb(158, 100, 100);            
         }
         .container{
+            position: relative; 
             margin: 50px auto;
             padding: 200px;
             background-color: #fff;
             border-radius: 99px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);            
-            position: relative; 
         }
         .bg-light {
             background-color: #f8f9fa !important;
@@ -65,31 +65,34 @@
             width: 200px;
         }
         #item-count{
-            position: fixed;
-            top: 715px; /* Adjust the top position as needed */
-            left: 870px; /* Adjust the right position as needed */
+            position: absolute;
+            bottom: 27px;
+            left: 47%;
+            transform: translateX(-50%);
             color: black;
             padding: 5px 10px;
             border-radius: 50%;
             font-size: 1rem;
         }
         #Tuotetta{
-            position: fixed;
-            top: 710px; /* Adjust the top position as needed */
-            left: 890px; /* Adjust the right position as needed */
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
             color: black;
             padding: 5px 10px;
             border-radius: 50%;
-            font-size: 1rem;  
+            font-size: 1rem;
         }
-        #clock{
-            position: fixed;
-            top: 700px; /* Adjust the top position as needed */
-            left: 850px; /* Adjust the right position as needed */
+            #clock {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
             color: black;
             padding: 5px 10px;
             border-radius: 50%;
-            font-size: 1rem;  
+            font-size: 1rem;
         }
     </style>
 </head>
