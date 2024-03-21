@@ -20,8 +20,6 @@
                 <img src="images/ostoskori.png">
                 <h3>Ostoskori</h3>
                 <h3 id="yhteensa">0.00 €</h3>
-                <h3 id="item-count" class="item-count">0</h3>
-                <h3 id="tuotteita">Tuotetta</h3>
             </button> 
             
                        
@@ -121,12 +119,7 @@
             } 
             h3 {
                 color: #d33b3b;
-            }
-            #item-count {
-            margin-top: 45px; /* Add some top margin */
-            margin-right: 40px; /* Adjust the left margin */
-            font-size: 1.2rem; /* Decrease the font size for better alignment */
-            }                      
+            }                       
     </style>
 </head>
 <body>
@@ -444,49 +437,36 @@
                     <script>
                        
                        var selectedItems = []; // Array to store selected items
-                       var total = 0;
+                        var total = 0;
 
-                function addToOrder(name, price, ingredients) {
-                    name = name.charAt(0).toUpperCase() + name.slice(1);
-                    // Create an object representing the pizza
-                    var pizza = {
-                        name: name,
-                        price: price,
-                        ingredients: ingredients,
-                    };
+                        function myFunction() {
+                        location.replace("index.html");
+                        }                                                                        
 
-                    var order = JSON.parse(localStorage.getItem("order")) || [];
-                    order.push(pizza);
-                    localStorage.setItem("order", JSON.stringify(order));
+                        function addToOrder(name, price, ingredients) {
+                            name = name.charAt(0).toUpperCase() + name.slice(1);
+                        // Create an object representing the pizza
+                            var pizza = {
+                                name: name,
+                                price: price,                                
+                                ingredients: ingredients,                                                                          
+                        };
+                        
+                        var order = JSON.parse(localStorage.getItem("order")) || [];
+                        order.push(pizza);
+                        localStorage.setItem("order", JSON.stringify(order));                    
+                        
+                        total += parseFloat(price);
+                        localStorage.setItem("total", total);
+                        document.getElementById("yhteensa").textContent = total.toFixed(2) + " €";
+                        }                                                     
 
-                    total += parseFloat(price);
-                    localStorage.setItem("total", total.toFixed(2));
-                    document.getElementById("yhteensa").textContent = total.toFixed(2) + " €";
-
-                    updateItemCount(); // Update item count when adding an item
-                }
-
-                function initializeTotal() {
-                    total = parseFloat(localStorage.getItem("total")) || 0;
-                    document.getElementById("yhteensa").textContent = total.toFixed(2) + " €";
-                    updateItemCount(); // Update item count on page load
-                }
-
-                function updateItemCount() {
-                    var itemCount = document.getElementById("item-count");
-                    var order = JSON.parse(localStorage.getItem("order")) || [];
-                    itemCount.textContent = "(" + order.length + ")";
-                }
-
-                // Call the function initially to set the initial count
-                initializeTotal();
-
-                // Function to navigate to the order summary page
-                function showOrderSummary() {
-                    location.replace("ostoskori.html");
-                }
-
-                window.onload = initializeTotal;
+                                                                                            
+                        function initializeTotal() {                            
+                            total = parseFloat(localStorage.getItem("total")) || 0;
+                            document.getElementById("yhteensa").textContent = total.toFixed(2) + " €";
+                        }
+                        window.onload = initializeTotal;
                     </script>
                                                                                                
             </div>                    
