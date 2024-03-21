@@ -241,11 +241,14 @@
 					<div class="form-group">
 						<label for="feedback"><strong>Kirjoita palautteesi: </strong> <span style="color: red;">*</span></label><br>
 						<textarea id="feedback" name="feedback" rows="4" cols="50" required></textarea><br><br>
-						<button onclick="go()">Lähetä</button>	
+						<form method="POST" action="php/fix.php" class="feedback-form" onsubmit="rev()">
+						<button type="submit" class="button" >Lähetä</button>	
+						</form>
 						<script>
-							function go() {
-								location.replace("palaute.html");
-							}
+							function rev() {
+								console.log('Yee yee')
+								window.location.href = 'palaute.html'
+						}
 						</script>	
 			
 					</div>																				
