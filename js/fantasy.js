@@ -150,6 +150,15 @@ document.addEventListener('DOMContentLoaded', jobanilistus);
 
 
 function send() {
-    location.replace('ostoskori.html');
+    const pizza = 'Fantasia pizza'; // You can change this to dynamically get the selected pizza name
+    const totalPrice = document.getElementById('totalPrice').textContent;
+
+    // Store the pizza name and total price in localStorage
+    localStorage.setItem('selectedPizza', pizza);
+    localStorage.setItem('totalPrice', totalPrice);
+
+    // Redirect to the shopping cart page
+    window.location.href = 'ostoskori.html';
+    
 }
 
