@@ -127,6 +127,14 @@
         function goBack() {
             location.replace("Tilaussivusto.html");
         }
+        function updateItemCount() {
+            var itemCount = document.getElementById("item-count");
+            var order = JSON.parse(localStorage.getItem("order")) || [];
+            itemCount.textContent = "(" + order.length + ")";
+        }
+
+        // Call the function initially to set the initial count
+        updateItemCount();
 
         // Function to handle toggling delivery options and address input
         function toggleDeliveryOptions(showOptions) {
