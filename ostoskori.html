@@ -174,7 +174,7 @@
         function promptAddress() {
             var deliveryCheckbox = document.getElementById("delivery-checkbox");
             if (delivery.checked) {
-                var address = prompt("Please enter your address:");
+                var address = prompt("Anna osoitteesi:");
                 // You can do something with the address here, such as storing it in localStorage or sending it to a server.
             }
         }
@@ -188,7 +188,7 @@
         var hours = now.getHours();
         var minutes = now.getMinutes();
         var timeString = hours + ":" + (minutes < 10 ? "0" : "") + minutes;
-        document.getElementById("clock").textContent = "Estimated Time: " + timeString;
+        document.getElementById("clock").textContent = "Arvioitu aika: " + timeString;
         }
 
         // Function to confirm the order

@@ -298,6 +298,14 @@
                                 height: 220px;
                                 border-radius: 0px;
                             }
+                            .ul2 {
+                            list-style-type: none; /* Poistaa oletusmerkit */
+                            padding: 0; /* Poistaa listan sisäpolun */
+                            }
+                            .li2 {
+                            padding-left: 20px; /* Lisää vasemman sisennysmerkin väliin */
+                            margin-bottom: 10px; /* Lisää välilyönnin jokaisen listaelementin välille */
+                            }
                         </style>
                     </head>
                     <body>
@@ -382,7 +390,10 @@
                         </div>            
                         <div class="pizza2">
                             <img src="images/mystery.png" alt="Pizza 7" id="pizzaimage">
-                            <span class="pizza-nimi">Fantasia pizza</span> <span class="pizza-hinta"><span class="price-background">15 €</span></span>            
+                            <span class="pizza-nimi">Fantasia pizza</span> <span class="pizza-hinta"><span class="price-background">15 €</span></span>   
+                            <ul class="ul2">         
+                            <li class="li2">Luo oma pizzasi haluamistasi täytteistä!</li>
+                        </ul>
                             <script>
                                 document.addEventListener('DOMContentLoaded', function() {
                                     const pizzaimage = document.getElementById('pizzaimage')
