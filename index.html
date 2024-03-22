@@ -73,7 +73,7 @@
                     localStorage.setItem('username', name);
                     localStorage.setItem('password', password);
             
-                    window.location.href = "index.html";
+                    window.location.href = "main.html";
                 }
             }
         
@@ -86,7 +86,7 @@
         
                 if (enteredName === storedName && enteredPassword === storedPassword) {
                     document.getElementById('user-name').innerText = storedName;
-                    window.location.href = "index.html"
+                    window.location.href = "main.html"
                 } else {
                     alert('Salasana tai nimi on väärin tai sinulla ei ole olemassa olevaa käyttäjää. Yritä uudelleen!');
                 }
