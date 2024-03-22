@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link href='https://fonts.googleapis.com/css?family=Merienda' rel='stylesheet'>
+		<link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+
+    	<title>Ryhmä B</title>
+    	<link rel="icon" href="images/logo_2.png">
+	</head>
+	<body data-spy="scroll" data-target=".navbar" data-offset="50">
+	  	<div id="Welcome">
+	  		<!---Start navigation Bar -->
+	    	<nav class="navbar navbar-expand-lg navbar fixed-top  navbar-light bg-light">
+		 		<a class="navbar-brand" href="#Welcome">
+    				<img src="images/logo_2.png" width="50" height="50" class="d-inline-block" alt=""> Luigi’s Pizzeria
+		 		</a>
+		 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+		    		<span class="navbar-toggler-icon"></span>
+		 		</button>
+			  	<div class="collapse navbar-collapse" id="navbarText">
+			    	<ul class="navbar-nav ml-auto" id="user-name">
+						<div id="user-info">
+							<li class="nav-item" id="logged">
+						Tervetuloa,	<a><span id="login-name"></span>! <button onclick="logout()" class="Kirjauduulosnappi">Kirjaudu ulos</button></a>
+							</li>
+						</div>						
+			      		<li class="nav-item">
+			        		<a class="nav-link" href="#Welcome">Tervetuloa</a>
+			      		</li>
+					    <li class="nav-item">
+					    	<a class="nav-link" href="#Restaurant">Ravintola</a>
+					    </li>
+					    <li class="nav-item">
+					    	<a class="nav-link" href="#Menu">Menu</a>
+					    </li>
+					    <li class="nav-item">
+					    	<a class="nav-link" href="#OurLocation">Sijaintimme</a>							
+					    </li>
+						<li class="nav-item">
+							<a class="nav-link" href="#Palaute">Palaute</a>
+						</li>					   
+				    </ul>
+				</div>
+			</nav>
+
+			<script>
+				window.onload = function () {
+					var username = localStorage.getItem('username');
+					if (username) {
+						document.getElementById('login-name').textContent = username;
+						document.getElementById('user-info').style.display = 'block';
+					} else {
+						document.getElementById('user-info').style.display = 'none';
+					}
+				}
+
+				function logout() {
+                window.location.href = 'kirjautumissivu.html'
+            }
+			</script>
+			<!--- End Navigation Bar -->
+			<!--- Start Carousel -->
+			<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+				<ol class="carousel-indicators">
+					<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+				    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+				    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+				</ol>
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+				    	<img class="d-block w-100 img-fluid img-slider" src="images/1-2.png" alt="First slide">
+				    	<div class="carousel-caption">
+						    <h2>Tervetuloa!</h2>
+							<p></p>
+						</div>
+				    </div>
+				    <div class="carousel-item">
+				      	<img class="d-block w-100 img-fluid img-slider" src="images/2.jpg" alt="Second slide">
+				      	<div class="carousel-caption">
+						    <h2>Herkullista pizzaa</h2>
+							<p></p>
+						</div>
+				    </div>
+				    <div class="carousel-item">
+				      	<img class="d-block w-100 img-fluid img-slider" src="images/3.jpg" alt="Third slide">
+				      	<div class="carousel-caption">
+						    <h2>Valitse meidät</h2>
+							<p></p>
+						</div>
+				    </div>
+				</div>
+				<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				    <span class="sr-only">Previous</span>
+				</a>
+				<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				    <span class="sr-only">Next</span>
+				</a>
+			</div>
+		</div>
+			<!--- End of Carousel -->
+			<!--- Restaurant-->
+		<div class="container">
+		 	<div class="row" id="Restaurant">
+	    		<div class="col navMenu">
+	     		 	<h2 class="text-center" >~ Ravintola ~</h2>
+	    		</div>
+  			</div>
+  			<div class="row bg-light" >
+  				<div class="col-md-6">
+  					<h3>Sijainti</h3>
+  					<p>Kiitos vierailustasi. Pizzaravintolamme on kuin piilotettu helmi, kutsuen vierailijoita nauttimaan unohtumattomasta makumatkasta. Vain muutama minuutti riittää selaamaan verkkosivustoamme ja tutustumaan ruokalistamme. Toivoamme, että pian liityt seuraamme nauttimaan upeasta pizzasta.</p>
+  					<h5>Uniikki kokemus</h5>
+  					<p>Tervetuloa nauttimaan laatuisesta pizzaravintolastamme! Jokainen pizza on tehty käsityönä, täynnä parhaita raaka-aineita. Ilmapiirimme on lämmin ja ystävällinen ympäristö kaikille. Tervetuloa kokemaan ainutlaatuinen pizzahetki kanssamme!</p>
+  				</div>
+  				<div class="col-md-6" data-aos="fade-up">
+  					<img class="img-fluid" src="images/location.jpg">
+  				</div>
+  			</div>
+  			<div class="row bg-light"><br></div>
+  			<div class="row bg-light">
+  				<div class="col-md-6 order-md-1 order-2" data-aos="fade-up">
+  					<img class="img-fluid " src="images/10.jpg">
+  				</div>
+  				<div class="col-md-6 order-md-12 order-1">
+  					<h3>Keittiö</h3>
+  					<p>Kokkimme, ammattilaitoiset mestarit, muovailevat intohimolla ja tarkkuudella jokaisen pizzan taitavasti. Tarjoamme vaihtoehtoja jokaisen makunystyrän tyydyttämiseksi.</p>
+  					<h5>Uniikki kokemus</h5>
+  					<p>Ravintolamme pizzakeittiö ei ole pelkästään ruokaa, se on kokemus. Lämmin tunnelma, houkuttelevat tuoksut uunista ja ystävällinen palvelu luovat erinomaisen ruokailuilmapiirin. Tervetuloa paikkaan, jossa pizza ei ole vain annos; se on unohtumaton kokemus.</p>
+  				</div>
+  			</div>
+  			<!--- End of Restaurant -->
+  			<!--- Start of Menu-->
+			<div class="row" id="Menu">
+				<div class="col navMenu">
+	     		 	<h2 class="text-center" >~ Ehdotuksiamme ~</h2>
+					  <button type="button" id="changemenu" onclick="myFunction()" style="font-size: larger;" >Siirry menuun -></button>
+				</div>
+			</div>
+			<div class="row bg-light">
+				<div class="col-md-4" data-aos="slide-up">
+					<div class="card view zoom">
+  						<img class="card-img-top img-fluid " src="images/4.jpg">
+					  	<div class="card-body">
+					  		<head><h5>~ Mozzarella ~</h5>
+							  <script>
+								function myFunction() {
+								  location.replace("Tilaussivusto.html")
+								}
+								</script>
+								</head>												  							
+					    	<ul class="list-group list-group-flush">
+							    <li class="list-group-item">tomaattikastike, puoli juustoa, rucolanverso, kirsikkatomaatti, mozzarella</li>							   
+							</ul>
+					  	</div>
+					</div>
+				</div>
+				<div class="col-md-4" data-aos="slide-up">
+					<div class="card">
+  						<img class="card-img-top img-fluid " src="images/5.jpg">
+					  	<div class="card-body">
+							<h5>~ Vege Lankku ~</h5>
+					    	<ul class="list-group list-group-flush">
+							    <li class="list-group-item">hapanjuuripohja, Koskenlaskijajuustoakastike, feta x 2, oliivi, rucolanverso x 2, kirsikkatomaatti, kurpitsansiemen, pikkelöity punasipuli, valkosipulidippi, valkosipulimajoneesi</li>							    
+							</ul>
+					  	</div>
+					</div>
+				</div>
+				<div class="col-md-4" data-aos="slide-up">
+					<div class="card">
+  						<img class="card-img-top img-fluid" src="images/6-1.jpg">
+					  	<div class="card-body">
+							<h5>~ Kebab ~</h5>
+					    	<ul class="list-group list-group-flush">
+							    <li class="list-group-item">kebabkastike, puoli juustoa, Kebab-liha x 2, punasipuli, salaatti, valkosipulimajoneesi</li>							    
+							</ul>
+					  	</div>
+					</div>
+				</div>
+				
+			</div>
+			<!--- End of Menu -->
+			<!--- Start of Reservation-->
+			<!--- End of Reserve -->
+			<!--- Start of Our Location -->
+			<div class="row" id="OurLocation">
+				<div class="col navMenu">
+					<h2 class="text-center">~ Sijaintimme ~</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div id="map" class="col-md-9 map">
+					<iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1989.6177120012246!2d24.9706178!3d60.405847399999995!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4692007fb215e3e3%3A0xa83f9f479fcffb9d!2sKeskikatu%203%2C%2004200%20Kerava!5e0!3m2!1sen!2sfi!4v1586812096955!5m2!1sen!2sfi" style="width: 100%; height: 100%;"></iframe>
+				</div>				
+				<div class="col-md-3">					
+					<h3>Osoite:</h3>
+					<p>Keskikatu 3, 04200 Kerava </p>
+					<h3>Sähköposti:</h3>
+					<p>pizzaplaceb@gmail.com</p>
+					<p style="font-size: 7px">ps, this address is real</p>
+				</div>
+			</div>
+
+			<div class="row" id="Palaute">
+				<div class="col navMenu">
+					<h2 class="text-center">~ Palaute ~</h2>
+				</div>				
+			</div>
+			<div class="row"><script>				
+				</script>
+				<form method="post" action="palaute.html" class="feedback-form" id="feedbackForm">
+					<div class="form-group">
+						<label for="name"><strong>Nimi</strong> <span style="color: red;">*</span> </label><br>
+						<input type="text" id="name" name="name" required><br>
+					</div>
+					<div class="form-group">
+						<label for="email"><strong>Sähköposti</strong> <span style="color: red;">*</span> </label><br>
+						<input type="email" id="email" name="email" required><br>
+					</div>
+					<div class="form-group">
+						<label for="satisfaction"><strong>Valitse tyytyväisyyden taso (1-5):</strong></label><br>
+						<div class="satisfaction-level">
+							<input type="radio" id="satisfaction1" name="satisfaction" value="1" required>
+							<label for="satisfaction1" class="circle">1</label>
+							<input type="radio" id="satisfaction2" name="satisfaction" value="2">
+							<label for="satisfaction2" class="circle">2</label>
+							<input type="radio" id="satisfaction3" name="satisfaction" value="3">
+							<label for="satisfaction3" class="circle">3</label>
+							<input type="radio" id="satisfaction4" name="satisfaction" value="4">
+							<label for="satisfaction4" class="circle">4</label>
+							<input type="radio" id="satisfaction5" name="satisfaction" value="5">
+							<label for="satisfaction5" class="circle">5</label>
+						</div>			
+					</div>
+					<div class="form-group">
+						<label for="feedback"><strong>Kirjoita palautteesi: </strong> <span style="color: red;">*</span></label><br>
+						<textarea id="feedback" name="feedback" rows="4" cols="50" required></textarea><br><br>
+						<a type="submit" class="button" href="palaute.html">Lähetä</a>																																					
+					</div>																				
+				</form>
+			</div>								
+			<!--- End of Our Location -->
+			<head>
+				<style>
+					body {
+						font-family: Arial, sans-serif;
+						margin: 0;
+						padding: 0;
+						background-color: #da4949;
+					}
+					.container {
+						margin: 50px auto;
+						padding: 200px;
+						background-color: #fff;
+						border-radius: 99px;
+						box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+					}
+					input {
+						width: 100%;
+						padding: 10px;
+						margin-bottom: 15px;
+						box-sizing: border-box;
+					}
+					button {
+						padding: 10px;
+						background-color: #4caf50;
+						color: #fff;
+						border: none;
+						border-radius: 20px;
+						cursor: pointer;
+						text-align: center;
+					}
+
+					button:hover {
+						background-color: #45a049;
+					}
+					.container1{
+						padding: 200px;
+						box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+						border-radius: 99px;
+						margin: 50px auto;
+					}
+					#changemenu {
+						padding: 10px;
+						background-color: #4caf50;
+						color: #fff;
+						border: none;
+						border-radius: 20px;
+						cursor: pointer;
+						text-align: center;
+						position: inherit;
+						left: 300px;
+					}
+					.feedback-form {
+						margin: 0 auto;
+						align-items: center;
+					}
+					.form-group {
+						margin-bottom: 20px;
+					}
+					.text.left {
+						text-align: left;
+					}					
+
+					.circle {
+    				display: inline-block;
+    				width: 30px;
+    				height: 30px;
+    				border-radius: 50%;
+    				border: 2px solid #4caf50;
+    				line-height: 30px;
+    				text-align: center;
+    				cursor: pointer;
+    				margin-right: 10px;
+					}
+
+					input[type="radio"] {
+    				display: none; /* Hide the actual radio buttons */
+					}
+
+					input[type="radio"]:checked + label {
+    				background-color: #4caf50; /* Change color when selected */
+    				color: #fff; /* Change text color when selected */
+					}	
+					.button {
+        			padding: 10px 20px;
+        			background-color: #4caf50;
+        			color: #fff;
+        			border: none;
+        			border-radius: 20px;
+        			cursor: pointer;
+        			text-align: center;
+        			display: inline-block;
+        			text-decoration: none; /* remove underline */
+    				}
+
+    				.button:hover {
+        			background-color: #45a049;
+    				}													
+				</style>
+			</head>									
+		</div>
+
+		<script src="js/jquery-3.3.1.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+		<script type="text/javascript" src="js/map.js"></script>
+		<script type="text/javascript" src="js/smooth-scroll.js"></script>
+		<script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+		<script type="text/javascript" src="js/image-effect.js"></script>		
+	    </script>
+  	</body>
+</html>
